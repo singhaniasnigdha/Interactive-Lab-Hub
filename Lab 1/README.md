@@ -57,19 +57,17 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 To stage the interaction with your interactive device, think about:
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+_Setting:_ Our player, Levi, has been working from home due to the pandemic that has taken the world by storm. While he has set up a perfect workspace to keep his productivity high, the number of emails/IMs he has to engage in frustrates him. As a result, he tends to rush through them often, and ends up misrepresenting his sentiments behind the messages.
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+_Players:_ Levi is the primary player in our setting, who is struggling how to effectively communicate with his colleagues and clients. His colleagues and clients are secondary players who will benefit if he is more cogent with his words.
 
-_Activity:_ What is happening between the actors?
+_Activity:_ HoloSent (Hologram + Sentiment) comes with a browser extension which Levi installs on his computer. Now, all of Levi’s messages are promptly evaluated by this device, the colour projections of which identify the sentiment conveyed by his messages. When Levi notices a mismatch between his emotion and the colour on HoloSent, he knows he should rephrase his message.
 
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+_Goals:_ The “Work From Home” shift has caused every person to rely more heavily on emails/written messages as opposed to physical meetings as the primary mode of communication. As we navigate this new normal, it is imperative that we convey sentiments/emotions clearly through written messages in order to build/maintain lasting relationships. 
 
-The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
-**Describe your setting, players, activity and goals here.**
+HoloSent can detect the sentiment conveyed by your messages in real-time, thereby guiding you to communicate more effectively. Through its different colours, it expresses the tone of your message (Red-Angry,Rude, Blue-Calm, Green-Happy/Interested, White-Professional). This is particularly useful when the tone does not match your intention, allowing you to fix the message and be more adept in your communication skills.
 
-Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
-**Include a picture of your storyboard here**
+Sketch a storyboard of the interactions you are planning. **Include a picture of your storyboard here**
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
