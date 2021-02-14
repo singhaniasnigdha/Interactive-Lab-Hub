@@ -48,11 +48,6 @@ E) [Costume the device](#part-e-costume-the-device)
 
 F) [Record the interaction](#part-f-record)
 
-## The Report
-This readme.md page in your own repository should be edited to include the work you have done. You can delete everything but the headers and the sections between the **stars**. Write the answers to the questions under the starred sentences. Include any material that explains what you did in this lab hub folder, and link it in the readme.
-
-Labs are due on Mondays. Make sure this page is linked to on your main class hub page.
-
 ## Part A. Plan 
 
 To stage the interaction with your interactive device, think about:
@@ -84,12 +79,9 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 ## Part C. Prototype the device
 
-You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
+Our smartphone is used as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
 
-Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
-
-We invented this tool for this lab! 
-**Give us feedback on Tinkerbelle.**
+We will not be using "Tinkerbelle" for our prototype. Instead, we use Zoom, where the screen shared from the laptop is rendered on the phone and projected using our Pyramid Hologram.
 
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
@@ -102,7 +94,7 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 ## Part E. Costume the device
 
-Only now should you start worrying about what the device should look like. Develop a costume so that you can use your phone as this device.
+We create a DIY 3D Pyramid Hologram using an OHP Sheet, clear tape and a pair of scissors. This [tutorial](https://www.instructables.com/DIY-Pyramid-Hologram/) is used for inspiration. 
 
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
