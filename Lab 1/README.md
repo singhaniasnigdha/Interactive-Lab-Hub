@@ -75,6 +75,9 @@ Try physically acting out the interaction you planned. For now, you can just pre
 **Are there things that seemed better on paper than acted out?**
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
+Some new ideas that popped up when the team was acting out the interaction were:
+* Use as reminders - Sync with reminders on your cell phone, and use some key images from the description to remind the user when its time for their activity (example - the picture of a dumbbells when its time to head to the gym)
+* 
 
 
 ## Part C. Prototype the device
@@ -88,7 +91,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 **Include your first attempts at recording the set-up video here.**
 
-Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
+Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
 **Show the follow-up work here.**
 
@@ -100,7 +103,7 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Include sketches of what your device might look like here.**
 
-**What concerns or opportunitities are influencing the way you've designed the device to look?**
+The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose.
 
 
 ## Part F. Record
