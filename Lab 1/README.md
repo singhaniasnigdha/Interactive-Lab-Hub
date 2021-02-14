@@ -19,18 +19,16 @@ For lab this week, we draw on this and other inspirations from theatre to stage 
 ### For lab, we need:
 
 1. Paper
-1. Markers/ Pen
-1. Smart Phone--Main required feature is that the phone needs to have a browser and display a webpage.
-1. Computer--we will use our computer to host a webpage which also features controls
-1. Found objects and materials--we costume our phone so that it looks like some other device. These materials can include doll clothes, a paper lantern, a bottle, human clothes, a pillow case. Be creative!
-1. Scissors
+1. Markers & Pen
+1. Smart Phone--Main required feature is that the phone should be able to connect to Zoom, which will be used to project the images.
+1. Computer--The computer is used to broadcast the videos which will be projected using our device.
+1. OHP Sheet, Scotch Tape, Scissors, Ruler--we costume our phone so that it looks like some other device.
 
 ### Deliverables for this lab are: 
 1. Storyboard
 1. Sketches/photos of costumed device
 1. Any reflections you have on the process.
 1. Video sketch of the prototyped interaction.
-1. Submit these in the lab1 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
 
 
 ## Overview
@@ -110,8 +108,7 @@ The pandemic is one of the primary reasons this idea was thought of. The hologra
 
 **Take a video of your prototyped interaction.**
 
-**Please indicate anyone you collaborated with on this Lab.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab/
 
 # Staging Interaction, Part 2 
 
