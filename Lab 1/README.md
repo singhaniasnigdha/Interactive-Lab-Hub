@@ -60,7 +60,8 @@ _Goals:_ The “Work From Home” shift has caused every person to rely more hea
 
 HoloSent can detect the sentiment conveyed by your messages in real-time, thereby guiding you to communicate more effectively. Through its different colours, it expresses the tone of your message (Red-Angry,Rude, Blue-Calm, Green-Happy/Interested, White-Professional). This is particularly useful when the tone does not match your intention, allowing you to fix the message and be more adept in your communication skills.
 
-Sketch a storyboard of the interactions you are planning. **Include a picture of your storyboard here**
+A storyboard of the interactions can be seen below.
+![StoryBoard](/StoryBoard.png)
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
