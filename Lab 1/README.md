@@ -46,9 +46,7 @@ E) [Costume the device](#part-e-costume-the-device)
 
 F) [Record the interaction](#part-f-record)
 
-## Part A. Plan 
-
-To stage the interaction with your interactive device, think about:
+## Part A. Plan
 
 _Setting:_ Our player, Levi, has been working from home due to the pandemic that has taken the world by storm. While he has set up a perfect workspace to keep his productivity high, the number of emails/IMs he has to engage in frustrates him. As a result, he tends to rush through them often, and ends up misrepresenting his sentiments behind the messages.
 
@@ -84,6 +82,9 @@ Some new ideas that popped up when the team was acting out the interaction were:
 Our smartphone is used as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
 
 We will not be using "Tinkerbelle" for our prototype. Instead, we use Zoom, where the screen shared from the laptop is rendered on the phone and projected using our Pyramid Hologram.
+
+A prototype of our pyramid can be seen below. We shade opposite sides red and green to denote the sentiment conveyed by the user.
+![Paper-Prototype](Paper-Prototype.png)
 
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
