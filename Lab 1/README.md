@@ -52,11 +52,11 @@ _Setting:_ Our player, Levi, has been working from home due to the pandemic that
 
 _Players:_ Levi is the primary player in our setting, who is struggling how to effectively communicate with his colleagues and clients. His colleagues and clients are secondary players who will benefit if he is more cogent with his words.
 
-_Activity:_ HoloSent (Hologram + Sentiment) comes with a browser extension which Levi installs on his computer. Now, all of Levi’s messages are promptly evaluated by this device, the colour projections of which identify the sentiment conveyed by his messages. When Levi notices a mismatch between his emotion and the colour on HoloSent, he knows he should rephrase his message.
+_Activity:_ **HoloSent** (Hologram + Sentiment) comes with a browser extension which Levi installs on his computer. Now, all of Levi’s messages are promptly evaluated by this device, the colour projections of which identify the sentiment conveyed by his messages. When Levi notices a mismatch between his emotion and the colour on HoloSent, he knows he should rephrase his message.
 
 _Goals:_ The “Work From Home” shift has caused every person to rely more heavily on emails/written messages as opposed to physical meetings as the primary mode of communication. As we navigate this new normal, it is imperative that we convey sentiments/emotions clearly through written messages in order to build/maintain lasting relationships. 
 
-HoloSent can detect the sentiment conveyed by your messages in real-time, thereby guiding you to communicate more effectively. Through its different colours, it expresses the tone of your message (Red-Angry,Rude, Blue-Calm, Green-Happy/Interested, White-Professional). This is particularly useful when the tone does not match your intention, allowing you to fix the message and be more adept in your communication skills.
+**HoloSent** can detect the sentiment conveyed by your messages in real-time, thereby guiding you to communicate more effectively. Through its different colours, it expresses the tone of your message (Red-Angry,Rude, Blue-Calm, Green-Happy/Interested, White-Professional). This is particularly useful when the tone does not match your intention, allowing you to fix the message and be more adept in your communication skills.
 
 A storyboard of the interactions can be seen below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard.png" width="840"></p>
@@ -69,12 +69,13 @@ Present your idea to the other people in your breakout room. You can just get fe
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
 
-**Are there things that seemed better on paper than acted out?**
+Some things that seemed better on paper and when ideating were:
+* Size of the projected images - As the projected images are tiny (given that we're using a smartphone), the device needs to be strategically placed to be viewed clearly. Instead, if we use a tablet and make a bigger pyramid, the images will be more distinct.
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 Some new ideas that popped up when the team was acting out the interaction were:
 * Use as reminders - Sync with reminders on your cell phone, and use some key images from the description to remind the user when its time for their activity (example - the picture of a dumbbells when its time to head to the gym)
-* 
+
 
 
 ## Part C. Prototype the device
@@ -87,6 +88,14 @@ A prototype of our pyramid can be seen below. We shade opposite sides red and gr
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Paper-Prototype.png" width="180"></p>
 
 ## Part D. Wizard the device
+
+Our initial videography with the paper prototype is shown here.
+
+<figure class="video_container">
+  <iframe src="https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX-/view?usp=sharing" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
+
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
 **Include your first attempts at recording the set-up video here.**
@@ -99,18 +108,19 @@ Now, change the goal within the same setting, and update the interaction with th
 
 We create a DIY 3D Pyramid Hologram using an OHP Sheet, clear tape and a pair of scissors. This [tutorial](https://www.instructables.com/DIY-Pyramid-Hologram/) is used for inspiration. 
 
-Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
-
-**Include sketches of what your device might look like here.**
+The pyramid looked like this.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="180"></p>
 
 The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose.
 
+As HoloSent will usually be placed close to your laptop/other device that you want to analyse the messages from. While there is a risk of water ruining the device, the other gadgets that are likely in its vicinity are not water-proof either. The purpose of the HoloSent it to just be an additional buddy to our overworked users, hence it does not have any emergency requirements.
 
 ## Part F. Record
 
 **Take a video of your prototyped interaction.**
 
-Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab/
+Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab. One critical feedback obtained was:
+* Lighting - The Holograms projected by the Pyramid can be viewed the best in a relatively dark room. We should explore how we can make the images more pronounced during daytime.
 
 # Staging Interaction, Part 2 
 
