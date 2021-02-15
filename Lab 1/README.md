@@ -104,7 +104,7 @@ Now, change the goal within the same setting, and update the interaction with th
 We create a DIY 3D Pyramid Hologram using an OHP Sheet, clear tape and a pair of scissors. This [tutorial](https://www.instructables.com/DIY-Pyramid-Hologram/) is used for inspiration. 
 
 The pyramid looked like this.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="240"></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="320"></p>
 
 The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose.
 
