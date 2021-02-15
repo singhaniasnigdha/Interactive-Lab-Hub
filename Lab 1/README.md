@@ -82,7 +82,7 @@ Our smartphone is used as a stand-in for the device we are prototyping. We will 
 The steps to create the prototype are summarised below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Prep-Work.png" width="840"></p>
 
-A paper prototype of our pyramid can be seen below. We shade opposite sides red and green to denote the sentiment conveyed by the user.
+The final paper prototype of our pyramid can be seen below. We shade opposite sides red and green to denote the sentiment conveyed by the user.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Paper-Prototype.png" width="240"></p>
 
 ## Part D. Wizard the device
