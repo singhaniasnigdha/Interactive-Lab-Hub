@@ -82,7 +82,7 @@ Our smartphone is used as a stand-in for the device you are prototyping. You wil
 We will not be using "Tinkerbelle" for our prototype. Instead, we use Zoom, where the screen shared from the laptop is rendered on the phone and projected using our Pyramid Hologram.
 
 A prototype of our pyramid can be seen below. We shade opposite sides red and green to denote the sentiment conveyed by the user.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Paper-Prototype.png" width="180"></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Paper-Prototype.png" width="240"></p>
 
 ## Part D. Wizard the device
 
@@ -104,7 +104,7 @@ Now, change the goal within the same setting, and update the interaction with th
 We create a DIY 3D Pyramid Hologram using an OHP Sheet, clear tape and a pair of scissors. This [tutorial](https://www.instructables.com/DIY-Pyramid-Hologram/) is used for inspiration. 
 
 The pyramid looked like this.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="180"></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="240"></p>
 
 The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose.
 
