@@ -73,10 +73,10 @@ Some things that seemed better on paper and when ideating were:
 * Size of the projected images - As the projected images are tiny (given that we're using a smartphone), the device needs to be strategically placed to be viewed clearly. Instead, if we use a tablet and make a bigger pyramid, the images will be more distinct.
 * Filming - Filming the device appeared to be an obstacle that was not accounted for. It is challenging to capture the action and the device together, particularly because the current HoloSent can be viewed from specific angles. 
 
-**Are there new ideas that occur to you or your collaborators that come up from the acting?**
 Some new ideas that popped up when the team was acting out the interaction were:
 * Use as reminders - Sync with reminders on your cell phone, and use some key images from the description to remind the user when its time for their activity (example - the picture of a dumbbells when its time to head to the gym)
-
+* Use to represent the weather outside
+* Use different colors and images to represent with the music playing around
 
 
 ## Part C. Prototype the device
