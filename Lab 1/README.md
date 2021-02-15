@@ -71,6 +71,7 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 Some things that seemed better on paper and when ideating were:
 * Size of the projected images - As the projected images are tiny (given that we're using a smartphone), the device needs to be strategically placed to be viewed clearly. Instead, if we use a tablet and make a bigger pyramid, the images will be more distinct.
+* Filming - Filming the device appeared to be an obstacle that was not accounted for. It is challenging to capture the action and the device together, particularly because the current HoloSent can be viewed from specific angles. 
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 Some new ideas that popped up when the team was acting out the interaction were:
@@ -92,7 +93,9 @@ A prototype of our pyramid can be seen below. We shade opposite sides red and gr
 Our initial videography with the paper prototype is shown here.
 
 <figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX-/view?usp=sharing" frameborder="0" allowfullscreen="true"> </iframe>
+  <video controls="true" allowfullscreen="true" poster="Hologram-Pyramid.png">
+    <source src="Paper-Proto-Movie.mp4" type="video/mp4">
+  </video>
 </figure>
 
 
