@@ -58,12 +58,12 @@ A storyboard of the interactions can be seen below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard.png" width="840"></p>
 
 On presenting the original idea to others, the following feedback was obtained:
-* Some found it to be a very interesting and useful device. With increasing reliance on emails/messages this seemed very useful.
+* Some found it to be a very interesting and useful device. Miscommunication is so frequent between parties, and this tool can help resolve some issues in that domain.
 * Some were concerned if users would be comfortable allowing a machine read/record their personal messages for analysis.
 
 ## Part B. Act out the Interaction
 
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
+We attempted to physically act out the interaction that were planned. Our thoughts and reflections from this exercise are documented below.
 
 Some things that seemed better on paper and when ideating were:
 * Size of the projected images - As the projected images are tiny (given that we're using a smartphone), the device needs to be strategically placed to be viewed clearly. Instead, if we use a tablet and make a bigger pyramid, the images will be more distinct.
@@ -86,18 +86,11 @@ A prototype of our pyramid can be seen below. We shade opposite sides red and gr
 
 ## Part D. Wizard the device
 
+A walkthrough of the setup used for the HoloSent prototype and remotely changing the colors can be found in the attached link. [Link to Setup Video](https://drive.google.com/file/d/19kpoVhiqDCwE7GTTGGarFZeJeti-o9dj)
+
 Our initial videography with the paper prototype is shown here.
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613354931/video_to_markdown/images/google-drive--1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX--c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX- "")
-
-
-Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
-
-**Include your first attempts at recording the set-up video here.**
-
-Now, change the goal within the same setting, and update the interaction with the paper prototype. 
-
-**Show the follow-up work here.**
 
 ## Part E. Costume the device
 
@@ -106,9 +99,9 @@ We create a DIY 3D Pyramid Hologram using an OHP Sheet, clear tape and a pair of
 The pyramid looked like this.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Hologram-Pyramid.png" width="320"></p>
 
-The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose.
+The pandemic is one of the primary reasons this idea was thought of. The hologram beside one's computer could work both as a decorative piece with a purpose. 
 
-As HoloSent will usually be placed close to your laptop/other device that you want to analyse the messages from. While there is a risk of water ruining the device, the other gadgets that are likely in its vicinity are not water-proof either. The purpose of the HoloSent it to just be an additional buddy to our overworked users, hence it does not have any emergency requirements.
+As HoloSent will usually be placed close to your laptop/other device that you want to analyse the messages from. While there is a risk of water ruining the device, the other gadgets that are likely in its vicinity are not water-proof either. The purpose of the HoloSent it to just be an additional buddy to our overworked users, hence it does not have any emergency requirements. The idea of using a hologram as opposed to the smartphone screen to communicate using light appeared interesting, which is why I went ahead with this approach.
 
 ## Part F. Record
 
