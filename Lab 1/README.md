@@ -57,9 +57,9 @@ _Goals:_ The “Work From Home” shift has caused every person to rely more hea
 A storyboard of the interactions can be seen below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard.png" width="840"></p>
 
-Present your idea to the other people in your breakout room.
-**Summarize feedback you got here.**
-
+On presenting the original idea to others, the following feedback was obtained:
+* Some found it to be a very interesting and useful device. With increasing reliance on emails/messages this seemed very useful.
+* Some were concerned if users would be comfortable allowing a machine read/record their personal messages for analysis.
 
 ## Part B. Act out the Interaction
 
@@ -112,10 +112,12 @@ As HoloSent will usually be placed close to your laptop/other device that you wa
 
 ## Part F. Record
 
-**Take a video of your prototyped interaction.**
+A video of the interaction with the **HoloSent** prototype is shown below. 
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613358557/video_to_markdown/images/google-drive--1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b "") 
 
 Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab. One critical feedback obtained was:
-* Lighting - The Holograms projected by the Pyramid can be viewed the best in a relatively dark room. We should explore how we can make the images more pronounced during daytime.
+* Inappropriate Lighting - The Holograms projected by the Pyramid can be viewed the best in a relatively dark room. We should explore how we can make the images more pronounced during daytime.
+* More emotions - For this video, we focussed on positive and negative emotions only. It was suggested that we can also look at other sentiments and explore more creative options to convey the meaning of the analysis.
 
 # Staging Interaction, Part 2 
 
