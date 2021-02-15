@@ -88,9 +88,7 @@ A prototype of our pyramid can be seen below. We shade opposite sides red and gr
 
 Our initial videography with the paper prototype is shown here.
 
-<figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX-" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613354931/video_to_markdown/images/google-drive--1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX--c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX- "")
 
 
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
