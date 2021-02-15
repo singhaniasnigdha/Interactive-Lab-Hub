@@ -13,9 +13,6 @@ For lab this week, we draw on this and other inspirations from theatre to stage 
 
 ## Prep
 
-1. Set up [your Github "Lab Hub" repository](../../../) by [following these instructions](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Spring/readings/Submitting%20Labs.md).
-2. Set up the README.md for your Hub repository (for instance, so that it has your name and points to your own Lab 1) and [learn how](https://guides.github.com/features/mastering-markdown/) to post links to your submissions on your readme.md so we can find them easily.
-
 ### For lab, we need:
 
 1. Paper
@@ -29,7 +26,6 @@ For lab this week, we draw on this and other inspirations from theatre to stage 
 1. Sketches/photos of costumed device
 1. Any reflections you have on the process.
 1. Video sketch of the prototyped interaction.
-
 
 ## Overview
 For this assignment, you are going to 
@@ -61,7 +57,7 @@ _Goals:_ The “Work From Home” shift has caused every person to rely more hea
 A storyboard of the interactions can be seen below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard.png" width="840"></p>
 
-Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
+Present your idea to the other people in your breakout room.
 **Summarize feedback you got here.**
 
 
@@ -76,7 +72,7 @@ Some things that seemed better on paper and when ideating were:
 Some new ideas that popped up when the team was acting out the interaction were:
 * Use as reminders - Sync with reminders on your cell phone, and use some key images from the description to remind the user when its time for their activity (example - the picture of a dumbbells when its time to head to the gym)
 * Use to represent the weather outside
-* Use different colors and images to represent with the music playing around
+* Use different colors and images to be representative of the music playing around
 
 
 ## Part C. Prototype the device
@@ -93,9 +89,7 @@ A prototype of our pyramid can be seen below. We shade opposite sides red and gr
 Our initial videography with the paper prototype is shown here.
 
 <figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="Hologram-Pyramid.png">
-    <source src="Paper-Proto-Movie.mp4" type="video/mp4">
-  </video>
+  <iframe src="https://drive.google.com/file/d/1KRdeFG5IBjOgGwpjI1LLqaSZirEwMHX-" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
 
