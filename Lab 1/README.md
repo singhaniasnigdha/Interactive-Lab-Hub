@@ -79,6 +79,9 @@ Some new ideas that popped up when the team was acting out the interaction were:
 
 Our smartphone is used as a stand-in for the device we are prototyping. We will not be using "Tinkerbelle" for our prototype. Instead, we use Zoom, where the screen shared from the laptop is rendered on the phone. The Pyramid is placed at the center of the phone screen and projects the images from the shared screen. The user can then control what colours or images are displayed by remotely monitoring the display from their laptop.
 
+The steps to create the prototype are summarised below.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Prep-Work.png" width="840"></p>
+
 A paper prototype of our pyramid can be seen below. We shade opposite sides red and green to denote the sentiment conveyed by the user.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/Paper-Prototype.png" width="240"></p>
 
