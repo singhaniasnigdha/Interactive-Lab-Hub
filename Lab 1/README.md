@@ -123,6 +123,11 @@ Bebe Lu (bl643) said:
 Erin Gong's (yg545) reaction was:
 > I really like your idea of detecting tones of written messages and how you costumed your device! The color choices also match the sentiment conveyed by the message – red being angry, blue being calm, etc. so that the user doesn’t have to remember what each color represents. This might become a problem if you are going to add more emotions to the device. But if light is not a requirement, I think a voice output can allow more emotion options and is more intuitive.
 
+Anam Tahir (at884) had some insightful feedback on how the use case of the device could be modified to indicate how busy a person was:
+> Liked the over arching idea, and especially the smart use of pyramid to prototype! Something that I was confused about was why would I need a separate device when the indication could be on screen too. Thinking about that gave me some possible use cases ideas that could be considered in the next iteration.
+For example, during wfh it often happens you are in a meeting and people are passing behind or coming in the room and talking to you not realizing you are un-muted so maybe the device can serve as an indicator for people around you regarding how busy you are. 
+
+
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
