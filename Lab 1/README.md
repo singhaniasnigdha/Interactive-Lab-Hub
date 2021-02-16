@@ -118,13 +118,8 @@ Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstor
 ## Feedback from classmates
 Bebe Lu (bl643) said:
 > I love how you dressed your phone! How did you achieved the dusty particle effect? That is unreal.
-Somehow the overarching idea is really heartwarming to me, showing and keeping a positive and kind energy to the world. I really wish there is a way to show semantics for text messages too. For email, a somewhat formal communication, I personally tend to be more careful about how I phrase things. With text messages and personal exchanges, I really hope to know if I am sending out a negative vibe (especially with intimate relationships).
 
-## Prep (to be done before Lab on Wednesday)
-
-You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
-
-**Summarize feedback from your partners here.**
+> Somehow the overarching idea is really heartwarming to me, showing and keeping a positive and kind energy to the world. I really wish there is a way to show semantics for text messages too. For email, a somewhat formal communication, I personally tend to be more careful about how I phrase things. With text messages and personal exchanges, I really hope to know if I am sending out a negative vibe (especially with intimate relationships).
 
 ## Make it your own
 
