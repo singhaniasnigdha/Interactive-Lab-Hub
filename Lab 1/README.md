@@ -117,10 +117,10 @@ Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstor
 
 ## Feedback from classmates
 Bebe Lu (bl643) said:
-> I love how you dressed your phone! How did you achieved the dusty particle effect? That is unreal.
+> I love how you dressed your phone! How did you achieve the dusty particle-like effect? That is unreal!
       Somehow the overarching idea is really heartwarming to me, showing and keeping a positive and kind energy to the world. I really wish there is a way to show semantics for text messages too. For email, a somewhat formal communication, I personally tend to be more careful about how I phrase things. With text messages and personal exchanges, I really hope to know if I am sending out a negative vibe (especially with intimate relationships).
 
-Erin Gong (yg545) reaction was:
+Erin Gong's (yg545) reaction was:
 > I really like your idea of detecting tones of written messages and how you costumed your device! The color choices also match the sentiment conveyed by the message – red being angry, blue being calm, etc. so that the user doesn’t have to remember what each color represents. This might become a problem if you are going to add more emotions to the device. But if light is not a requirement, I think a voice output can allow more emotion options and is more intuitive.
 
 ## Make it your own
