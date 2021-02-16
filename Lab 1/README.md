@@ -109,6 +109,7 @@ As HoloSent will usually be placed close to your laptop/other device that you wa
 A video of the interaction with the **HoloSent** prototype is shown below. 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613358557/video_to_markdown/images/google-drive--1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b "") 
 
+#### Acknowledgements
 Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab. Critical feedback included:
 * Inappropriate Lighting - The Holograms projected by the Pyramid can be viewed the best in a relatively dark room. We should explore how we can make the images more pronounced during daytime.
 * Explore more emotions - For this video, we focussed on positive and negative emotions only. It was suggested that we can also look at other sentiments and explore more creative options to convey the meaning of the analysis.
@@ -125,7 +126,11 @@ Erin Gong's (yg545) reaction was:
 
 Anam Tahir (at884) had some insightful feedback on how the use case of the device could be modified to indicate how busy a person was:
 > Liked the over arching idea, and especially the smart use of pyramid to prototype! Something that I was confused about was why would I need a separate device when the indication could be on screen too. Thinking about that gave me some possible use cases ideas that could be considered in the next iteration.
-For example, during wfh it often happens you are in a meeting and people are passing behind or coming in the room and talking to you not realizing you are un-muted so maybe the device can serve as an indicator for people around you regarding how busy you are. 
+For example, during wfh it often happens you are in a meeting and people are passing behind or coming in the room and talking to you not realizing you are un-muted so maybe the device can serve as an indicator for people around you regarding how busy you are.
+
+Some useful thoughts shared by Sam Lee (snl48) were:
+> The setting is a little difficult since it has to be dark for you to see the hologram clearly. Most of the time I’m working, I’m not sitting in the dark.
+> Does the HoloSent always listen to what you’re typing? Or can you tell it to review? If so, can you show how you told it to review your work?
 
 
 ## Make it your own
