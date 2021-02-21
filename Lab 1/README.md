@@ -132,8 +132,8 @@ Some useful thoughts shared by Sam Lee (snl48) were:
 > The setting is a little difficult since it has to be dark for you to see the hologram clearly. Most of the time I’m working, I’m not sitting in the dark.
 > Does the HoloSent always listen to what you’re typing? Or can you tell it to review? If so, can you show how you told it to review your work?
 
-## Modifications from Lab 1
-The idea from Lab 1 is built upon to replace colors with animated emoticons that can more accurately represent the sentiment. Erin's feedback to accomodate more distinct indicators for different emotions combined with some voice prompt was used as inspiration for this feature. 
+## Updates
+The idea from Part 1 is built upon to replace colors with animated emoticons that can more accurately represent the sentiment. Erin's feedback to accomodate more distinct indicators for different emotions combined with some voice prompt was used as inspiration for this feature. 
 
 The set up is identical to what was used earlier. The animated emoticons were built using Apple Memoji, Tenor (GIF search engine) and Microsoft Powerpoint.
 
