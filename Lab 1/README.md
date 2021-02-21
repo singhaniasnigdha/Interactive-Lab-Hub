@@ -135,8 +135,10 @@ Some useful thoughts shared by Sam Lee (snl48) were:
 ## Updates
 The idea from Part 1 is built upon to replace colors with animated emoticons that can more accurately represent the sentiment. Erin's feedback to accomodate more distinct indicators for different emotions combined with some voice prompt was used as inspiration for this feature. 
 
-The set up is identical to what was used earlier. The animated emoticons were built using Apple Memoji, Tenor (GIF search engine) and Microsoft Powerpoint.
+This is the updated story board for HoloSent:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard_2.png" width="840"></p>
 
+The set up is identical to what was used earlier. The animated emoticons were built using Apple Memoji, Tenor (GIF search engine) and Microsoft Powerpoint.
 
 The final video can be seen here:
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613869761/video_to_markdown/images/google-drive--1f4OqlMdtny6A5Mg1j8a80tQPo764M6_b-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1f4OqlMdtny6A5Mg1j8a80tQPo764M6_b "")
