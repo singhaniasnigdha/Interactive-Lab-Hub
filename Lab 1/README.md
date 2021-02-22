@@ -109,7 +109,7 @@ As HoloSent will usually be placed close to your laptop/other device that you wa
 A video of the interaction with the **HoloSent** prototype is shown below. 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613358557/video_to_markdown/images/google-drive--1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1_BCJHFharAl1qK2E4nN5eXCYlkjJRx_b "") 
 
-#### Acknowledgements
+#### Acknowledgement
 Samantha Lee (snl48) and Shivani Doshi (sgd73) collaborated with me to brainstorm, record and provide feedback on this lab. Critical feedback included:
 * Inappropriate Lighting - The Holograms projected by the Pyramid can be viewed the best in a relatively dark room. We should explore how we can make the images more pronounced during daytime.
 * Explore more emotions - For this video, we focussed on positive and negative emotions only. It was suggested that we can also look at other sentiments and explore more creative options to convey the meaning of the analysis.
@@ -142,3 +142,11 @@ The set up for the interaction video is identical to what was used earlier (in p
 
 The final video can be seen here:
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1613869761/video_to_markdown/images/google-drive--1f4OqlMdtny6A5Mg1j8a80tQPo764M6_b-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1f4OqlMdtny6A5Mg1j8a80tQPo764M6_b "")
+
+While the interaction showcases responses to an email, HoloSent's use case can be expanded well outside emails, to private messaging and blogs too (as suggested by Sam Lee). 
+
+The use of reflection to project images restricts the lighting when using this device. We hope that we can come up with a technique in future iterations that will allow us to create the image projections in a well-lit room.
+
+#### Acknowledgement
+Thank you Shivani Doshi (sgd73) for helping film this video.
+
