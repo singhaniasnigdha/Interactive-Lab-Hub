@@ -133,7 +133,7 @@ Some useful thoughts shared by Sam Lee (snl48) were:
 > Does the HoloSent always listen to what you’re typing? Or can you tell it to review? If so, can you show how you told it to review your work?
 
 ## Updates
-The idea from Part 1 is built upon to replace colors with animated emoticons that can more accurately represent the sentiment. Erin's feedback to accomodate more distinct indicators for different emotions combined with some voice prompt was used as inspiration for this feature. 
+The idea from Part 1 is built upon to replace colors with animated emoticons that can more accurately represent the sentiment. Erin's feedback to accomodate more distinct indicators for different emotions combined with some voice prompt was used as inspiration for this feature. With this modification, the device can also notify the user if his/her messages have many grammar errors.
 
 This is the updated story board for HoloSent:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%201/StoryBoard_2.png" width="840"></p>
