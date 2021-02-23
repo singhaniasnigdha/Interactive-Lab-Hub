@@ -147,5 +147,6 @@ While the interaction showcases responses to an email, HoloSent's use case can b
 
 The use of reflection to project images restricts the lighting when using this device. We hope that we can come up with a technique in future iterations that will allow us to create the image projections in a well-lit room.
 
+
 #### Acknowledgement
 Thank you Shivani Doshi (sgd73) for helping film this video.
