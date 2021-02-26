@@ -163,13 +163,13 @@ while True:
                 kick_img = image_formatting(kick_img, width, height)
                 disp.image(kick_img, rotation)
                 time.sleep(0.05)
-            time.sleep(0.2)
-        
+
+        goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
+        goal_img = image_formatting(goal_img, width, height)
+        disp.image(goal_img, rotation)
+        time.sleep(2)
         while joystick.get_horizontal() != 509 and joystick.get_vertical() != 503:
-            goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
-            goal_img = image_formatting(goal_img, width, height)
-            disp.image(goal_img, rotation)
-            time.sleep(2)
+            time.sleep(1)
         twist.set_count(twist.count + 2)
 
     #print(f"Rotary Count: {twist.count}")
