@@ -1,3 +1,4 @@
+import os
 import time
 import subprocess
 import digitalio
@@ -8,6 +9,9 @@ import busio
 import qwiic_twist
 import qwiic_joystick
 import qwiic_button
+
+# Get current working directory
+cwd = os.getcwd()
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -110,7 +114,7 @@ while True:
     # Start wine time if it is 5pm on Friday
     if twist_date == 5 and clock_time == 34:
         while not redButton.is_button_pressed():
-            image3 = Image.open("/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/winetime.png")
+            image3 = Image.open(cwd+"/imgs/winetime.png")
             image3 = image_formatting(image3, width, height)
             disp.image(image3, rotation)
 
@@ -120,14 +124,14 @@ while True:
             time.sleep(1)
 
         for i in range(0, 9):
-            image4 = Image.open(f"/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/cheers{i}.png")
+            image4 = Image.open(f"{cwd}/imgs/cheers{i}.png")
             image4 = image_formatting(image4, width, height)
             disp.image(image4, rotation)
 
             time.sleep(0.5)
         twist.set_count(twist.count + 1)
 
-    image2 = Image.open("/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/" + times[clock_time].replace(':','').replace(' ','').replace('AM','am').replace('PM','pm') + '.png')
+    image2 = Image.open(cwd + "/imgs/" + times[clock_time].replace(':','').replace(' ','').replace('AM','am').replace('PM','pm') + '.png')
     image2 = image_formatting(image2, width, height)
 
     # Get drawing object to draw on image.
@@ -142,29 +146,31 @@ while True:
     #draw.text((x, y), time.strftime("%m/%d/%Y %H:%M:%S"), font=font, fill="#FFFFFF")
 
     if twist_date == 0 and clock_time == 20:
-        # while not joystick.get_button():
-        #     soccer_time_img = Image.open("/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/soccer_time.png")
-        #     soccer_time_img = image_formatting(soccer_time_img, width, height)
-        #     disp.image(soccer_time_img, rotation)
-
-        soccer_start_img = Image.open("/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/kick0.png")
-        soccer_start_img = image_formatting(soccer_start_img, width, height)
-        disp.image(soccer_start_img, rotation)
-
-        if joystick.get_horizontal() or joystick.get_vertical():
+        soccer_time_img = Image.open(f"{cwd}/imgs/soccer_time.jpg")
+        soccer_time_img = image_formatting(soccer_time_img, width, height)
+        disp.image(soccer_time_img, rotation)
+        time.sleep(2)
+        
+        while joystick.get_horizontal() == 509 and joystick.get_vertical() == 503:
+            soccer_start_img = Image.open(f"{cwd}/imgs/kick0.png")
+            soccer_start_img = image_formatting(soccer_start_img, width, height)
+            disp.image(soccer_start_img, rotation)
+            time.sleep(0.5)
+        
+        if joystick.get_horizontal() != 509 or joystick.get_vertical() != 503:
             for i in range(1, 12):
-                kick_img = Image.open(f"/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/kick{i}.png")
+                kick_img = Image.open(f"{cwd}/imgs/kick{i}.png")
                 kick_img = image_formatting(kick_img, width, height)
                 disp.image(kick_img, rotation)
-                time.sleep(0.15)
-
-            goal_img = Image.open(f"/home/pi/Documents/Interactive-Lab-Hub/Lab 2/imgs/goooooal.png")
+                time.sleep(0.05)
+            time.sleep(0.2)
+        
+        while joystick.get_horizontal() != 509 and joystick.get_vertical() != 503:
+            goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
             goal_img = image_formatting(goal_img, width, height)
             disp.image(goal_img, rotation)
-        
-        while not redButton.is_button_pressed():
-            print(f"Joystick Position: X: {joystick.get_horizontal()}, Y: {joystick.get_vertical()}, Button: {joystick.check_button()}")
-            time.sleep(1)
+            time.sleep(2)
+        twist.set_count(twist.count + 2)
 
     #print(f"Rotary Count: {twist.count}")
     #print(f"Joystick Position: X: {joystick.get_horizontal()}, Y: {joystick.get_vertical()}, Button: {joystick.check_button()}")
