@@ -1,10 +1,5 @@
 # Lab 2 Prep
 
-### Get Kit and Inventory Parts
-Prior to lab Wednesday, taken inventory of the kit parts that you have, and note anything that is missing:
-
-***Update your [parts list inventory](partslist.md)***
-
 ### For Lab 2, part 1, you will need:
 
 - [Raspberry Pi 4](https://www.adafruit.com/product/4296)
