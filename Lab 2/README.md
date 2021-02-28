@@ -9,7 +9,7 @@ It is worth spending a little time thinking about how you mark time, and what wo
 ### Acknowledgements
 Sam Lee (snl48) and I worked together for this lab.  
 
-## Raspberry Pi and Other Inventory
+### Raspberry Pi and Other Inventory
 The inventory available for this lab is compiled at [Inventory List](partslist.md).
 
 ## Overview
@@ -75,11 +75,11 @@ The time appears as output on the terminal, which is updated every second. The s
 ## Set up your RGB Display
 The [Adafruit MiniPiTFT](https://www.adafruit.com/product/4393) display is added to the Raspberry Pi, and we use Python to control the contents on this display.
 
-<img src="https://cdn-learn.adafruit.com/assets/assets/000/082/842/large1024/adafruit_products_4393_iso_ORIG_2019_10.jpg" height="200" />
+<p align="center"><img src="https://cdn-learn.adafruit.com/assets/assets/000/082/842/large1024/adafruit_products_4393_iso_ORIG_2019_10.jpg" height="200" /></p>
 
 Line up the screen and press it on the headers. The hole in the screen should match up with the hole on the raspberry pi.
 
-<p float="left">
+<p align="center">
 <img src="https://cdn-learn.adafruit.com/assets/assets/000/087/539/medium640/adafruit_products_4393_quarter_ORIG_2019_10.jpg?1579991932" height="200" />
 <img src="https://cdn-learn.adafruit.com/assets/assets/000/082/861/original/adafruit_products_image.png" height="200">
 </p>
