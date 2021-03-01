@@ -102,7 +102,9 @@ The prompt asks the user to enter the name of a color, then press either of the 
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cornell_tech_image.png" width="360"></p>
 
-Can you make it switch to another image when you push one of the buttons?
+We experiment with this script to learn how to use the buttons. The updated code is present in [image_change.py](image_change.py) which shows different images based on which button the MiniPiTFT is pressed. For Button A, it shows the Cornell Tech Logo, and when Button B is pressed it shows "Wine Time". The display will show a white screen when both buttons are pressed together. The result can be seen in the GIF below.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/image_change.gif" height="480" /></p>
 
 ## Part D. 
 ## Set up the Display Clock Demo
