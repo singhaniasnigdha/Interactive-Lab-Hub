@@ -126,7 +126,7 @@ The video of the PiClock that uses the rotary encoder can be seen below:
 
 ## Part G. Planning further interactions/features for the PiClock
 
-We want to make the PiClock representative of an individual's everyday life. We want the user to be in control of their time. They perform activities at regular intervals. Some activities we brainstormed include:
+We want to make the PiClock representative of an individual's everyday life. We want the user to be in control of their time (and thus wish to continue using the rotary encoder to allow the user to increment/decrement their time). In addition, they perform activities at regular intervals. Some activities we brainstormed include:
 * Sleeping
 * Cooking
 * Playing a sport

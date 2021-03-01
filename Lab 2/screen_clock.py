@@ -1,5 +1,5 @@
-import os
 import time
+import os
 import subprocess
 import digitalio
 import board
@@ -9,8 +9,9 @@ import busio
 import qwiic_twist
 import qwiic_joystick
 import qwiic_button
+import adafruit_mpu6050
+from adafruit_apds9960.apds9960 import APDS9960
 
-# Get current working directory
 cwd = os.getcwd()
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -69,9 +70,9 @@ backlight.value = True
 twist = qwiic_twist.QwiicTwist()
 twist.begin()
 twist_count = 0
-twist.set_blue(150)
-twist.set_red(0)
-twist.set_green(0)
+twist.set_blue(255)
+twist.set_red(100)
+twist.set_green(255)
 
 # Set up the joystick
 joystick = qwiic_joystick.QwiicJoystick()
@@ -81,8 +82,25 @@ joystick.begin()
 redButton = qwiic_button.QwiicButton()
 redButton.begin()
 
-greenButton = qwiic_button.QwiicButton(0x63)
+greenButton = qwiic_button.QwiicButton(0x62)
 greenButton.begin()
+
+# Configure the accelerometer
+i2c = busio.I2C(board.SCL, board.SDA)
+mpu = adafruit_mpu6050.MPU6050(i2c)
+
+# Configure the light sensor
+int_pin = digitalio.DigitalInOut(board.D21)
+apds = APDS9960(i2c, interrupt_pin=int_pin)
+apds.enable_proximity = True
+apds.proximity_interrupt_threshold = (0, 175)
+apds.enable_proximity_interrupt = True
+
+# Configure screen buttons
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 
 dates = ['Sunday\nFebruary 28, 2021',
          'Monday\nMarch 1, 2021',
@@ -112,9 +130,9 @@ while True:
     clock_time = twist_time % 48
 
     # Start wine time if it is 5pm on Friday
-    if twist_date == 5 and clock_time == 34:
+    if twist_date == 5 and clock_time == 35:
         while not redButton.is_button_pressed():
-            image3 = Image.open(cwd+"/imgs/winetime.png")
+            image3 = Image.open(f"{cwd}/imgs/winetime.png")
             image3 = image_formatting(image3, width, height)
             disp.image(image3, rotation)
 
@@ -131,7 +149,75 @@ while True:
             time.sleep(0.5)
         twist.set_count(twist.count + 1)
 
-    image2 = Image.open(cwd + "/imgs/" + times[clock_time].replace(':','').replace(' ','').replace('AM','am').replace('PM','pm') + '.png')
+    if greenButton.is_button_pressed():
+        accel_move = False
+        accel_quota = 0
+        image4 = Image.open(f"{cwd}/imgs/dinnertime.png")
+        image4 = image_formatting(image4, width, height)
+        disp.image(image4, rotation)
+
+        while not accel_move:
+            greenButton.LED_on(255)
+            time.sleep(1)
+            greenButton.LED_off()
+            time.sleep(1)
+
+            accel_value = (mpu.acceleration[0]**2 + mpu.acceleration[1]**2 + mpu.acceleration[2]**2)**0.5
+            print(accel_value)
+            if accel_value > 14:
+                accel_quota += 1
+
+            if accel_quota > 2:
+                accel_move = True
+
+        image5 = Image.open(f"{cwd}/imgs/yum.png")
+        image5 = image_formatting(image5, width, height)
+        disp.image(image5, rotation)
+        time.sleep(1)
+
+    if not int_pin.value:
+        image6 = Image.open(f"{cwd}/imgs/bedtime.png")
+        image6 = image_formatting(image6, width, height)
+        disp.image(image6, rotation)
+
+        time.sleep(2)
+        twist.set_count(twist.count + 14)
+        twist_time = twist.count
+        twist_date = twist_time // 48
+        clock_time = twist_time % 48
+
+        while apds.proximity > 100:
+            pass
+
+        apds.clear_interrupt()
+
+    if twist_date == 0 and clock_time == 20:
+        soccer_time_img = Image.open(f"{cwd}/imgs/soccer_time.jpg")
+        soccer_time_img = image_formatting(soccer_time_img, width, height)
+        disp.image(soccer_time_img, rotation)
+        time.sleep(2)
+
+        while joystick.get_horizontal() == 510 and joystick.get_vertical() == 505:
+            soccer_start_img = Image.open(f"{cwd}/imgs/kick0.png")
+            soccer_start_img = image_formatting(soccer_start_img, width, height)
+            disp.image(soccer_start_img, rotation)
+            time.sleep(0.5)
+
+        for i in range(1, 12):
+            kick_img = Image.open(f"{cwd}/imgs/kick{i}.png")
+            kick_img = image_formatting(kick_img, width, height)
+            disp.image(kick_img, rotation)
+            time.sleep(0.05)
+
+        goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
+        goal_img = image_formatting(goal_img, width, height)
+        disp.image(goal_img, rotation)
+        time.sleep(2)
+        while joystick.get_horizontal() != 510 and joystick.get_vertical() != 505:
+            time.sleep(1)
+        twist.set_count(twist.count + 2)
+
+    image2 = Image.open(f"{cwd}/imgs/" + times[clock_time].replace(':','').replace(' ','').replace('AM','am').replace('PM','pm') + '.png')
     image2 = image_formatting(image2, width, height)
 
     # Get drawing object to draw on image.
@@ -143,34 +229,7 @@ while True:
     draw.text((x, y), dates[twist_date], font=font, fill="#000000")
     y += 2 * font.getsize(dates[twist_date])[1]
     draw.text((x, y), times[clock_time], font=font, fill="#000000")
-    #draw.text((x, y), time.strftime("%m/%d/%Y %H:%M:%S"), font=font, fill="#FFFFFF")
-
-    if twist_date == 0 and clock_time == 20:
-        soccer_time_img = Image.open(f"{cwd}/imgs/soccer_time.jpg")
-        soccer_time_img = image_formatting(soccer_time_img, width, height)
-        disp.image(soccer_time_img, rotation)
-        time.sleep(2)
-        
-        while joystick.get_horizontal() == 509 and joystick.get_vertical() == 503:
-            soccer_start_img = Image.open(f"{cwd}/imgs/kick0.png")
-            soccer_start_img = image_formatting(soccer_start_img, width, height)
-            disp.image(soccer_start_img, rotation)
-            time.sleep(0.5)
-        
-        for i in range(1, 12):
-            kick_img = Image.open(f"{cwd}/imgs/kick{i}.png")
-            kick_img = image_formatting(kick_img, width, height)
-            disp.image(kick_img, rotation)
-            time.sleep(0.05)
-
-        goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
-        goal_img = image_formatting(goal_img, width, height)
-        disp.image(goal_img, rotation)
-        time.sleep(2)
-        while joystick.get_horizontal() != 509 and joystick.get_vertical() != 503:
-            time.sleep(1)
-        twist.set_count(twist.count + 2)
-
+    
     # Display image.
     disp.image(image2, rotation)
-    time.sleep(0.1)
+    time.sleep(0.01)
