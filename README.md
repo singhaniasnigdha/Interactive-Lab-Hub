@@ -4,3 +4,4 @@ for [Interactive Device Design](https://github.com/FAR-Lab/Developing-and-Design
 Links to the README.md's for each lab can be found below:
 
 [Lab 1. Staging Interaction](Lab%201/)
+[Lab 2. The Clock of Pi](Lab%202/)
