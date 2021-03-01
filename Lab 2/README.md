@@ -100,7 +100,7 @@ The prompt asks the user to enter the name of a color, then press either of the 
 
 [image.py](image.py) contains an example of how to display an image of the Cornell Tech logo on the screen. 
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cornell_tech_image.png" width="240"></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cornell_tech_image.png" width="360"></p>
 
 Can you make it switch to another image when you push one of the buttons?
 
