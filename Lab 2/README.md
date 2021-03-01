@@ -137,6 +137,9 @@ We explored the use cases of different sensors we had, and matched them to these
 * We plan to use the accelerometer or the capacitive touch sensor to raise a signal when the user moves his/her pan. 
 * We want to make a sport for the user with the joystick. We decided to build a costume for the joystick and the user can use it to direct a soccer goal.
 
+These are summarised in the image below:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/future_interactions.png" height="360" /></p>
+
 ## Part 2
 
 ## Video of the final interactions
