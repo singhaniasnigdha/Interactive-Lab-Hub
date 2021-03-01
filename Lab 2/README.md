@@ -147,6 +147,12 @@ We explored the use cases of different sensors we had, and matched them to these
 These are summarised in the image below:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/future_interactions.png" height="360" /></p>
 
+## Prep for Part 2
+
+Pick up remaining parts for kit.
+
+Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
+
 ## Part 2
 
 ## Video of the final interactions
