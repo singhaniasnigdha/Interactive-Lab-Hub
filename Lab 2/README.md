@@ -105,8 +105,9 @@ We experiment with this script to learn how to use the buttons. The updated code
 
 ## Part D. Set up the Display Clock
 
-In `screen_clock.py`. Show the time by filling in the while loop. You can use the code in `cli_clock.py` and `stats.py` to figure this out.
+We take inspiration from the code in [stats.py](stats.py) to learn to display text on the MiniPiTFT screen. Our output can be seen in the screen below.
 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/stats.png" height="360" /></p>
 
 ## Part E. Building a barebones clock
 
