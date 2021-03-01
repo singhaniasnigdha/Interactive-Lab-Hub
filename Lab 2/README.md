@@ -67,7 +67,7 @@ We run the example [cli_clock.py](cli_clock.py) to test our device.
 
 The time appears as output on the terminal, which is updated every second. The screenshot below shows the result from running this script.
 
-![](imgs/cli_clock.gif)
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cli_clock.gif" height="360" /></p>
 
 
 ## Part C. 
@@ -94,7 +94,7 @@ We test the screen by running our [screen_test.py](screen_test.py).
 
 The prompt asks the user to enter the name of a color, then press either of the buttons. The images below show the output from this script.
 
-![](imgs/screen_test.gif)
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/screen_test.gif" height="480" /></p>
 
 #### Displaying an image
 
@@ -104,7 +104,7 @@ The prompt asks the user to enter the name of a color, then press either of the 
 
 We experiment with this script to learn how to use the buttons. The updated code is present in [image_change.py](image_change.py) which shows different images based on which button the MiniPiTFT is pressed. For Button A, it shows the Cornell Tech Logo, and when Button B is pressed it shows "Wine Time". The display will show a white screen when both buttons are pressed together. The result can be seen in the GIF below.
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/image_change.gif" height="480" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/image_change.gif" height="360" /></p>
 
 ## Part D. 
 ## Set up the Display Clock Demo
@@ -115,20 +115,25 @@ In `screen_clock.py`. Show the time by filling in the while loop. You can use th
 ## Part E.
 ## Modify the barebones clock to make it your own
 
-Our modified barebones clock can be found at [barebones_clock.py](barebones_clock.py). This uses the rotary encoder to move the time by 30 minutes. Moving it in the clockwise direction increments the time, while moving it in the anti-clockwise direction makes the time move back.
+Our modified barebones clock can be found at [barebones_clock.py](barebones_clock.py). This uses the rotary encoder to move the time by 30 minutes. Moving it in the clockwise direction increments the time, while moving it in the anti-clockwise direction makes the time move back. The rotary encoder is connected using I2C.
 
-Additionally, we use an array of images, to depict sunrise and sunset based on the time. These images are show up in the MiniPiTFT that is attached to the Raspberry Pi.
+Additionally, we use an array of images, to depict sunrise and sunset based on the time. These images show up in the MiniPiTFT that is attached to the Raspberry Pi.
+
+Our final setup can be seen in the image below.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/pi_rotary_encoder.png" height="360" /></p>
 
 
 ## Part F. 
 ## Short video of the barebones PiClock
 
 The video of the PiClock that uses the rotary encoder can be seen below:
-
-**Take a video of your PiClock.**
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566984/video_to_markdown/images/google-drive--1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T "")
 
 ## Part G. 
-## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+## Planning further interactions/features for the Clock
 
+## Part 2
 
+# Video of the final interactions
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566585/video_to_markdown/images/google-drive--1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS "")
 
