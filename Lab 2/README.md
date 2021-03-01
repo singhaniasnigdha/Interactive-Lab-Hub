@@ -15,22 +15,21 @@ The inventory available for this lab is compiled at [Inventory List](partslist.m
 ## Overview
 Activities for this assignment are:
 
-A) [Connect to your Pi](#part-a)  
+A) [Connect to your Pi](#part-a-connecting-to-raspberry-pi)  
 
-B) [Try out cli_clock.py](#part-b) 
+B) [Command Line Clock](#part-b-command-line-clock) 
 
-C) [Set up your RGB display](#part-c)
+C) [Set up RGB display](#part-c-set-up-rgb-display)
 
-D) [Try out clock_display_demo](#part-d) 
+D) [Try out clock_display_demo](#part-d-set-up-the-display-clock) 
 
-E) [Modify the code to make the display your own](#part-e)
+E) [Building a barebones clock](#part-e-building-a-barebones-clock)
 
-F) [Make a short video of your modified barebones PiClock](#part-f)
+F) [Short video of the barebones PiClock](#part-f-short-video-of-the-barebones-piclock)
 
-G) [Sketch and brainstorm further interactions and features you would like for your clock for Part 2.](#part-g)
+G) [Planning further interactions/features for the PiClock](#part-g-planning-further-interactionsfeatures-for-the-piclock)
 
-## Part A. 
-## Connect to your Pi
+## Part A. Connecting to Raspberry Pi
 
 As preparation for this lab, we burn our Pi Image onto the SD card, and connect the Pi to our wifi. This allows us to SSH into the Pi using our devices on the same network. The detailed preparations can be found [here](prep-work/prep.md) 
 
@@ -56,8 +55,7 @@ Next, install all the packages required for the this lab. All the packages are a
 (circuitpython) pi@ixe00:~/Interactive-Lab-Hub $ pip install -r requirements.txt
 ```
 
-## Part B. 
-### Try out the Command Line Clock
+## Part B. Command Line Clock
 
 We run the example [cli_clock.py](cli_clock.py) to test our device. 
 ```
@@ -70,8 +68,7 @@ The time appears as output on the terminal, which is updated every second. The s
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cli_clock.gif" height="360" /></p>
 
 
-## Part C. 
-## Set up your RGB Display
+## Part C. Set up RGB Display
 The [Adafruit MiniPiTFT](https://www.adafruit.com/product/4393) display is added to the Raspberry Pi, and we use Python to control the contents on this display.
 
 <p align="center"><img src="https://cdn-learn.adafruit.com/assets/assets/000/082/842/large1024/adafruit_products_4393_iso_ORIG_2019_10.jpg" height="200" /></p>
@@ -106,14 +103,12 @@ We experiment with this script to learn how to use the buttons. The updated code
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/image_change.gif" height="360" /></p>
 
-## Part D. 
-## Set up the Display Clock Demo
+## Part D. Set up the Display Clock
 
 In `screen_clock.py`. Show the time by filling in the while loop. You can use the code in `cli_clock.py` and `stats.py` to figure this out.
 
 
-## Part E.
-## Modify the barebones clock to make it your own
+## Part E. Building a barebones clock
 
 Our modified barebones clock can be found at [barebones_clock.py](barebones_clock.py). This uses the rotary encoder to move the time by 30 minutes. Moving it in the clockwise direction increments the time, while moving it in the anti-clockwise direction makes the time move back. The rotary encoder is connected using I2C.
 
@@ -123,17 +118,15 @@ Our final setup can be seen in the image below.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/pi_rotary_encoder.png" height="360" /></p>
 
 
-## Part F. 
-## Short video of the barebones PiClock
+## Part F. Short video of the barebones PiClock
 
 The video of the PiClock that uses the rotary encoder can be seen below:
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566984/video_to_markdown/images/google-drive--1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T "")
 
-## Part G. 
-## Planning further interactions/features for the Clock
+## Part G. Planning further interactions/features for the PiClock
 
 ## Part 2
 
-# Video of the final interactions
+## Video of the final interactions
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566585/video_to_markdown/images/google-drive--1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS "")
 
