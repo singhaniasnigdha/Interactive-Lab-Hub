@@ -98,9 +98,11 @@ The prompt asks the user to enter the name of a color, then press either of the 
 
 #### Displaying an image
 
-[image.py](image.py) contains an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
+[image.py](image.py) contains an example of how to display an image of the Cornell Tech logo on the screen. 
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cornell_tech_image.png" width="240"></p>
+
+Can you make it switch to another image when you push one of the buttons?
 
 ## Part D. 
 ## Set up the Display Clock Demo
@@ -111,13 +113,15 @@ In `screen_clock.py`. Show the time by filling in the while loop. You can use th
 ## Part E.
 ## Modify the barebones clock to make it your own
 
-Does time have to be linear?  How do you measure a year? [In daylights? In midnights? In cups of coffee?](https://www.youtube.com/watch?v=wsj15wPpjLY)
+Our modified barebones clock can be found at [barebones_clock.py](barebones_clock.py). This uses the rotary encoder to move the time by 30 minutes. Moving it in the clockwise direction increments the time, while moving it in the anti-clockwise direction makes the time move back.
 
-Can you make time interactive? You can look in `screen_test.py` for examples for how to use the buttons.
+Additionally, we use an array of images, to depict sunrise and sunset based on the time. These images are show up in the MiniPiTFT that is attached to the Raspberry Pi.
 
 
 ## Part F. 
-## Make a short video of your modified barebones PiClock
+## Short video of the barebones PiClock
+
+The video of the PiClock that uses the rotary encoder can be seen below:
 
 **Take a video of your PiClock.**
 
