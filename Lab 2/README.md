@@ -67,7 +67,7 @@ We run the example [cli_clock.py](cli_clock.py) to test our device.
 
 The time appears as output on the terminal, which is updated every second. The screenshot below shows the result from running this script.
 
-*** Insert image/gif ***
+![](imgs/cli_clock.gif)
 
 
 ## Part C. 
@@ -94,17 +94,13 @@ We test the screen by running our [screen_test.py](screen_test.py).
 
 The prompt asks the user to enter the name of a color, then press either of the buttons. The images below show the output from this script.
 
-![](imgs/cli_clock.gif)
+![](imgs/screen_test.gif)
 
 #### Displaying an image
 
 [image.py](image.py) contains an example of how to display an image on the screen. Can you make it switch to another image when you push one of the buttons?
 
-
-#### Displaying Info
-You can look in `stats.py` for how to display text on the screen
-
-
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/cornell_tech_image.png" width="240"></p>
 
 ## Part D. 
 ## Set up the Display Clock Demo
