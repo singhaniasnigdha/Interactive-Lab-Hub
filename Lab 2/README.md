@@ -7,7 +7,7 @@ For our first Pi project, we will pay homage to the [timekeeping devices of old]
 It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
 
 ### Acknowledgements
-Sam Lee (snl48) and I worked together for this lab.  
+Sam Lee (snl48) and I worked together for this lab. We iteratively built on what we wanted as the final product and executed it together.
 
 ### Raspberry Pi and Other Inventory
 The inventory available for this lab is compiled at [Inventory List](partslist.md).
@@ -121,9 +121,21 @@ Our final setup can be seen in the image below.
 ## Part F. Short video of the barebones PiClock
 
 The video of the PiClock that uses the rotary encoder can be seen below:
+
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566984/video_to_markdown/images/google-drive--1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1GTcadkFiFY9N9W-uxGgojbXpPkQuTO_T "")
 
 ## Part G. Planning further interactions/features for the PiClock
+
+We want to make the PiClock representative of an individual's everyday life. We want the user to be in control of their time. They perform activities at regular intervals. Some activities we brainstormed include:
+* Sleeping
+* Cooking
+* Playing a sport
+* Working
+
+We explored the use cases of different sensors we had, and matched them to these activities. We decided with the following:
+* Make a costume for a bed. Use a blanket to cover the proximity sensor to raise a signal when the person is sleeping. When the person wakes up, it's morning and the time moves forward.
+* We plan to use the accelerometer or the capacitive touch sensor to raise a signal when the user moves his/her pan. 
+* We want to make a sport for the user with the joystick. We decided to build a costume for the joystick and the user can use it to direct a soccer goal.
 
 ## Part 2
 
