@@ -103,11 +103,17 @@ We experiment with this script to learn how to use the buttons. The updated code
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/image_change.gif" height="360" /></p>
 
-## Part D. Set up the Display Clock
+#### Displaying Statistics (Text) on the MiniPiTFT
 
-We take inspiration from the code in [stats.py](stats.py) to learn to display text on the MiniPiTFT screen. Our output can be seen in the screen below.
+The output can be seen in the screen below.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/stats.png" height="360" /></p>
+
+## Part D. Set up the Display Clock
+
+We take inspiration from the code in [stats.py](stats.py) to learn to display text on the MiniPiTFT screen. This is used to display the time on the MiniPiTFT. The source code is available at [display_clock.py](display_clock.py) and the output can be seen in the image below.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/display_clock.png" height="360" /></p>
 
 ## Part E. Building a barebones clock
 
