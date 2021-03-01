@@ -157,12 +157,11 @@ while True:
             disp.image(soccer_start_img, rotation)
             time.sleep(0.5)
         
-        if joystick.get_horizontal() != 509 or joystick.get_vertical() != 503:
-            for i in range(1, 12):
-                kick_img = Image.open(f"{cwd}/imgs/kick{i}.png")
-                kick_img = image_formatting(kick_img, width, height)
-                disp.image(kick_img, rotation)
-                time.sleep(0.05)
+        for i in range(1, 12):
+            kick_img = Image.open(f"{cwd}/imgs/kick{i}.png")
+            kick_img = image_formatting(kick_img, width, height)
+            disp.image(kick_img, rotation)
+            time.sleep(0.05)
 
         goal_img = Image.open(f"{cwd}/imgs/goooooal.png")
         goal_img = image_formatting(goal_img, width, height)
@@ -171,11 +170,6 @@ while True:
         while joystick.get_horizontal() != 509 and joystick.get_vertical() != 503:
             time.sleep(1)
         twist.set_count(twist.count + 2)
-
-    #print(f"Rotary Count: {twist.count}")
-    #print(f"Joystick Position: X: {joystick.get_horizontal()}, Y: {joystick.get_vertical()}, Button: {joystick.check_button()}")
-    #print(f"Red Button: {redButton.is_button_pressed()}")
-    #print(f"Green Button: {greenButton.is_button_pressed()}")
 
     # Display image.
     disp.image(image2, rotation)

@@ -61,7 +61,6 @@ Next, install all the packages required for the this lab. All the packages are a
 
 We run the example [cli_clock.py](cli_clock.py) to test our device. 
 ```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub $ pip install -r requirements.txt
 (circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ python cli_clock.py 
 02/24/2021 11:20:49
 ```
@@ -95,7 +94,7 @@ We test the screen by running our [screen_test.py](screen_test.py).
 
 The prompt asks the user to enter the name of a color, then press either of the buttons. The images below show the output from this script.
 
-*** Insert image/gif ***
+![](imgs/cli_clock.gif)
 
 #### Displaying an image
 
