@@ -1,25 +1,25 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
-
 """
-Be sure to check the learn guides for more usage information.
-
-This example is for use on (Linux) computers that are using CPython with
-Adafruit Blinka to support CircuitPython libraries. CircuitPython does
-not support PIL/pillow (python imaging library)!
-
-Author(s): Melissa LeBlanc-Williams for Adafruit Industries
+This script shows how we can change image displayed based on the button
+on the MiniPiTFT.
 """
 
 import digitalio
 import board
 from PIL import Image, ImageDraw
+from adafruit_rgb_display.rgb import color565
 import adafruit_rgb_display.ili9341 as ili9341
 import adafruit_rgb_display.st7789 as st7789  # pylint: disable=unused-import
 import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
 import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
+
+def image_formatting(im):
+    im = im.convert('RGB')
+    # Scale the image to the smaller screen dimension
+    im = im.resize((240, 135), Image.BICUBIC)
+
+    return im
 
 # Configuration for CS and DC pins (these are PiTFT defaults):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -79,6 +79,10 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 
 # Scale the image to the smaller screen dimension
 image_ratio = image.width / image.height
@@ -96,6 +100,20 @@ x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image = image.crop((x, y, x + width, y + height))
 
-# Display image.
-disp.image(image)
+# Image 2 - Wine Time
+wine_img = Image.open(f"imgs/winetime.png")
+wine_img = image_formatting(wine_img)
 
+# Main loop:
+while True:
+    if buttonA.value and buttonB.value:
+        backlight.value = False  # turn off backlight
+    else:
+        backlight.value = True  # turn on backlight
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        # Display Cornell Tech Image
+        disp.image(image)
+    if buttonA.value and not buttonB.value:  # just button B pressed
+        disp.image(wine_img, 90)
+    if not buttonA.value and not buttonB.value:  # none pressed
+        disp.fill(color565(255, 255, 255))  # white color
