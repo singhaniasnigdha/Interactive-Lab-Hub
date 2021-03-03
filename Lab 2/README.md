@@ -152,6 +152,9 @@ These are summarised in the image below:
 Shivani Doshi (sgd73) liked the use of the sensor to control time and the auto-changing backgrounds:
 > It was nice that you showed the proof of having done each section by including a video, well done! You guys definitely got a lot accomplished for this lab, which is awesome to see. I like that you have that rotary encoder to shift the time and change the background accordingly. The further interactions part was also really interesting, where you're playing with different hours having different significances. All in all, really great work!
 
+Bebei Lu (bl643) liked how detailed the documentation was:
+> I love how you recorded every step along the way. You have definitely done a lot for this lab! You made the device truly interactive. With the animated background and time travel, the device responded to user action. This feedback loop is very cool!
+
 
 ## Part 2
 
