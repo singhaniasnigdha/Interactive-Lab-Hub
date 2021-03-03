@@ -147,7 +147,7 @@ We explored the use cases of different sensors we had, and matched them to these
 These are summarised in the image below:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/future_interactions.png" height="360" /></p>
 
-## Prep for Part 2. Feedback from Classmates:
+## Prep for Part 2. Feedback from Classmates
 
 Shivani Doshi (sgd73) liked the use of the sensor to control time and the auto-changing backgrounds:
 > It was nice that you showed the proof of having done each section by including a video, well done! You guys definitely got a lot accomplished for this lab, which is awesome to see. I like that you have that rotary encoder to shift the time and change the background accordingly. The further interactions part was also really interesting, where you're playing with different hours having different significances. All in all, really great work!
