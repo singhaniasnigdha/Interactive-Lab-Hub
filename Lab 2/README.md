@@ -155,6 +155,9 @@ Shivani Doshi (sgd73) liked the use of the sensor to control time and the auto-c
 Bebei Lu (bl643) liked how detailed the documentation was:
 > I love how you recorded every step along the way. You have definitely done a lot for this lab! You made the device truly interactive. With the animated background and time travel, the device responded to user action. This feedback loop is very cool!
 
+Ritika Poddar (rp477) particularly liked the cooking element and viewed our design as a video game:
+> I love the use of the rotary encoder on the barebones clock, it is very cool to watch the sun rise up in the image. Your final interactions video is amazing it's almost like you built a whole video game within itself. I like how you utilized so many different interaction elements. My favorite part was the dinner time/ cook food feature :)
+
 
 ## Part 2
 
