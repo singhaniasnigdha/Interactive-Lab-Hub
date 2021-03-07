@@ -29,6 +29,11 @@ F) [Short video of the barebones PiClock](#part-f-short-video-of-the-barebones-p
 
 G) [Planning further interactions/features for the PiClock](#part-g-planning-further-interactionsfeatures-for-the-piclock)
 
+H) [Features for the Final Clock of Pi](#part-h-features-for-the-final-clock-of-pi)
+
+I) [Video of the Final Interactions](#part-i-video-of-the-final-interactions)
+
+
 ## Part A. Connecting to Raspberry Pi
 
 As preparation for this lab, we burn our Pi Image onto the SD card, and connect the Pi to our wifi. This allows us to SSH into the Pi using our devices on the same network. The detailed preparations can be found [here](prep-work/prep.md) 
@@ -147,6 +152,9 @@ We explored the use cases of different sensors we had, and matched them to these
 These are summarised in the image below:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%202/imgs/future_interactions.png" height="360" /></p>
 
+
+## Part 2
+
 ## Prep for Part 2. Feedback from Classmates
 
 Shivani Doshi (sgd73) liked the use of the sensor to control time and the auto-changing backgrounds:
@@ -158,11 +166,31 @@ Bebei Lu (bl643) liked how detailed the documentation was:
 Ritika Poddar (rp477) particularly liked the cooking element and viewed our design as a video game:
 > I love the use of the rotary encoder on the barebones clock, it is very cool to watch the sun rise up in the image. Your final interactions video is amazing it's almost like you built a whole video game within itself. I like how you utilized so many different interaction elements. My favorite part was the dinner time/ cook food feature :)
 
+## Part H. Features for the Final Clock of Pi
+As discussed in [Part G](#part-g-planning-further-interactionsfeatures-for-the-piclock), Sam and I decided to make the device interactive by incorporating activities from everyday life, and using the various sensors with our Raspberry Pi to perform those activities. All our sensors are connected using I2C. Following is a comprehensive coverage of the different interactions available in our version of the Clock of Pi:
 
-## Part 2
+### Time Display/Control
+__Sensors Used__: Rotary Encoder, MiniPiTFT <br>
+__Description__: This component is the same as was used for our barebones clock and shown in [Part F](#part-f-short-video-of-the-barebones-piclock). The rotary encoder was lit up, and the user can move it either clockwise or counter-clockwise, which adds or subtracts 30 minutes from their current day. The time and day of the week are displayed on the MiniPiTFT that is set up on the Pi. We present an image of the mountains on the screen, and highlight the rising and setting of the sun to further emphasize the time of the day.
 
-## Features for the Final Clock of Pi
+### Soccer
+__Sensors Used__: Joystick, MiniPiTFT <br>
+__Description__: At 10am on Sunday morning, the screen informs the user that it is time for Soccer practise. We see a player waiting to kick the ball. The costume of the soccer ball on the joystick informs the user that they should move this to kick the ball. As the user moves the joystick towards the goal, the action is simulated on the screen, and the user kicks a goal! The time on the screen moves to 11am, informing the user that they spent 1 hour during training.
 
-## Video of the final interactions
+### Cooking Dinner
+__Sensors Used__: Green Button, Accelerometer, MiniPiTFT <br>
+__Description__: When the User clicks the green button, the device learns that the user is hungry. The screen will display "Dinner Time", after which the user should toss the frying pan which is connected to an accelerometer. The user should perform this activity for a short duration, after which the food is deemed cooked and the User can enjoy their meal.
+
+### Bedtime
+__Sensors Used__: Proximity Sensor, MiniPiTFT <br>
+__Description__: We model a tiny bed on the breadboard, the sheets of which should cover the proximity sensor when the User sleeps. At 11pm, our user goes to sleep and the sheets cover the proximity sensor. When the sheets are removed, the device learns that it is time to wake up, and the clock shows 6am of the next day.
+
+### Wine-time
+__Sensors Used__: Red Button, MiniPiTFT <br>
+__Description__: We add wine-time as a fun element in our design. At 5pm on Friday, the MiniPiTFT lights up and displays the message "Wine-Time"! The red button on the breadboard blinks, waiting for the user to click it so as to finish their glass of wine. We use the MiniPiTFT again to show a series of animations where 2 glasses of wine clink together.
+
+## Part I. Video of the Final Interactions
+The interactions described above are showcased in the video below:
+
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1614566585/video_to_markdown/images/google-drive--1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1Zml_PnKv7Po2L-kpPTjNheOi9eHsNsjS "")
 
