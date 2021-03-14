@@ -1,6 +1,6 @@
 # You're a wizard, Snigdha
 
-<img src="https://pbs.twimg.com/media/Cen7qkHWIAAdKsB.jpg" height="400">
+<p align="center"><img src="https://pbs.twimg.com/media/Cen7qkHWIAAdKsB.jpg" height="400"></p>
 
 In this lab, we want you to practice wizarding an interactive device as discussed in class. We will focus on audio as the main modality for interaction but there is no reason these general techniques can't extend to video, haptics or other interactive mechanisms. In fact, you are welcome to add those to your project if they enhance your design.
 
@@ -13,7 +13,6 @@ In the home directory of your Pi there is a folder called `text2speech` containi
 pi@ixe00:~/text2speech $ ls
 Download        festival_demo.sh  GoogleTTS_demo.sh  pico2text_demo.sh
 espeak_demo.sh  flite_demo.sh     lookdave.wav
-
 ```
 
 you can run these examples by typing 
@@ -24,7 +23,6 @@ pi@ixe00:~/text2speech $ cat festival_demo.sh
 #from: https://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis)#Festival_Text_to_Speech
 
 echo "Just what do you think you're doing, Dave?" | festival --tts
-
 ```
 
 You can also play audio files directly with `aplay filename`.
