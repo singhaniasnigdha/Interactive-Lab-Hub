@@ -110,7 +110,7 @@ twist.set_green(255)
 redButton = qwiic_button.QwiicButton()
 redButton.begin()
 
-greenButton = qwiic_button.QwiicButton(0x62)
+greenButton = qwiic_button.QwiicButton(address=0x62)
 greenButton.begin()
 
 # Configure screen buttons
@@ -145,7 +145,7 @@ img_dict = {
     Scene.WELCOME: 'welcome_hogwarts.jpeg',
     Scene.ARE_YOU_READY: 'ready.png',
     Scene.DIAGON_ALLEY: 'diagon-alley.png',
-    Scene.BRICK_IMAGE: 'puzzle.png',
+    Scene.BRICK_IMAGE: 'puzzle.png', 
     Scene.OLLIVANDERS: 'ollivanders.jpg',
     Scene.CHOOSE_WAND: 'wands.jpeg',
     Scene.HOGWARTS_EXPRESS: 'hogwarts-express.jpg',
@@ -157,7 +157,7 @@ img_dict = {
     Scene.THANK_YOU: 'thankyou.png'
 }
 
-screen = Scene.BRICK_IMAGE
+screen = Scene.WELCOME
 
 while True:
     display_image(img_dict[screen])
