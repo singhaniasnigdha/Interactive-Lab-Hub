@@ -2,7 +2,7 @@
 
 This is a Demo App for a Wizard of Oz interactive system where the wizard is playing a magic 8 ball
 
-<img src='https://images-na.ssl-images-amazon.com/images/I/71729uRDw2L._AC_SY606_.jpg' width=200>
+<p align="center"><img src='https://images-na.ssl-images-amazon.com/images/I/71729uRDw2L._AC_SY606_.jpg' width=200></p>
 
 ## Hardware Set-Up
 
