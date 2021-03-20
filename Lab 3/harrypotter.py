@@ -157,7 +157,6 @@ img_dict = {
     Scene.THANK_YOU: 'thankyou.png'
 }
 
-
 screen = Scene.WELCOME
 
 while True:
@@ -180,10 +179,14 @@ while True:
         next_screen = Scene.BRICK_IMAGE
 
     if screen == Scene.BRICK_IMAGE:
-        # TODO add puzzle question
+        speak(f"Tap on the right brick to enter! Here is your clue.")
+        speak(f"In this world, left means right and up means down!")
+        speak(f"Start at 3,3. Move one step right, then left-up.")
+        speak(f"Finally, move left down.")
+        speak(f"Which brick did you land in?")
         speak(f"Press the green button when you're ready to answer.")
         blink_button(greenButton)
-        answer = get_user_input(wrong_answer_prompt='Wrong Answer! Think again!')
+        answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
         speak(f"Correct! Welcome to Diagon Alley.")
         next_screen = Scene.OLLIVANDERS
 
@@ -245,7 +248,6 @@ while True:
         speak(f"That is the correct answer!")
         speak(f'You are now part of {choice}.')
         next_screen = Scene.THANK_YOU
-        
 
     if screen == Scene.THANK_YOU:
         time.sleep(0.5)
