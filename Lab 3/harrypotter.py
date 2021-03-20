@@ -157,7 +157,7 @@ img_dict = {
     Scene.THANK_YOU: 'thankyou.png'
 }
 
-screen = Scene.WELCOME
+screen = Scene.HOGWARTS_EXPRESS
 
 while True:
     display_image(img_dict[screen])
@@ -185,7 +185,7 @@ while True:
         speak(f"Finally, move left down.")
         speak(f"Which brick did you land in?")
         speak(f"Press the green button when you're ready to answer.")
-        blink_button(greenButton)
+        #blink_button(greenButton)
         answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
         speak(f"Correct! Welcome to Diagon Alley.")
         next_screen = Scene.OLLIVANDERS
@@ -200,19 +200,24 @@ while True:
         speak(f'Use 3 words to describe yourself!')
         speak(f'This will help Ollivander pick a wand for you.')
         get_user_input()
+        time.sleep(0.5)
         speak(f"Hmm! Wood from Black Walnut and a Core of Dragon Heartstring, that is perfect for you.")
         next_screen = Scene.HOGWARTS_EXPRESS
 
     if screen == Scene.HOGWARTS_EXPRESS:
         speak(f'Now that you have your wand, get aboard the Hogwarts Express!')
         speak(f'Enjoy your journey')
-        time.sleep(2)
-        speak(f"Grrr! Looks like you're hungry.")
-        speak(f"Let's buy Bertie Botts all flavour beans. Grrr.")
+        time.sleep(1)
+        speak(f'Looks like you are hungry.')
+        speak(f'Let us buy Bertie Botts all flavour beans.')
+        next_screen = Scene.BEANS
         
     if screen == Scene.BEANS:
         speak(f"Which flavours do you want?")
-        get_user_input(wrong_answer_prompt='Boring Choice! Try something unique.')
+        choice = int(input('Enter your choice: '))
+        while choice != 1:
+            speak('Boring Choice! Try something unique')
+            choice = int(input('Try something interesting:'))
         speak(f"Now, that is an interesting choice!")
         next_screen = Scene.SUITCASE
     
