@@ -1,6 +1,7 @@
 import enum
 import os
 import signal
+import sys
 import time
 
 import digitalio
@@ -18,6 +19,25 @@ cwd = os.getcwd()
 def speak(command):
     call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
     time.sleep(0.5)
+
+def display_image(img):
+    display_img = Image.open(f'{cwd}/imgs/{img}')
+    display_img = image_formatting(display_img, width, height)
+    disp.image(display_img, rotation)
+
+def get_user_input(correct_answer = 1, wrong_answer_prompt='Press Ctrl-C to exit. Otherwise, try again:'):
+    decision = type(correct_answer)(input('Enter your choice: '))
+    while decision != correct_answer:
+        decision = type(correct_answer)(input(wrong_answer_prompt))
+    return decision
+
+def blink_button(button):
+    while not button.is_button_pressed():
+        button.LED_on(255)
+        time.sleep(0.5)
+        button.LED_off()
+        time.sleep(0.5)
+    button.LED_off()
 
 def signal_handler(sig, frame):
     print('Closing Gracefully')
@@ -87,11 +107,11 @@ twist.set_red(100)
 twist.set_green(255)
 
 # Set up buttons
-#redButton = qwiic_button.QwiicButton()
-#redButton.begin()
+redButton = qwiic_button.QwiicButton()
+redButton.begin()
 
-#greenButton = qwiic_button.QwiicButton(0x62)
-#greenButton.begin()
+greenButton = qwiic_button.QwiicButton(0x62)
+greenButton.begin()
 
 # Configure screen buttons
 buttonA = digitalio.DigitalInOut(board.D23)
@@ -105,7 +125,7 @@ def image_formatting(image2, width=240, height=135):
     image2 = image2.resize((width, height), Image.BICUBIC)
     return image2
 
-
+houses = ['Gryffinndor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
 class Scene(enum.Enum):
     WELCOME = 0
     ARE_YOU_READY = 1
@@ -128,22 +148,20 @@ img_dict = {
     Scene.BRICK_IMAGE: 'puzzle.png',
     Scene.OLLIVANDERS: 'ollivanders.jpg',
     Scene.CHOOSE_WAND: 'wands.jpeg',
+    Scene.HOGWARTS_EXPRESS: 'hogwarts-express.jpg',
     Scene.BEANS: 'beans.png',
-    Scene.SUITCASE: '',
-    Scene.USE_SPELL: '',
-    Scene.SORTING_HAT: '',
-    Scene.CHOOSE_HOUSE: '',
-    Scene.THANK_YOU: ''
+    Scene.SUITCASE: 'suitcase.jpg',
+    Scene.USE_SPELL: 'open-suitcase.jpg',
+    Scene.SORTING_HAT: 'great-hall.jpeg',
+    Scene.CHOOSE_HOUSE: 'house-0.png',
+    Scene.THANK_YOU: 'thankyou.png'
 }
 
-houses = ['Gryffinndor', 'Hufflepuff', 'Slytherin', 'Ravenclaw']
 
 screen = Scene.WELCOME
 
 while True:
-    display_img = Image.open(f'{cwd}/imgs/{img_dict[screen]}')
-    display_img = image_formatting(display_img, width, height)
-    disp.image(display_img, rotation)
+    display_image(img_dict[screen])
 
     if screen == Scene.WELCOME:
         speak(f'We are pleased to inform that you have been admitted to Hogwarts School of Witchcraft and Wizardry!')
@@ -153,9 +171,7 @@ while True:
     if screen == Scene.ARE_YOU_READY:
         speak(f'Are you ready? Say YES or NO. Press the red button to repeat.')
         # TODO Add red button func
-        decision = int(input('Enter your choice: '))
-        while decision != 1:
-            decision = int(input('Press Ctrl-C to exit. Otherwise, enter 1: '))
+        get_user_input()
         next_screen = Scene.DIAGON_ALLEY
         time.sleep(0.1)
 
@@ -165,14 +181,11 @@ while True:
 
     if screen == Scene.BRICK_IMAGE:
         # TODO add puzzle question
-        while True:
-            decision = input()
-            if decision == 1:
-                speak(f"Correct! Welcome to Diagon Alley.")
-                next_screen = Scene.OLLIVANDERS
-                break
-            else:
-                speak(f"Wrong Answer! Think again!")
+        speak(f"Press the green button when you're ready to answer.")
+        blink_button(greenButton)
+        answer = get_user_input(wrong_answer_prompt='Wrong Answer! Think again!')
+        speak(f"Correct! Welcome to Diagon Alley.")
+        next_screen = Scene.OLLIVANDERS
 
     if screen == Scene.OLLIVANDERS:
         speak(f'Task Number 2')
@@ -183,58 +196,55 @@ while True:
     if screen == Scene.CHOOSE_WAND:
         speak(f'Use 3 words to describe yourself!')
         speak(f'This will help Ollivander pick a wand for you.')
-        input()
+        get_user_input()
         speak(f"Hmm! Wood from Black Walnut and a Core of Dragon Heartstring, that is perfect for you.")
+        next_screen = Scene.HOGWARTS_EXPRESS
+
+    if screen == Scene.HOGWARTS_EXPRESS:
+        speak(f'Now that you have your wand, get aboard the Hogwarts Express!')
+        speak(f'Enjoy your journey')
+        time.sleep(2)
+        speak(f"Grrr! Looks like you're hungry.")
+        speak(f"Let's buy Bertie Botts all flavour beans. Grrr.")
         
     if screen == Scene.BEANS:
-        while True:
-            decision = input()
-            if decision == 1:
-                speak(f"Now, that is an interesting choice!")
-                next_screen = Scene.SUITCASE
-                break
-            else:
-                speak(f"Boring Choice! Try something unique.")
+        speak(f"Which flavours do you want?")
+        get_user_input(wrong_answer_prompt='Boring Choice! Try something unique.')
+        speak(f"Now, that is an interesting choice!")
+        next_screen = Scene.SUITCASE
     
     if screen == Scene.SUITCASE:
-        speak('Welcome to Hogwarts!')
+        speak(f'Welcome to Hogwarts!')
         speak(f'Before you proceed to The Great Hall, you need to get dressed.')
         speak(f'But you forgot the keys to your suitcase at home.')
         speak(f'Try to remember and use the spell to open the lock!')
         next_screen = Scene.USE_SPELL
     
     if screen == Scene.USE_SPELL:
-        while True:
-            decision = input()
-            if decision == 1:
-                speak(f"Good Memory! Now get changed quickly! Dinner is about to begin.")
-                next_screen = Scene.SORTING_HAT
-                break
-            else:
-                speak(f"Think harder! You can do this.")
+        get_user_input(wrong_answer_prompt='Think harder! You can do this.')
+        speak(f"Good Memory! Now get changed quickly!")
+        speak(f"Dinner is about to begin.")
+        next_screen = Scene.SORTING_HAT
     
     if screen == Scene.SORTING_HAT:
-        speak(f'Hogwarts has 4 houses.')
+        speak(f'Welcome to the great hall! Hogwarts has 4 houses.')
         speak(', '.join(houses))
         speak(f'Use the rotating wheel to choose your House.')
-        speak(f'Press the wheel to confirm.')
         next_screen = Scene.CHOOSE_HOUSE
     
     if screen == Scene.CHOOSE_HOUSE:
+        speak(f'Press the wheel to confirm.')
         while not twist.is_pressed():
             choice = houses[twist.count % 4]
-            # TODO Add highlighting to house selected
+            display_image(f'house-{choice}.png')
+            time.sleep(0.2)
         
         # choice = houses[twist.count % 4]
         speak(f'What are the 2 colors that represent {choice}?')
-        time.sleep(1)
-        # TODO fix
-        if input() == 1:
-            speak(f"That is the correct answer!")
-            speak(f'You are now part of {choice}.')
-            next_screen = Scene.THANK_YOU
-        else:
-            speak(f"Wrong answer try again.")
+        get_user_input(wrong_answer_prompt='Wrong answer try again.')
+        speak(f"That is the correct answer!")
+        speak(f'You are now part of {choice}.')
+        next_screen = Scene.THANK_YOU
         
 
     if screen == Scene.THANK_YOU:
