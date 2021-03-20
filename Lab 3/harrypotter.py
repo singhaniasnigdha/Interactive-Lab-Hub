@@ -157,7 +157,7 @@ img_dict = {
     Scene.THANK_YOU: 'thankyou.png'
 }
 
-screen = Scene.BEANS
+screen = Scene.BRICK_IMAGE
 
 while True:
     display_image(img_dict[screen])
@@ -185,7 +185,7 @@ while True:
         speak(f"Finally, move left down.")
         speak(f"Which brick did you land in?")
         speak(f"Press the green button when you're ready to answer.")
-        #blink_button(greenButton)
+        blink_button(redButton)
         answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
         speak(f"Correct! Welcome to Diagon Alley.")
         next_screen = Scene.OLLIVANDERS
@@ -247,15 +247,15 @@ while True:
     if screen == Scene.CHOOSE_HOUSE:
         speak(f'Press the wheel to confirm.')
         while not twist.is_pressed():
-            choice = houses[twist.count % 4]
+            choice = twist.count % 4
             display_image(f'house-{choice}.png')
             time.sleep(0.2)
         
         # choice = houses[twist.count % 4]
-        speak(f'What are the 2 colors that represent {choice}?')
+        speak(f'What are the 2 colors that represent {houses[choice]}?')
         get_user_input(wrong_answer_prompt='Wrong answer try again.')
         speak(f"That is the correct answer!")
-        speak(f'You are now part of {choice}.')
+        speak(f'You are now part of {houses[choice]}.')
         next_screen = Scene.THANK_YOU
 
     if screen == Scene.THANK_YOU:
