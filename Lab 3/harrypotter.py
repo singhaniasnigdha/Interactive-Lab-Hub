@@ -125,7 +125,7 @@ def image_formatting(image2, width=240, height=135):
     image2 = image2.resize((width, height), Image.BICUBIC)
     return image2
 
-houses = ['Gryffinndor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
+houses = ['Gryffinndor', 'Hufflepuff', 'Ravenclaw', 'Slitherin']
 class Scene(enum.Enum):
     WELCOME = 0
     ARE_YOU_READY = 1
@@ -157,7 +157,7 @@ img_dict = {
     Scene.THANK_YOU: 'thankyou.png'
 }
 
-screen = Scene.HOGWARTS_EXPRESS
+screen = Scene.BEANS
 
 while True:
     display_image(img_dict[screen])
@@ -229,7 +229,11 @@ while True:
         next_screen = Scene.USE_SPELL
     
     if screen == Scene.USE_SPELL:
-        get_user_input(wrong_answer_prompt='Think harder! You can do this.')
+        choice = int(input('Enter your choice: '))
+        while choice != 1:
+            speak('Think harder! You can do this.')
+            choice = int(input('Think again:'))
+
         speak(f"Good Memory! Now get changed quickly!")
         speak(f"Dinner is about to begin.")
         next_screen = Scene.SORTING_HAT
