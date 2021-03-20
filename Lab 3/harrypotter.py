@@ -1,6 +1,6 @@
 import enum
 import os
-import subprocess
+import signal
 import time
 
 import digitalio
@@ -8,16 +8,21 @@ import board
 import adafruit_rgb_display.st7789 as st7789
 import busio
 import qwiic_twist
-import qwiic_joystick
 import qwiic_button
 
 from PIL import Image, ImageDraw, ImageFont
+from subprocess import call, Popen
 
 cwd = os.getcwd()
 
 def speak(command):
-    subprocess.call(f"espeak '{command}'", shell=True)
+    call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
     time.sleep(0.5)
+
+def signal_handler(sig, frame):
+    print('Closing Gracefully')
+    audio_stream.terminate()
+    sys.exit(0)
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -42,6 +47,10 @@ disp = st7789.ST7789(
     x_offset=53,
     y_offset=40,
 )
+
+hardware = 'plughw:2,0'
+audio_stream = Popen("/usr/bin/cvlc alsa://"+hardware+" --sout='#transcode{vcodec=none,acodec=mp3,ab=256,channels=2,samplerate=44100,scodec=none}:http{mux=mp3,dst=:8080/}' --no-sout-all --sout-keep", shell=True)
+
 
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
@@ -72,17 +81,17 @@ backlight.value = True
 # Set up the rotary pin
 twist = qwiic_twist.QwiicTwist()
 twist.begin()
-# twist_count = 0
+twist_count = 0
 twist.set_blue(255)
 twist.set_red(100)
 twist.set_green(255)
 
 # Set up buttons
-redButton = qwiic_button.QwiicButton()
-redButton.begin()
+#redButton = qwiic_button.QwiicButton()
+#redButton.begin()
 
-greenButton = qwiic_button.QwiicButton(0x62)
-greenButton.begin()
+#greenButton = qwiic_button.QwiicButton(0x62)
+#greenButton.begin()
 
 # Configure screen buttons
 buttonA = digitalio.DigitalInOut(board.D23)
@@ -139,20 +148,20 @@ while True:
     if screen == Scene.WELCOME:
         speak(f'We are pleased to inform that you have been admitted to Hogwarts School of Witchcraft and Wizardry!')
         speak(f'Before you join us next week, you are required to complete 5 tasks.')
-        screen = Scene.ARE_YOU_READY
+        next_screen = Scene.ARE_YOU_READY
 
     if screen == Scene.ARE_YOU_READY:
-        speak(f'Are you ready? Say YES or NO. Press RED button to repeat.')
+        speak(f'Are you ready? Say YES or NO. Press the red button to repeat.')
         # TODO Add red button func
-        while True:
-            if input() == 1:
-                screen = Scene.DIAGON_ALLEY
-                time.sleep(0.1)
-                break
+        decision = int(input('Enter your choice: '))
+        while decision != 1:
+            decision = int(input('Press Ctrl-C to exit. Otherwise, enter 1: '))
+        next_screen = Scene.DIAGON_ALLEY
+        time.sleep(0.1)
 
     if screen == Scene.DIAGON_ALLEY:
         speak(f'Your first task is to enter Diagon Alley')
-        screen = Scene.BRICK_IMAGE
+        next_screen = Scene.BRICK_IMAGE
 
     if screen == Scene.BRICK_IMAGE:
         # TODO add puzzle question
@@ -160,7 +169,7 @@ while True:
             decision = input()
             if decision == 1:
                 speak(f"Correct! Welcome to Diagon Alley.")
-                screen = Scene.OLLIVANDERS
+                next_screen = Scene.OLLIVANDERS
                 break
             else:
                 speak(f"Wrong Answer! Think again!")
@@ -169,7 +178,7 @@ while True:
         speak(f'Task Number 2')
         speak(f'You definitely need a wand before you are off to learn magic!')
         speak(f'Let us find you one.')
-        screen = Scene.CHOOSE_WAND
+        next_screen = Scene.CHOOSE_WAND
 
     if screen == Scene.CHOOSE_WAND:
         speak(f'Use 3 words to describe yourself!')
@@ -182,7 +191,7 @@ while True:
             decision = input()
             if decision == 1:
                 speak(f"Now, that is an interesting choice!")
-                screen = Scene.SUITCASE
+                next_screen = Scene.SUITCASE
                 break
             else:
                 speak(f"Boring Choice! Try something unique.")
@@ -192,14 +201,14 @@ while True:
         speak(f'Before you proceed to The Great Hall, you need to get dressed.')
         speak(f'But you forgot the keys to your suitcase at home.')
         speak(f'Try to remember and use the spell to open the lock!')
-        screen = Scene.USE_SPELL
+        next_screen = Scene.USE_SPELL
     
     if screen == Scene.USE_SPELL:
         while True:
             decision = input()
             if decision == 1:
                 speak(f"Good Memory! Now get changed quickly! Dinner is about to begin.")
-                screen = Scene.SORTING_HAT
+                next_screen = Scene.SORTING_HAT
                 break
             else:
                 speak(f"Think harder! You can do this.")
@@ -209,7 +218,7 @@ while True:
         speak(', '.join(houses))
         speak(f'Use the rotating wheel to choose your House.')
         speak(f'Press the wheel to confirm.')
-        screen = Scene.CHOOSE_HOUSE
+        next_screen = Scene.CHOOSE_HOUSE
     
     if screen == Scene.CHOOSE_HOUSE:
         while not twist.is_pressed():
@@ -223,7 +232,7 @@ while True:
         if input() == 1:
             speak(f"That is the correct answer!")
             speak(f'You are now part of {choice}.')
-            screen = Scene.THANK_YOU
+            next_screen = Scene.THANK_YOU
         else:
             speak(f"Wrong answer try again.")
         
@@ -237,3 +246,6 @@ while True:
         break
     
     time.sleep(0.1)
+    screen = next_screen
+
+signal.signal(signal.SIGINT, signal_handler)
