@@ -14,6 +14,8 @@ import qwiic_button
 from PIL import Image, ImageDraw, ImageFont
 from subprocess import call, Popen
 
+import RPi.GPIO as GPIO 
+
 cwd = os.getcwd()
 
 def speak(command):
@@ -99,8 +101,8 @@ backlight.switch_to_output()
 backlight.value = True
 buttonA = digitalio.DigitalInOut(board.D23)
 buttonB = digitalio.DigitalInOut(board.D24)
-buttonA.switch_to_input()
-buttonB.switch_to_input()
+buttonA.switch_to_input(digitalio.Pull.UP)
+buttonB.switch_to_input(digitalio.Pull.UP)
 
 # Set up the rotary pin
 twist = qwiic_twist.QwiicTwist()
@@ -163,6 +165,10 @@ img_dict = {
 
 screen = Scene.WELCOME
 
+def callback_fn():
+    print('Interrupted')
+GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_fn, bouncetime=300)
+
 while True:
     display_image(img_dict[screen])
 
@@ -188,7 +194,7 @@ while True:
         speak(f"Start at 3,3. Move one step right, then left-up.")
         speak(f"Finally, move left down.")
         speak(f"Which brick did you land in?")
-        speak(f"Press the green button when you're ready to answer. Press red to repeat.")
+        speak(f"Press the green button when you\'re ready to answer. Press red to repeat.")
 
         while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
             redButton.LED_on(255); greenButton.LED_on(255)
@@ -198,7 +204,6 @@ while True:
         repeat = redButton.is_button_pressed()
         redButton.LED_off(); greenButton.LED_off()
 
-        # blink_button(greenButton)
         if not repeat:
             answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
             speak(f"Correct! Welcome to Diagon Alley.")
@@ -266,8 +271,8 @@ while True:
             speak('Think harder! You can do this.')
             choice = int(input('Think again:'))
 
-        speak(f"Good Memory! Now get changed quickly!")
-        speak(f"Dinner is about to begin.")
+        speak(f'Good Memory! Now get changed quickly!')
+        speak(f'Dinner is about to begin.')
         next_screen = Scene.SORTING_HAT
     
     if screen == Scene.SORTING_HAT:
