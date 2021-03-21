@@ -164,9 +164,17 @@ img_dict = {
 }
 
 screen = Scene.WELCOME
+restart = False
 
-def callback_fn():
-    print('Interrupted')
+def restart():
+    restart = False
+    speak(f'Restarting now')
+    time.sleep(0.5)
+
+def callback_fn(channel):
+    print(f'Restarting the game:')
+    restart = True
+    #print(f'Interrupted: {channel}')
 GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_fn, bouncetime=300)
 
 while True:
@@ -194,7 +202,7 @@ while True:
         speak(f"Start at 3,3. Move one step right, then left-up.")
         speak(f"Finally, move left down.")
         speak(f"Which brick did you land in?")
-        speak(f"Press the green button when you\'re ready to answer. Press red to repeat.")
+        speak(f"Press the green button when you ready to answer. Press red to repeat.")
 
         while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
             redButton.LED_on(255); greenButton.LED_on(255)
@@ -302,9 +310,6 @@ while True:
         backlight.value = False
         break
 
-    # Restart
-    if buttonB.value and not buttonA.value:  # just button A pressed
-        next_screen = Scene.WELCOME
     
     time.sleep(0.1)
     screen = next_screen
