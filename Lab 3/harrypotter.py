@@ -203,6 +203,9 @@ while True:
             answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
             speak(f"Correct! Welcome to Diagon Alley.")
             next_screen = Scene.OLLIVANDERS
+        else:
+            speak(f"Repeating instructions:")
+            time.sleep(0.2)
 
     if screen == Scene.OLLIVANDERS:
         speak(f'Task Number 2')
@@ -229,6 +232,9 @@ while True:
             time.sleep(0.5)
             speak(f"Hmm! Wood from Black Walnut and a Core of Dragon Heartstring, that is perfect for you.")
             next_screen = Scene.HOGWARTS_EXPRESS
+        else:
+            speak(f"Repeating instructions:")
+            time.sleep(0.2)
 
     if screen == Scene.HOGWARTS_EXPRESS:
         speak(f'Now that you have your wand, get aboard the Hogwarts Express!')
