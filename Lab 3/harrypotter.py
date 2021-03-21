@@ -164,17 +164,9 @@ img_dict = {
 }
 
 screen = Scene.WELCOME
-restart = False
-
-def restart():
-    restart = False
-    speak(f'Restarting now')
-    time.sleep(0.5)
 
 def callback_fn(channel):
     print(f'Restarting the game:')
-    restart = True
-    #print(f'Interrupted: {channel}')
 GPIO.add_event_detect(23, GPIO.FALLING, callback=callback_fn, bouncetime=300)
 
 while True:
@@ -230,7 +222,7 @@ while True:
         speak(f'Use 3 words to describe yourself!')
         speak(f'This will help Ollivander pick a wand for you.')
 
-        speak(f"Press the green button when you're ready to answer. Press red to repeat.")
+        speak(f"Press the green button when you ready to answer, red to repeat.")
 
         while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
             redButton.LED_on(255); greenButton.LED_on(255)
@@ -271,14 +263,14 @@ while True:
         speak(f'Before you proceed to The Great Hall, you need to get dressed.')
         speak(f'But you forgot the keys to your suitcase at home.')
         speak(f'Try to remember and use the spell to open the lock!')
-        next_screen = Scene.USE_SPELL
-    
-    if screen == Scene.USE_SPELL:
+        
         choice = int(input('Enter your choice: '))
         while choice != 1:
             speak('Think harder! You can do this.')
             choice = int(input('Think again:'))
-
+        next_screen = Scene.USE_SPELL
+    
+    if screen == Scene.USE_SPELL:
         speak(f'Good Memory! Now get changed quickly!')
         speak(f'Dinner is about to begin.')
         next_screen = Scene.SORTING_HAT
@@ -297,6 +289,10 @@ while True:
             time.sleep(0.2)
         
         speak(f'What are the 2 colors that represent {houses[choice]}?')
+        choice = int(input('Enter your choice: '))
+        while choice != 1:
+            speak('Think harder! You can do this.')
+            choice = int(input('Think again:'))
         get_user_input(wrong_answer_prompt='Wrong answer try again.')
         speak(f"That is the correct answer!")
         speak(f'You are now part of {houses[choice]}.')
