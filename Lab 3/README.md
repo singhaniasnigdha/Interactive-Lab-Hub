@@ -68,7 +68,11 @@ The theme of the game is preparing a student to begin lessons at Hogwarts. To do
 1. Practise their spells
 1. Pick a house
 
-Sketch ideas for what you'll work on in lab on Wednesday.
+To make audio the predominant mode of communication, the Raspberry Pi will speak with the user, and ask them to reply with their answers. 
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/sketch.png" height="360" /></p>
+
+Some additional sensors are added to make the device more interactive and fun to play.
 
 ## Share your idea sketches with Zoom Room mates and get feedback
 
