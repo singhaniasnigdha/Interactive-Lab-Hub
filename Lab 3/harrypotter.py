@@ -97,6 +97,10 @@ font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 
 # Set up the rotary pin
 twist = qwiic_twist.QwiicTwist()
@@ -184,11 +188,21 @@ while True:
         speak(f"Start at 3,3. Move one step right, then left-up.")
         speak(f"Finally, move left down.")
         speak(f"Which brick did you land in?")
-        speak(f"Press the green button when you're ready to answer.")
-        blink_button(redButton)
-        answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
-        speak(f"Correct! Welcome to Diagon Alley.")
-        next_screen = Scene.OLLIVANDERS
+        speak(f"Press the green button when you're ready to answer. Press red to repeat.")
+
+        while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
+            redButton.LED_on(255); greenButton.LED_on(255)
+            time.sleep(0.5)
+            redButton.LED_off(); greenButton.LED_off()
+            time.sleep(0.5)
+        repeat = redButton.is_button_pressed()
+        redButton.LED_off(); greenButton.LED_off()
+
+        # blink_button(greenButton)
+        if not repeat:
+            answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
+            speak(f"Correct! Welcome to Diagon Alley.")
+            next_screen = Scene.OLLIVANDERS
 
     if screen == Scene.OLLIVANDERS:
         speak(f'Task Number 2')
@@ -199,10 +213,22 @@ while True:
     if screen == Scene.CHOOSE_WAND:
         speak(f'Use 3 words to describe yourself!')
         speak(f'This will help Ollivander pick a wand for you.')
-        get_user_input()
-        time.sleep(0.5)
-        speak(f"Hmm! Wood from Black Walnut and a Core of Dragon Heartstring, that is perfect for you.")
-        next_screen = Scene.HOGWARTS_EXPRESS
+
+        speak(f"Press the green button when you're ready to answer. Press red to repeat.")
+
+        while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
+            redButton.LED_on(255); greenButton.LED_on(255)
+            time.sleep(0.5)
+            redButton.LED_off(); greenButton.LED_off()
+            time.sleep(0.5)
+        repeat = redButton.is_button_pressed()
+        redButton.LED_off(); greenButton.LED_off()
+
+        if not repeat:
+            get_user_input()
+            time.sleep(0.5)
+            speak(f"Hmm! Wood from Black Walnut and a Core of Dragon Heartstring, that is perfect for you.")
+            next_screen = Scene.HOGWARTS_EXPRESS
 
     if screen == Scene.HOGWARTS_EXPRESS:
         speak(f'Now that you have your wand, get aboard the Hogwarts Express!')
@@ -251,7 +277,6 @@ while True:
             display_image(f'house-{choice}.png')
             time.sleep(0.2)
         
-        # choice = houses[twist.count % 4]
         speak(f'What are the 2 colors that represent {houses[choice]}?')
         get_user_input(wrong_answer_prompt='Wrong answer try again.')
         speak(f"That is the correct answer!")
@@ -265,6 +290,10 @@ while True:
         time.sleep(2)
         backlight.value = False
         break
+
+    # Restart
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        next_screen = Scene.WELCOME
     
     time.sleep(0.1)
     screen = next_screen
