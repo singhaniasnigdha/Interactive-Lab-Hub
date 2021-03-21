@@ -78,7 +78,7 @@ Some additional sensors are added to make the device more interactive and fun to
 
 *what was the feedback? Who did it come from?*
 
-## Prototype your system
+## Prototyping the System
 For this demo, we use: 
 * Raspberry Pi, 
 * MiniPiTFT Display
@@ -88,13 +88,23 @@ For this demo, we use:
 * Red LED Button
 * Green LED Button
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/schematic.png" height="360" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/schematic.png" height="420" /></p>
 
-*Document how the system works*
+The code for this system can be found at [harrypotter.py](harrypotter.py). This is a 5-step game to prepare the player before they embark their magical journey at Hogwarts. Communicating through voice is the primary sensing modality in this game. The MiniPiTFT is used to show images relevant to the task at hand. We connect all sensors using I2C, as shown in the image above.
+
+As the game has a fixed sequence, this strategy is used to queue images and texts for speech translation. Based on which stage the user is currently at, images and prompts are shown. This can be achieved using simple `if` conditional statements.
+
+__The Game__: There are 7 scenes and 5 tasks the user will witness. The first scene reads out the acceptance letter to Hogwarts. The user is asked if they are ready to begin, and expects a response. The next scene shows Diagon Alley, where the user should solve a brick wall puzzle to enter the Alley. This is a reference to the movie where Hagrid knows which bricks to tap in order to open up the wall, while Harry looks at him with disbelief. In our version, the user is asked to follow a series of instructions to learn which brick to tap.
+
+The third scene takes us to Ollivanders, where the user should identify 3 personal traits to help Ollivander pick a suitable wand. After all the shopping from Diagon Alley, the next scene takes place on Hogwarts Express, when the player is hungry. They need to buy Bertie Bott's Every-Flavour Beans, but need to pick unique flavours to clear the round. Now at Hogwarts, the fifth scene asks the user to open their suitcase using a magic spell. 
+
+In the sixth scene, the user is at The Great Hall, and has to be sorted into their house! But the sorting hat is not safe to use (with the pandemic, and all!). So the user must pick a house of their own choosing, as long as they can identify the colors used to represent it! This brings us to the end of the game, and the seventh scene thanks the user for participating.
+
+__The Controller__: A simple user input from the terminal is used to control the flow of the game. This is because the microphone used for this assignment is not powerful enough to perfectly translate what the users are saying. To avoid encounters where 1) the system misunderstands the user 2) the user says something unknown, we keep the system simple and respond in 1 of 2 ways, as specified in the code.
 
 *Include videos or screencaptures of both the system and the controller.*
 
-## Test the system
+## Testing the System
 We had at least two people interact with this system and review the interactions and setup.
 
 ### What worked well about the system and what didn't?
@@ -105,7 +115,7 @@ One disadvantage of the system was the voice output. It was not very clear, and 
 
 ### What worked well about the controller and what didn't?
 
-The Controller used for this experiment is user input based on 1's and 0's. Every action has 2 paths, the decision of which depends on what is entered into the terminal by the person controlling the interaction. This makes the interaction swift, and follows a fixed expected pattern.
+The Controller used for this experiment is user input based on 1's and 0's. Every action has 2 paths, the decision of which depends on what is entered into the terminal by the person controlling the interaction. This makes the interaction swift, and follows a fixed expected pattern. The Controller was also useful because the STT was not reliable - different accents and words from the Harry Potter world were not detected well.
 
 The fixed pattern, however, is also a downside for this setup. The system is limited to only 2 responses per question. It cannot help the user if they have any questions.
 
