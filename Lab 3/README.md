@@ -88,6 +88,8 @@ For this demo, we use:
 * Red LED Button
 * Green LED Button
 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/schematic.png" height="360" /></p>
+
 *Document how the system works*
 
 *Include videos or screencaptures of both the system and the controller.*
