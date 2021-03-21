@@ -95,21 +95,26 @@ For this demo, we use:
 *Include videos or screencaptures of both the system and the controller.*
 
 ## Test the system
-Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
-
-Answer the following:
+We had at least two people interact with this system and review the interactions and setup.
 
 ### What worked well about the system and what didn't?
-*your answer here*
+
+The concept of Harry Potter worked well, as some people were excited to see what the device could do. Use of rotary encoder to select the House based on the display (MiniPiTFT) was well received.
+
+One disadvantage of the system was the voice output. It was not very clear, and could not convey messages with a certain emotion (such as excitement, or disappointment). It would have been interesting to use the voice from one of the Harry Potter characters (maybe, Professor McGonagall).
 
 ### What worked well about the controller and what didn't?
 
-*your answer here*
+The Controller used for this experiment is user input based on 1's and 0's. Every action has 2 paths, the decision of which depends on what is entered into the terminal by the person controlling the interaction. This makes the interaction swift, and follows a fixed expected pattern.
+
+The fixed pattern, however, is also a downside for this setup. The system is limited to only 2 responses per question. It cannot help the user if they have any questions.
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-*your answer here*
-
+Some observations that were made during user interactions where:
+* The system was unable to answer queries so having support would be useful in a more autonomous version.
+* If building an autonomous system, we could have more conditional branches as opposed to 2 used in this simple version.
+* The users knew the device was rigged because it could understand all their commands perfectly. It is interesting to note that users expected the device to misunderstand.
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
