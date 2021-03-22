@@ -130,5 +130,6 @@ Some observations that were made during user interactions where:
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-*your answer here*
+As the questions are open-ended, we would require to collect answers from multiple people to build an effective autonomous system. We can add Hogwarts terminology to the vocabulary so that the system is better equipped to translate speech to text.
 
+As the game focuses on Harry Potter and the wizarding world, it would be interesting to use more spells and capture hand gestures to also quiz individuals on wand movements. By taking note of pauses, we could also interpret if the user wants support and provide hints accordingly.
