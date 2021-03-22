@@ -8,6 +8,7 @@ import digitalio
 import board
 import adafruit_rgb_display.st7789 as st7789
 import busio
+import subprocess
 import qwiic_twist
 import qwiic_button
 
@@ -19,7 +20,8 @@ import RPi.GPIO as GPIO
 cwd = os.getcwd()
 
 def speak(command):
-    call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
+    subprocess.run(["sh", "GoogleTTS_demo.sh", command])
+    # call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
     time.sleep(0.5)
 
 def display_image(img):
@@ -191,7 +193,6 @@ while True:
 
     if screen == Scene.ARE_YOU_READY:
         speak(f'Are you ready? Say YES or NO. Press the red button to repeat.')
-        # TODO Add red button func
         get_user_input()
         next_screen = Scene.DIAGON_ALLEY
         time.sleep(0.1)
@@ -209,13 +210,6 @@ while True:
         speak(f"Press the green button when you ready to answer. Press red to repeat.")
 
         repeat = blink_both_buttons()
-        # while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
-        #     redButton.LED_on(255); greenButton.LED_on(255)
-        #     time.sleep(0.5)
-        #     redButton.LED_off(); greenButton.LED_off()
-        #     time.sleep(0.5)
-        # repeat = redButton.is_button_pressed()
-        # redButton.LED_off(); greenButton.LED_off()
 
         if not repeat:
             decision = int(input('Enter your choice: '))
@@ -228,14 +222,6 @@ while True:
         else:
             speak(f"Repeating instructions:")
             time.sleep(0.2)
-
-        # if not repeat:
-        #     answer = get_user_input(correct_answer='3,3', should_speak=True, wrong_answer_prompt='Wrong Answer! Think again!')
-        #     speak(f"Correct! Welcome to Diagon Alley.")
-        #     next_screen = Scene.OLLIVANDERS
-        # else:
-        #     speak(f"Repeating instructions:")
-        #     time.sleep(0.2)
 
     if screen == Scene.OLLIVANDERS:
         speak(f'Task Number 2')

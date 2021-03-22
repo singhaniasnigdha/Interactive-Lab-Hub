@@ -59,7 +59,7 @@ There is an included [dspeech](.dspeech) demo that uses [Mozilla DeepSpeech](htt
 
 ## Prep for Part 2
 
-The overarching idea of this project is inspired fromm a Harry Potter-themed Escape Room. The users are expected to complete 5 tasks, which range from logic puzzles to simple Harry Potter trivia. 
+The overarching idea of this game is inspired fromm a Harry Potter-themed Escape Room. The users are expected to complete 5 tasks, which range from logic puzzles to simple Harry Potter trivia. 
 
 The theme of the game is preparing a student to begin lessons at Hogwarts. To do so, they must:
 1. Visit Diagon Alley
@@ -68,7 +68,7 @@ The theme of the game is preparing a student to begin lessons at Hogwarts. To do
 1. Practise their spells
 1. Pick a house
 
-To make audio the predominant mode of communication, the Raspberry Pi will speak with the user, and ask them to reply with their answers. 
+To make audio the predominant mode of communication, the Raspberry Pi will speak with the user and ask questions, to which the user replies. 
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/sketch.png" height="360" /></p>
 
