@@ -76,7 +76,9 @@ Some additional sensors are added to make the device more interactive and fun to
 
 ## Share your idea sketches with Zoom Room mates and get feedback
 
-*what was the feedback? Who did it come from?*
+I walked through my plan with Hortense Gimonet and Anam Tahir during our breakout session. They were quite interested to see what riddles/puzzles will be used.
+
+I introduced the proposal to Shivani Doshi and Ritika Poddar, who thought the theme and story line of incorporating Hogwarts was engaging. They are excited to see the final product. Shivani also suggested that I  use more sensors to make the device interesting.
 
 ## Prototyping the System
 For this demo, we use: 
@@ -102,7 +104,7 @@ In the sixth scene, the user is at The Great Hall, and has to be sorted into the
 
 __The Controller__: A simple user input from the terminal is used to control the flow of the game. This is because the microphone used for this assignment is not powerful enough to perfectly translate what the users are saying. To avoid encounters where 1) the system misunderstands the user 2) the user says something unknown, we keep the system simple and respond in 1 of 2 ways, as specified in the code.
 
-*Include videos or screencaptures of both the system and the controller.*
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616383029/video_to_markdown/images/google-drive--19yOeTlyNIUetqK_j5zS16LM2EOm35oFr-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/19yOeTlyNIUetqK_j5zS16LM2EOm35oFr/view?usp=sharing "")
 
 ## Testing the System
 We had at least two people interact with this system and review the interactions and setup.
