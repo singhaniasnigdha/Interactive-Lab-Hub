@@ -102,9 +102,12 @@ The third scene takes us to Ollivanders, where the user should identify 3 person
 
 In the sixth scene, the user is at The Great Hall, and has to be sorted into their house! But the sorting hat is not safe to use (with the pandemic, and all!). So the user must pick a house of their own choosing, as long as they can identify the colors used to represent it! This brings us to the end of the game, and the seventh scene thanks the user for participating.
 
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616383029/video_to_markdown/images/google-drive--19yOeTlyNIUetqK_j5zS16LM2EOm35oFr-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/19yOeTlyNIUetqK_j5zS16LM2EOm35oFr/view?usp=sharing "")
+
 __The Controller__: A simple user input from the terminal is used to control the flow of the game. This is because the microphone used for this assignment is not powerful enough to perfectly translate what the users are saying. To avoid encounters where 1) the system misunderstands the user 2) the user says something unknown, we keep the system simple and respond in 1 of 2 ways, as specified in the code.
 
-[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616383029/video_to_markdown/images/google-drive--19yOeTlyNIUetqK_j5zS16LM2EOm35oFr-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/19yOeTlyNIUetqK_j5zS16LM2EOm35oFr/view?usp=sharing "")
+### Problems Encountered
+I attempted speech recognition with the microphone, but could not get deepspeech to be very accurate and consistent with the translated text. My accent also seemed to be one of the primary hiccups, as a result of which I had to resort to Wizarding using terminal input. 
 
 ## Testing the System
 We had at least two people interact with this system and review the interactions and setup.
