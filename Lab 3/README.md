@@ -115,6 +115,7 @@ __Rotary Encoder__: As the last task, the user has to pick their house. The symb
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/rotary_encoder.gif" height="360" /></p
 
 __The Controller__: A simple user input from the terminal is used to control the flow of the game. This is because the microphone used for this assignment is not powerful enough to perfectly translate what the users are saying. To avoid encounters where 1) the system misunderstands the user 2) the user says something unknown, we keep the system simple and respond in 1 of 2 ways, as specified in the code.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/controller.gif" height="360" /></p>
 
 
 ### The Game ### 
