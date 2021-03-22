@@ -112,7 +112,7 @@ __Mini PiTFT__: The PiTFT Display is used to display many nostalgic images from 
 __LED Buttons__: The Red and Green LED buttons are used to get user input at some stages. The Red button should be pressed when the user wants the system to repeat the instructions, and Green when they are ready to give out an answer. The button blinks when the user has the option of pressing them, and is otherwise turned off.
 
 __Rotary Encoder__: As the last task, the user has to pick their house. The symbols of the 4 houses - Gryffindor, Hufflepuff, Ravenclaw and Slytherin - appear on the screen, and the user should use the rotary encoder to select which house they want to belong to. Moving the wheel moves between choices, and pressing the wheel confirms the selected choice. The GIF below showcases this interaction.
-<p align="center"><img src="https://drive.google.com/file/d/19kqex7IiDS7G1pevYZu25t7Hr5IqgSrU/view?usp=sharing" height="360" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/rotary_encoder.gif" height="360" /></p
 
 __The Controller__: A simple user input from the terminal is used to control the flow of the game. This is because the microphone used for this assignment is not powerful enough to perfectly translate what the users are saying. To avoid encounters where 1) the system misunderstands the user 2) the user says something unknown, we keep the system simple and respond in 1 of 2 ways, as specified in the code.
 
