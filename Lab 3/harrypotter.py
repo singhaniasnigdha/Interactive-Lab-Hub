@@ -27,9 +27,11 @@ def display_image(img):
     display_img = image_formatting(display_img, width, height)
     disp.image(display_img, rotation)
 
-def get_user_input(correct_answer = 1, wrong_answer_prompt='Press Ctrl-C to exit. Otherwise, try again:'):
+def get_user_input(correct_answer = 1, should_speak=False, wrong_answer_prompt='Press Ctrl-C to exit. Otherwise, try again:'):
     decision = type(correct_answer)(input('Enter your choice: '))
     while decision != correct_answer:
+        if should_speak:
+            speak(wrong_answer_prompt)
         decision = type(correct_answer)(input(wrong_answer_prompt))
     return decision
 
@@ -40,6 +42,16 @@ def blink_button(button):
         button.LED_off()
         time.sleep(0.5)
     button.LED_off()
+
+def blink_both_buttons():
+    while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
+        redButton.LED_on(255); greenButton.LED_on(255)
+        time.sleep(0.5)
+        redButton.LED_off(); greenButton.LED_off()
+        time.sleep(0.5)
+    red_pressed = redButton.is_button_pressed()
+    redButton.LED_off(); greenButton.LED_off()
+    return red_pressed
 
 def signal_handler(sig, frame):
     print('Closing Gracefully')
@@ -196,21 +208,34 @@ while True:
         speak(f"Which brick did you land in?")
         speak(f"Press the green button when you ready to answer. Press red to repeat.")
 
-        while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
-            redButton.LED_on(255); greenButton.LED_on(255)
-            time.sleep(0.5)
-            redButton.LED_off(); greenButton.LED_off()
-            time.sleep(0.5)
-        repeat = redButton.is_button_pressed()
-        redButton.LED_off(); greenButton.LED_off()
+        repeat = blink_both_buttons()
+        # while not (redButton.is_button_pressed() or greenButton.is_button_pressed()):
+        #     redButton.LED_on(255); greenButton.LED_on(255)
+        #     time.sleep(0.5)
+        #     redButton.LED_off(); greenButton.LED_off()
+        #     time.sleep(0.5)
+        # repeat = redButton.is_button_pressed()
+        # redButton.LED_off(); greenButton.LED_off()
 
         if not repeat:
-            answer = get_user_input(correct_answer='3,3', wrong_answer_prompt='Wrong Answer! Think again!')
-            speak(f"Correct! Welcome to Diagon Alley.")
-            next_screen = Scene.OLLIVANDERS
+            decision = int(input('Enter your choice: '))
+            if decision != 1:
+                speak('Wrong Answer! Think again!')
+                speak(f"Repeating instructions:")
+            else:
+                speak(f"Correct! Welcome to Diagon Alley.")
+                next_screen = Scene.OLLIVANDERS
         else:
             speak(f"Repeating instructions:")
             time.sleep(0.2)
+
+        # if not repeat:
+        #     answer = get_user_input(correct_answer='3,3', should_speak=True, wrong_answer_prompt='Wrong Answer! Think again!')
+        #     speak(f"Correct! Welcome to Diagon Alley.")
+        #     next_screen = Scene.OLLIVANDERS
+        # else:
+        #     speak(f"Repeating instructions:")
+        #     time.sleep(0.2)
 
     if screen == Scene.OLLIVANDERS:
         speak(f'Task Number 2')
@@ -251,10 +276,7 @@ while True:
         
     if screen == Scene.BEANS:
         speak(f"Which flavours do you want?")
-        choice = int(input('Enter your choice: '))
-        while choice != 1:
-            speak('Boring Choice! Try something unique')
-            choice = int(input('Try something interesting:'))
+        answer = get_user_input(correct_answer=1, should_speak=True, wrong_answer_prompt='Boring Choice! Try something unique')
         speak(f"Now, that is an interesting choice!")
         next_screen = Scene.SUITCASE
     
@@ -264,10 +286,7 @@ while True:
         speak(f'But you forgot the keys to your suitcase at home.')
         speak(f'Try to remember and use the spell to open the lock!')
         
-        choice = int(input('Enter your choice: '))
-        while choice != 1:
-            speak('Think harder! You can do this.')
-            choice = int(input('Think again:'))
+        answer = get_user_input(correct_answer=1, should_speak=True, wrong_answer_prompt='Think harder! You can do this.')
         next_screen = Scene.USE_SPELL
     
     if screen == Scene.USE_SPELL:
@@ -289,11 +308,7 @@ while True:
             time.sleep(0.2)
         
         speak(f'What are the 2 colors that represent {houses[choice]}?')
-        choice = int(input('Enter your choice: '))
-        while choice != 1:
-            speak('Think harder! You can do this.')
-            choice = int(input('Think again:'))
-        get_user_input(wrong_answer_prompt='Wrong answer try again.')
+        answer = get_user_input(correct_answer=1, should_speak=True, wrong_answer_prompt='Think harder! You can do this.')
         speak(f"That is the correct answer!")
         speak(f'You are now part of {houses[choice]}.')
         next_screen = Scene.THANK_YOU
