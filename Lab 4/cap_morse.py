@@ -45,22 +45,22 @@ def check_word_break(word, code):
     return word, code
 
 while True:
+    word, code = check_letter_break(word, code)
+    word, code = check_word_break(word, code)
+    
     if mpr121[8].value:
-        word, code = check_letter_break(word, code)
-        word, code = check_word_break(word, code)
 
         code = code + '.'
         print(".", end="", file=sys.stderr)
         os.system('mpg123 sounds/dit.mp3 &')
         time1 = time.time()
-        time.sleep(UNIT_TIME)
     
     if mpr121[10].value:
-        word, code = check_letter_break(word, code)
-        word, code = check_word_break(word, code)
-
         code = code + '-'
         print("-", end="", file=sys.stderr)
         os.system('mpg123 sounds/dah.mp3 &')
         time1 = time.time()
-        time.sleep(UNIT_TIME * 3)
+        time.sleep(UNIT_TIME * 2)
+
+    
+    time.sleep(UNIT_TIME)
