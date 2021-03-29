@@ -52,13 +52,13 @@ while True:
 
         code = code + '.'
         print(".", end="", file=sys.stderr)
-        os.system('mpg123 sounds/dit.mp3 &')
+        # os.system('mpg123 sounds/dit.mp3 &')
         time1 = time.time()
     
     if mpr121[10].value:
         code = code + '-'
         print("-", end="", file=sys.stderr)
-        os.system('mpg123 sounds/dah.mp3 &')
+        # os.system('mpg123 sounds/dah.mp3 &')
         time1 = time.time()
         time.sleep(UNIT_TIME * 2)
 
