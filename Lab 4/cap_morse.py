@@ -5,6 +5,9 @@ import board
 import busio
 import adafruit_mpr121
 
+code=""
+word=" "
+
 i2c = busio.I2C(board.SCL, board.SDA)
 
 mpr121 = adafruit_mpr121.MPR121(i2c)
@@ -24,40 +27,41 @@ CODE_TO_LTR = {v: k for k, v in LTR_TO_CODE.items()}
 
 UNIT_TIME = 1
 
-time1 = time.time()
-code, words = '', ''
+time1 = float('inf')
 
-def check_letter_break():
+def check_letter_break(word, code):
     if time.time() - time1 > UNIT_TIME * 3:
-        words = f'{words}{CODE_TO_LTR.get(code, "")}  '
-        print(words)
-        code = ''
-        print(' ', end='')
+        word += CODE_TO_LTR.get(code, "")
+        print(word)
+        code = ""
+        print(" ", end="")
+    return word, code
 
-def check_word_break():
+def check_word_break(word, code):
     if time.time() - time1 > UNIT_TIME * 7:
-        words = f'{words}{CODE_TO_LTR.get(code, "")}  '
-        print(words)
-        code = ''
+        word += CODE_TO_LTR.get(code, "") + " "
+        print(word)
+        code = ""
         print('\t', end='')
+    return word, code
 
 while True:
     if mpr121[8].value:
-        check_letter_break()
-        check_word_break()
+        word, code = check_letter_break(word, code)
+        word, code = check_word_break(word, code)
 
         code = code + '.'
         print(".", end="")
-        os.system('mpg123 dit.mp3 &')
+        os.system('mpg123 sounds/dit.mp3 &')
         time1 = time.time()
         time.sleep(UNIT_TIME)
     
     if mpr121[10].value:
-        check_letter_break()
-        check_word_break()
+        word, code = check_letter_break(word, code)
+        word, code = check_word_break(word, code)
 
         code = code + '-'
         print("-", end="")
-        os.system('mpg123 dah.mp3 &')
+        os.system('mpg123 sounds/dah.mp3 &')
         time1 = time.time()
         time.sleep(UNIT_TIME * 3)
