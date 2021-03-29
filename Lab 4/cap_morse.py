@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 import board
@@ -32,17 +33,15 @@ time1 = float('inf')
 def check_letter_break(word, code):
     if time.time() - time1 > UNIT_TIME * 3:
         word += CODE_TO_LTR.get(code, "")
-        print(word)
+        print(word, file=sys.stderr)
         code = ""
-        print(" ", end="")
     return word, code
 
 def check_word_break(word, code):
     if time.time() - time1 > UNIT_TIME * 7:
         word += CODE_TO_LTR.get(code, "") + " "
-        print(word)
+        print(word, file=sys.stderr)
         code = ""
-        print('\t', end='')
     return word, code
 
 while True:
@@ -51,7 +50,7 @@ while True:
         word, code = check_word_break(word, code)
 
         code = code + '.'
-        print(".", end="")
+        print(".", end="", file=sys.stderr)
         os.system('mpg123 sounds/dit.mp3 &')
         time1 = time.time()
         time.sleep(UNIT_TIME)
@@ -61,7 +60,7 @@ while True:
         word, code = check_word_break(word, code)
 
         code = code + '-'
-        print("-", end="")
+        print("-", end="", file=sys.stderr)
         os.system('mpg123 sounds/dah.mp3 &')
         time1 = time.time()
         time.sleep(UNIT_TIME * 3)
