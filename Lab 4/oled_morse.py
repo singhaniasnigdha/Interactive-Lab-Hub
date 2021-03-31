@@ -44,39 +44,37 @@ oled.show()
 image = Image.new("1", (oled.width, oled.height))
 draw = ImageDraw.Draw(image)
 
-# Draw the text
-draw.text((0, 0), "Hi!", font=font, fill=255)
-draw.text((0, 30), "Hello!", font=font2, fill=255)
-draw.text((34, 46), "HELLO!", font=font2, fill=255)
 
-# Display image
-oled.image(image)
-oled.show()
+time1 = float('inf')
+code, word = "", ""
+end_sent = True
 
-
-# time1 = float('inf')
-# code, word = "", ""
-# end_sent = True
-
-# while True:  
-#     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
-#         word =  ""
-#         end_sent = True
+while True:  
+    if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
+        word =  ""
+        end_sent = True
+        # Blank Screen
+        oled.fill(0)
+        oled.show()
     
-#     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
-#         word += CODE_TO_LTR.get(code, "")
-#         print(f"{code} = {word}", file=sys.stderr)
-#         code = ""
-#         end_sent = False
+    if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
+        # Draw the text
+        draw.text((0, 10), code, font=font2, fill=255)
+        draw.text((30, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
+        # Display image
+        oled.image(image)
+        oled.show()
+        code = ""
+        end_sent = False
     
-#     if mpr121[8].value:
-#         code = code + '.'
-#         # os.system('mpg123 sounds/dit.mp3 &')
-#         time1 = time.time()
+    if mpr121[8].value:
+        code = code + '.'
+        # os.system('mpg123 sounds/dit.mp3 &')
+        time1 = time.time()
     
-#     if mpr121[10].value:
-#         code = code + '-'
-#         # os.system('mpg123 sounds/dah.mp3 &')
-#         time1 = time.time()
+    if mpr121[10].value:
+        code = code + '-'
+        # os.system('mpg123 sounds/dah.mp3 &')
+        time1 = time.time()
 
-#     time.sleep(UNIT_TIME/4)
+    time.sleep(UNIT_TIME/4)
