@@ -1,0 +1,82 @@
+import os
+import sys
+import time
+
+import board
+import busio
+import adafruit_mpr121
+import adafruit_ssd1306
+
+from PIL import Image, ImageDraw, ImageFont
+
+LTR_TO_CODE = { 'A':'.-', 'B':'-...', 'C':'-.-.', 'D':'-..', 'E':'.',
+                    'F':'..-.', 'G':'--.', 'H':'....', 
+                    'I':'..', 'J':'.---', 'K':'-.-',
+                    'L':'.-..', 'M':'--', 'N':'-.',
+                    'O':'---', 'P':'.--.', 'Q':'--.-',
+                    'R':'.-.', 'S':'...', 'T':'-',
+                    'U':'..-', 'V':'...-', 'W':'.--',
+                    'X':'-..-', 'Y':'-.--', 'Z':'--..',
+                    '1':'.----', '2':'..---', '3':'...--', '4':'....-', '5':'.....', 
+                    '6':'-....', '7':'--...', '8':'---..', '9':'----.', '0':'-----'}
+
+CODE_TO_LTR = {v: k for k, v in LTR_TO_CODE.items()}
+
+UNIT_TIME = 1
+
+# Load a font in 2 different sizes.
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
+
+i2c = busio.I2C(board.SCL, board.SDA)
+
+mpr121 = adafruit_mpr121.MPR121(i2c)
+
+# Create the SSD1306 OLED class.
+# The first two parameters are the pixel width and pixel height.
+oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+
+# start with a blank screen
+oled.fill(0)
+oled.show()
+
+# Create blank image for drawing.
+image = Image.new("1", (oled.width, oled.height))
+draw = ImageDraw.Draw(image)
+
+# Draw the text
+draw.text((0, 0), "Hi!", font=font, fill=255)
+draw.text((0, 30), "Hello!", font=font2, fill=255)
+draw.text((34, 46), "HELLO!", font=font2, fill=255)
+
+# Display image
+oled.image(image)
+oled.show()
+
+
+# time1 = float('inf')
+# code, word = "", ""
+# end_sent = True
+
+# while True:  
+#     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
+#         word =  ""
+#         end_sent = True
+    
+#     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
+#         word += CODE_TO_LTR.get(code, "")
+#         print(f"{code} = {word}", file=sys.stderr)
+#         code = ""
+#         end_sent = False
+    
+#     if mpr121[8].value:
+#         code = code + '.'
+#         # os.system('mpg123 sounds/dit.mp3 &')
+#         time1 = time.time()
+    
+#     if mpr121[10].value:
+#         code = code + '-'
+#         # os.system('mpg123 sounds/dah.mp3 &')
+#         time1 = time.time()
+
+#     time.sleep(UNIT_TIME/4)
