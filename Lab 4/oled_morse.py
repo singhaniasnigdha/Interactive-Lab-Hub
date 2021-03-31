@@ -47,29 +47,30 @@ draw = ImageDraw.Draw(image)
 def clear_screen(oled):
     oled.fill(0)
     oled.show()
-    image = Image.new("1", (oled.width, oled.height))
     return ImageDraw.Draw(image)
 
 
 time1 = float('inf')
-code, word = "", ""
+prev_code, code = "", ""
 end_sent = True
 
 while True:  
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
-        word =  ""
         end_sent = True
-        draw = clear_screen(oled)
+        clear_screen(oled)
     
     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
-        draw = clear_screen(oled)
-        # Draw the text
+        # undraw the previous code
+        draw.text((0, 10), prev_code, font=font2, fill=0)
+        draw.text((40, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
+        # Draw the current code
         draw.text((0, 10), code, font=font2, fill=255)
-        draw.text((30, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
+        draw.text((40, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
         # Display image
         oled.image(image)
         oled.show()
-        code = ""
+
+        prev_code, code = code, ""
         end_sent = False
     
     if mpr121[8].value:
