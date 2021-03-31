@@ -47,6 +47,8 @@ draw = ImageDraw.Draw(image)
 def clear_screen(oled):
     oled.fill(0)
     oled.show()
+    image = Image.new("1", (oled.width, oled.height))
+    return ImageDraw.Draw(image)
 
 
 time1 = float('inf')
@@ -57,10 +59,10 @@ while True:
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
         word =  ""
         end_sent = True
-        clear_screen(oled)
+        draw = clear_screen(oled)
     
     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
-        clear_screen(oled)
+        draw = clear_screen(oled)
         # Draw the text
         draw.text((0, 10), code, font=font2, fill=255)
         draw.text((30, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
