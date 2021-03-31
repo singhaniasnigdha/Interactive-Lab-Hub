@@ -65,7 +65,7 @@ The capacitive sensor board is connected to the raspberry pi using the qwiic con
 ### Part B
 ### OLED screen
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/oled.png" height="360" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/oled.png" height="240" /></p>
 
 We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples) to display the decoded alphabets/numbers received from the capacitive sensor-based Morse Generator. The code for the same can be found at `oled_morse.py`.
 
@@ -73,14 +73,6 @@ We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_Cir
 
 ### Part C
 ### Paper Display
-
-Here is an Arduino breadboard with a paper faceplate on it to turn it into a display:
-
-<img src="https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2020Fall/images/paper_if.png?raw=true"  width="250"/>
-
-
-
-This is fine, but it can be a bit difficult to lay out a great and user friendly display within the constraints of the breadboard. Also, it really only works for applications where people can come and stand over the breadboard, or where you can mount the board to the wall.
 
 Here is another prototype for a paper display:
 
