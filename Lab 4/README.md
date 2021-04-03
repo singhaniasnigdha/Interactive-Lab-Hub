@@ -26,7 +26,6 @@ For lab this week, we focus on the prototyping the physical look and feel of the
 1. Cutting board
 1. Cutting tools
 1. Markers
-1. Found objects and materials--like bananas--we're not saying that to be funny.
 
 
 ### Deliverables for this lab are: 
@@ -43,16 +42,23 @@ B) [OLED screen](#part-b)
 
 C) [Paper Display](#part-c)
 
-D) [Wizard the device](#part-d-wizard-the-device) 
+D) [Materiality](#part-d-materiality) 
 
-E) [Costume the device](#part-e-costume-the-device)
+E) [Record the interaction](#part-e-record-the-interactions)
 
-F) [Record the interaction](#part-f-record)
+F) ['Looks-Like' Prototype](#part-f-looks-like-prototype)
+
+G) ['Works-Like' Prototype](#part-g-looks-like-prototype)
+
+H) ['Acts-Like' Prototype](#part-h-looks-like-prototype)
+
+I) [Reflections](#part-i-reflections)
+
+
 
 ## The Report
 
-### Part A
-### Capacitive Sensing
+### Part A Capacitive Sensing
 
 We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in this experiment. At boot it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to build our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter.
 
@@ -62,8 +68,7 @@ The capacitive sensor board is connected to the raspberry pi using the qwiic con
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_morse.gif" height="420" /></p>
 
-### Part B
-### OLED screen
+### Part B OLED screen
 
 We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples) to display the decoded alphabets/numbers received from the capacitive sensor-based Morse Generator. The code for the same can be found at `oled_morse.py`.
 
@@ -71,8 +76,7 @@ We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_Cir
 
 I use a spoon to touch the conductive sheet, as I realise that the system is more robust when the touch occurs using the spoon than my finger.
 
-### Part C
-### Paper Display
+### Part C Paper Display
 
 Here is another prototype for a paper display:
 
@@ -100,8 +104,7 @@ Make a paper display for your project that communicates the state of the Pi and 
 
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
-### Part D
-### Materiality
+### Part D Materiality
 
 **Open Ended**: We are putting very few constraints on this part but we want you to get creative.
 
@@ -111,7 +114,15 @@ Design a system with the Pi and anything from your kit with a focus on form, and
 
 **b. explain the selection.**
 
+### Part E Record Interactions
+
 ### Part 2.
+
+### Part F 'Looks-Like' Prototype
+
+### Part G 'Works-Like' Prototype
+
+### Part H 'Acts-Like' Prototype
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
 
@@ -121,6 +132,7 @@ Reiterating:
 1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
 3. "Works like" prototypes: show us what the device can do
 4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
-5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
 
 
+
+### Part I Reflections
