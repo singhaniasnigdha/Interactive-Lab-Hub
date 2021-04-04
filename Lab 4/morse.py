@@ -85,13 +85,13 @@ def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
         end_sent = True
         # undraw the previous code
         draw.text((0, 10), word, font=font2, fill=0)
-        draw.text((40, 10), code, font=font2, fill=0)
+        draw.text((50, 10), code, font=font2, fill=0)
         word, code = "", ""
     
     if time.time() - time1 > UNIT_TIME and len(num_code) > 0:
         # undraw the previous code
         draw.text((0, 10), word, font=font2, fill=0)
-        draw.text((40, 10), code, font=font2, fill=0)
+        draw.text((50, 10), code, font=font2, fill=0)
         
         # Draw the current code
         word += T9_INPUT[int(num_code)]
@@ -120,10 +120,10 @@ def morse_to_alpha(code, prev_code, time1, end_sent, oled):
     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
         # undraw the previous code
         draw.text((0, 10), prev_code, font=font2, fill=0)
-        draw.text((40, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
+        draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
         # Draw the current code
         draw.text((0, 10), code, font=font2, fill=255)
-        draw.text((40, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
+        draw.text((50, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
         # Display image
         oled.image(image)
         oled.show()

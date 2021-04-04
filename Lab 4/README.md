@@ -106,7 +106,7 @@ The sheet holding the sensors is taped onto one of the side of the cardboard, su
 ### Part E. 'Looks-Like' Prototype 
 Different angles of the final physical prototype is shown in the image below. 
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/looks-like.png" height="240" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/looks-like.png" height="280" /></p>
 
 The top-view show the final appearance of the Morse Decoder, after which we see how the box contains the Raspberry Pi. This makes it easy to open the circuit work on the Pi and easily put it back in the box. As mentioned before, the box is made as small as possible to make the device easy to carry around. The third image indicates how easy it is to connect a power supply to the device. (Ofcourse, we would like the actual device to be wireless!!) The last image shows the device operational.
 
