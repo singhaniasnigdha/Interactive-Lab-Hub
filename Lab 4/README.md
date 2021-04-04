@@ -41,7 +41,7 @@ H) [Reflections](#part-h-reflections)
 
 ## The Report
 
-We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator), [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples), red LED buttons, and the Raspberry Pi in this experiment. We prototype a mini version of our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter.
+We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator), [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples), red LED buttons, and the Raspberry Pi in this experiment. We prototype a mini version of our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter, for those who seek to learn about this secretive language.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/morse.png" height="280" /></p>
 
@@ -65,6 +65,10 @@ We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_Cir
 I use a spoon to touch the conductive sheet, as I realise that the system is more robust when the touch occurs using the spoon than my finger.
 
 ### Part C. Paper Display
+
+The device idea was first prototyped on paper to get an understanding of the components and structure required.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-proto.png" height="180" /></p>
+
 
 Things needed to build the paper prototype:
 * Cardboard
@@ -132,3 +136,6 @@ Some things that could have better are:
 * **Neater design** - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
 * **Capacitive Touch Sensor** - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
 * **Bigger Screen** - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
+
+Some things I wanted to add:
+* Light and Sound to convey the Morse Code, instead of characters. However, this device is presented as a starter to those who wish to learn to read and deciper Morse Code.
