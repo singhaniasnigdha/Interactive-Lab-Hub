@@ -45,6 +45,7 @@ We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator)
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/morse.png" height="280" /></p>
 
+The device can translate Morse characters (composed of `.` and `-`) to english alphabet and arabic numerals, and vice versa. A button is used to denote the direction of translation. The following sections cover the deliverables for this lab, and the incremental development of the device.
 ### Part A. Capacitive Sensing
 
 At boot it measures the capacitance on each of the 12 contacts of the capacitive sensor. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to 2 nodes of the capacitive touch to translate morse characters to english alphabet and arabic numerals.
@@ -80,8 +81,7 @@ To build the numpad, 10 1cm-edge squares are cut to provide a raised platform to
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/numbers.png" height="240" /></p>
 
-**Interacting with the Paper Display.**
-A prototype of the prototype is created, which does not have any functionality yet. Following are 2 interactions with this prototype: 1) when the led off, the device converts English text to Morse Code 2) when the red led is on, Morse Code is converted to English. 
+**Interacting with the Paper Display.** A prototype of the prototype is created, which does not have any functionality yet. Following are 2 interactions with this prototype: 1) when the led off, the device converts English text to Morse Code 2) when the red led is on, Morse Code is converted to English. 
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-display.gif" height="480" /></p>
 
