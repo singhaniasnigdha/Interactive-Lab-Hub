@@ -85,7 +85,7 @@ To build the numpad, 10 1cm-edge squares are cut to provide a raised platform to
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/numbers.png" height="240" /></p>
 
-**Rationale for the Design.** A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive.
+**Rationale for the Design.** A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive. The objective of this device is to teach a person how to use and understand Morse Code which in itself is challenging. Hence, the device is built in a way that every user feels a sense of familiarity associated with it.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/design.png" height="240" /></p>
 
@@ -124,6 +124,8 @@ Sensors/Devices used for making this prototype include:
 * Capacitive Touch Sensor
 * Conductive Tape
 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/schematic.png" height="240" /></p>
+
 The code for this experiment can be found at `morse.py`.
 
 ### Part G. 'Acts-Like' Prototype
@@ -132,7 +134,7 @@ The code for this experiment can be found at `morse.py`.
 ### Part H. Reflections
 This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
 
-Some things that could have better are:
+Some things that could have been better are:
 * **Neater design** - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
 * **Capacitive Touch Sensor** - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
 * **Bigger Screen** - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
