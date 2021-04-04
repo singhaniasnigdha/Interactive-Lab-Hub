@@ -124,11 +124,16 @@ Sensors/Devices used for making this prototype include:
 * Capacitive Touch Sensor
 * Conductive Tape
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/schematic.png" height="240" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/schematic.png" height="280" /></p>
 
-The code for this experiment can be found at `morse.py`.
+This device has 2 modes:
+1. Translating English Letters to Morse Symbols: When the red LED is off, the user is in this mode. This is the first stage of learning, where the user inputs letter using the T9-keypad and their corresponding Morse Code appear on the screen.
+1. Translating Morse Characters to Alphabets/Arabic Numbers: This mode is in play when the red LED is on. Once the user is more familiar with the Morse Code, they can use the buttons below the OLED display, i.e., the dot and dash to input a code in Morse language. The device will then translate their code to English letters.
+
+The user can toggle between modes by pressing the red LED button. The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen in the next section.
 
 ### Part G. 'Acts-Like' Prototype
+This device is catered to users who want to learn Morse Code. This can be depicted using the storyboard below:
 (videos/storyboards/other means of showing how a person would interact with the device)
 
 ### Part H. Reflections
