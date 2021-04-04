@@ -22,19 +22,19 @@ For lab this week, we focus on the prototyping the physical look and feel of the
 
 ## Overview
 
-A) [Capacitive Sensing](#part-a)
+A) ['Acts-Like' Prototype](#part-a-acts-like-prototype)
 
-B) [OLED screen](#part-b) 
+B) [Paper Display](#part-b-paper-display)
 
-C) [Paper Display](#part-c)
+C) [Capacitive Sensing](#part-c-capacitive-sensing)
 
-D) [Materiality](#part-d-materiality) 
+D) [OLED screen](#part-d-oled-screen) 
 
-E) ['Looks-Like' Prototype](#part-e-looks-like-prototype)
+E) [Materiality](#part-e-materiality) 
 
-F) ['Works-Like' Prototype](#part-f-works-like-prototype)
+F) ['Looks-Like' Prototype](#part-f-looks-like-prototype)
 
-G) ['Acts-Like' Prototype](#part-g-acts-like-prototype)
+G) ['Works-Like' Prototype](#part-g-works-like-prototype)
 
 H) [Reflections](#part-h-reflections)
 
@@ -46,25 +46,13 @@ We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator)
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/morse.png" height="280" /></p>
 
 The device can translate Morse characters (composed of `.` and `-`) to english alphabet and arabic numerals, and vice versa. A button is used to denote the direction of translation. The following sections cover the deliverables for this lab, and the incremental development of the device.
-### Part A. Capacitive Sensing
 
-At boot it measures the capacitance on each of the 12 contacts of the capacitive sensor. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to 2 nodes of the capacitive touch to translate morse characters to english alphabet and arabic numerals.
+### Part A. 'Acts-Like' Prototype
+This device is catered to users who want to learn Morse Code. This can be depicted using the storyboard below:
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_sensor.png" height="240" /></p>
+__TODO: Add storyboard__
 
-The capacitive sensor board is connected to the raspberry pi using the qwiic connectors. Then alligator clips are used to attach small strips of conductive sheet to 2 nodes (in our case 8 and 10.) In the image above, the yellow clip represents the `dit` (morse sound for dot) and the black clip is the `dah` (morse for dash). The code is available at `cap_morse.py`.
-
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_morse.gif" height="420" /></p>
-
-### Part B. OLED screen
-
-We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples) to display the decoded alphabets/numbers received from the capacitive sensor-based Morse Generator. The code for the same can be found at `oled_morse.py`.
-
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/oled_morse.gif" height="420" /></p>
-
-I use a spoon to touch the conductive sheet, as I realise that the system is more robust when the touch occurs using the spoon than my finger.
-
-### Part C. Paper Display
+### Part B. Paper Display
 
 The device idea was first prototyped on paper to get an understanding of the components and structure required.
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-proto.png" height="180" /></p>
@@ -95,7 +83,25 @@ It should be small and handy. The dimensions of the device are kept to a minimum
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-display.gif" height="480" /></p>
 
-### Part D. Materiality
+### Part C. Capacitive Sensing
+
+At boot it measures the capacitance on each of the 12 contacts of the capacitive sensor. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to 2 nodes of the capacitive touch to translate morse characters to english alphabet and arabic numerals.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_sensor.png" height="240" /></p>
+
+The capacitive sensor board is connected to the raspberry pi using the qwiic connectors. Then alligator clips are used to attach small strips of conductive sheet to 2 nodes (in our case 8 and 10.) In the image above, the yellow clip represents the `dit` (morse sound for dot) and the black clip is the `dah` (morse for dash). The code is available at `cap_morse.py`.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_morse.gif" height="420" /></p>
+
+### Part D. OLED screen
+
+We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples) to display the decoded alphabets/numbers received from the capacitive sensor-based Morse Generator. The code for the same can be found at `oled_morse.py`.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/oled_morse.gif" height="420" /></p>
+
+I use a spoon to touch the conductive sheet, as I realise that the system is more robust when the touch occurs using the spoon than my finger.
+
+### Part E. Materiality
 
 **Choice of Material**:  Cardboard was used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the T9-keypad (used to input the message), and additional sensors.
 
@@ -107,15 +113,14 @@ The sheet holding the sensors is taped onto one of the side of the cardboard, su
 
 **Other Alternatives**:  As devices of this kind are usually made of metal or plaastic, they were considered to build the prototype. Plastic Sheets were discarded because they are not environment friendly, while cardboard is bio-degradable and easily available at everyone's houses. Metal sheets are also not particularly friendly to the environment, but they are extremely complicated to cut, mold and shape.
 
-### Part E. 'Looks-Like' Prototype 
+### Part F. 'Looks-Like' Prototype 
 Different angles of the final physical prototype is shown in the image below. 
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/looks-like.png" height="280" /></p>
 
 The top-view show the final appearance of the Morse Decoder, after which we see how the box contains the Raspberry Pi. This makes it easy to open the circuit work on the Pi and easily put it back in the box. As mentioned before, the box is made as small as possible to make the device easy to carry around. The third image indicates how easy it is to connect a power supply to the device. (Ofcourse, we would like the actual device to be wireless!!) The last image shows the device operational.
 
-### Part F. 'Works-Like' Prototype
-(show us what the device can do)
+### Part G. 'Works-Like' Prototype
 
 Sensors/Devices used for making this prototype include: 
 * Raspberry Pi, 
@@ -132,9 +137,7 @@ This device has 2 modes:
 
 The user can toggle between modes by pressing the red LED button. The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen in the next section.
 
-### Part G. 'Acts-Like' Prototype
-This device is catered to users who want to learn Morse Code. This can be depicted using the storyboard below:
-(videos/storyboards/other means of showing how a person would interact with the device)
+__TODO: Add interaction video__
 
 ### Part H. Reflections
 This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
