@@ -81,16 +81,15 @@ To build the numpad, 10 1cm-edge squares are cut to provide a raised platform to
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/numbers.png" height="240" /></p>
 
-**Interacting with the Paper Display.** A prototype of the prototype is created, which does not have any functionality yet. Following are 2 interactions with this prototype: 1) when the led off, the device converts English text to Morse Code 2) when the red led is on, Morse Code is converted to English. 
-
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-display.gif" height="480" /></p>
-
 **Rationale for the Design.** A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/design.png" height="240" /></p>
 
 It should be small and handy. The dimensions of the device are kept to a minimum to only hold the keypad, screen and the Raspberry Pi. It would have been ideal to have a slimmer device, but the thickness of the Raspberry Pi was a constraint in this regard.
 
+**Interacting with the Paper Display.** A prototype of the prototype is created, which does not have any functionality yet. Following are 2 interactions with this prototype: 1) when the led off, the device converts English text to Morse Code 2) when the red led is on, Morse Code is converted to English. 
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-display.gif" height="480" /></p>
 
 ### Part D. Materiality
 
@@ -104,9 +103,15 @@ The sheet holding the sensors is taped onto one of the side of the cardboard, su
 
 **Other Alternatives**:  As devices of this kind are usually made of metal or plaastic, they were considered to build the prototype. Plastic Sheets were discarded because they are not environment friendly, while cardboard is bio-degradable and easily available at everyone's houses. Metal sheets are also not particularly friendly to the environment, but they are extremely complicated to cut, mold and shape.
 
-### Part E. 'Looks-Like' Prototype
+### Part E. 'Looks-Like' Prototype 
+Different angles of the final physical prototype is shown in the image below. 
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/looks-like.png" height="240" /></p>
+
+The top-view show the final appearance of the Morse Decoder, after which we see how the box contains the Raspberry Pi. This makes it easy to open the circuit work on the Pi and easily put it back in the box. As mentioned before, the box is made as small as possible to make the device easy to carry around. The third image indicates how easy it is to connect a power supply to the device. (Ofcourse, we would like the actual device to be wireless!!) The last image shows the device operational.
 
 ### Part F. 'Works-Like' Prototype
+(show us what the device can do)
 
 Sensors/Devices used for making this prototype include: 
 * Raspberry Pi, 
@@ -118,7 +123,7 @@ Sensors/Devices used for making this prototype include:
 The code for this experiment can be found at `morse.py`.
 
 ### Part G. 'Acts-Like' Prototype
-
+(videos/storyboards/other means of showing how a person would interact with the device)
 
 ### Part H. Reflections
 This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
@@ -127,9 +132,3 @@ Some things that could have better are:
 * **Neater design** - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
 * **Capacitive Touch Sensor** - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
 * **Bigger Screen** - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
-
-### Deliverables for this lab are: 
-1. Sketches/photos of device designs
-1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
-3. "Works like" prototypes: show us what the device can do
-4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
