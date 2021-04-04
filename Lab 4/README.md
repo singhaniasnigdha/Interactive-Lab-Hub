@@ -71,12 +71,6 @@ I use a spoon to touch the conductive sheet, as I realise that the system is mor
 
 ### Part C Paper Display
 
-Here is another prototype for a paper display:
-
-<img src="https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2020Fall/images/b_box.png?raw=true"  width="250"/>
-
-It holds a pi and usb power supply, and provides a front stage on which to put writing, graphics, LEDs, buttons or displays.
-
 This design can be made by scoring a long strip of corrugated cardboard of width X, with the following measurements:
 
 | Y height of box <br> <sub><sup>- thickness of cardboard</sup></sub> | Z  depth of box <br><sub><sup>- thickness of cardboard</sup></sub> | Y height of box  | Z  depth of box | H height of faceplate <br><sub><sup>* * * * * (don't make this too short) * * * * *</sup></sub>|
@@ -95,17 +89,19 @@ Make a paper display for your project that communicates the state of the Pi and 
 
 **b. Make a video of your paper display in action.**
 
-**c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+**c. Rationale for the Design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 ### Part D Materiality
 
-**Open Ended**: We are putting very few constraints on this part but we want you to get creative.
+**Choice of Material** -- Cardboard was used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the T9-keypad (used to input the message), and additional sensors.
 
-Design a system with the Pi and anything from your kit with a focus on form, and materiality. The "stuff" that enclose the system should be informed by the desired interaction. What would a computer made of rocks be like? How would an ipod made of grass behave? Would a roomba made of gold clean your floor any differently?
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/material.png" height="240" /></p>
 
-**a. document the material prototype.** Include candidates that were considered even if they were set aside later.
+The capacitive touch sensor, OLED screen and red button are placed on a small sheet of cardboard. Next, a small rectangular box is built to store the Raspberry Pi. Small cutouts are made on the side of this box to allow for a power cord and a 3.5mm audio jack. 
 
-**b. explain the selection.**
+The sheet holding the sensors is taped onto one of the side of the cardboard, such that it is easy to slide the Pi in and out of the device, and/or connect it with other sensors. 
+
+**Other Alternatives** -- As devices of this kind are usually made of metal or plaastic, they were considered to build the prototype. Plastic Sheets were discarded because they are not environment friendly, while cardboard is bio-degradable and easily available at everyone's houses. Metal sheets are also not particularly friendly to the environment, but they are extremely complicated to cut, mold and shape.
 
 ### Part E Record Interactions
 
@@ -119,7 +115,6 @@ Design a system with the Pi and anything from your kit with a focus on form, and
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
 
-Reiterating:
 ### Deliverables for this lab are: 
 1. Sketches/photos of device designs
 1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
