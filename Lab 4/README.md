@@ -27,13 +27,6 @@ For lab this week, we focus on the prototyping the physical look and feel of the
 1. Cutting tools
 1. Markers
 
-
-### Deliverables for this lab are: 
-1. Sketches/photos of device designs
-1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
-3. "Works like" prototypes: show us what the device can do
-4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
-
 ## Overview
 
 A) [Capacitive Sensing](#part-a)
@@ -48,9 +41,9 @@ E) [Record the interaction](#part-e-record-the-interactions)
 
 F) ['Looks-Like' Prototype](#part-f-looks-like-prototype)
 
-G) ['Works-Like' Prototype](#part-g-looks-like-prototype)
+G) ['Works-Like' Prototype](#part-g-works-like-prototype)
 
-H) ['Acts-Like' Prototype](#part-h-looks-like-prototype)
+H) ['Acts-Like' Prototype](#part-h-acts-like-prototype)
 
 I) [Reflections](#part-i-reflections)
 
