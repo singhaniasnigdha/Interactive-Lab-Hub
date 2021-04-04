@@ -20,13 +20,6 @@ For lab this week, we focus on the prototyping the physical look and feel of the
 </p>
 <p align="center">Dyson Vacuum Cardboard Prototypes</p>
 
-### For lab, we need:
-
-1. Cardboard (start collecting those shipping boxes!)
-1. Cutting board
-1. Cutting tools
-1. Markers
-
 ## Overview
 
 A) [Capacitive Sensing](#part-a)
@@ -68,14 +61,20 @@ I use a spoon to touch the conductive sheet, as I realise that the system is mor
 
 ### Part C. Paper Display
 
-Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
+Things needed to build the paper prototype:
+* Cardboard
+* Olfa Knife and Cutting Board
+* Glue
+* Ruler and Markers
+* Tape
  
-**a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). 
+A sheet of cardboard is marked with the following dimensions to create the box which holds the Raspberry Pi. The edges are then glued together to create an open box.
 
-| X length of box | Y width of box | Z  depth of box |
-| --- | --- | --- | 
-| 13cm | 7cm | 3cm | 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/box.png" height="240" /></p>
 
+To build the numpad, 10 1cm-edge squares are cut to provide a raised platform to simulate the feel of a button. A printout of the T9-keypad is used as stickers on these buttons to guide the user about which letters are associated with which number. Finally, two button in the shape of a circle and rectangle are cut out, to denote the Morse symbols.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/numbers.png" height="240" /></p>
 
 **b. Make a video of your paper display in action.**
 
@@ -105,10 +104,11 @@ The sheet holding the sensors is taped onto one of the side of the cardboard, su
 Sensors/Devices used for making this prototype include: 
 * Raspberry Pi, 
 * OLED Display
-* a speaker/aux cable 
 * Red LED Button
 * Capacitive Touch Sensor
 * Conductive Tape
+
+The code for this experiment can be found at `morse.py`.
 
 ### Part G. 'Acts-Like' Prototype
 
@@ -117,9 +117,9 @@ Sensors/Devices used for making this prototype include:
 This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
 
 Some things that could have better are:
-* Neater design - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
-* Capacitive Touch Sensor - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
-* Bigger Screen - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
+* **Neater design** - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
+* **Capacitive Touch Sensor** - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
+* **Bigger Screen** - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
 
 ### Deliverables for this lab are: 
 1. Sketches/photos of device designs
