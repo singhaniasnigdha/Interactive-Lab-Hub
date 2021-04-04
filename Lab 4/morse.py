@@ -55,6 +55,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 # Set up button
 redButton = qwiic_button.QwiicButton()
 redButton.begin()
+redButton.LED_on(255)
 
 # start with a blank screen
 oled.fill(0)
@@ -71,7 +72,7 @@ end_sent = True
 
 convert_to_alpha = True
 
-def check_button(redButton):
+def check_button(redButton, convert_to_alpha):
     should_terminate = False
     while not should_terminate:
         if redButton.is_button_pressed():
@@ -144,7 +145,7 @@ def morse_to_alpha(code, prev_code, time1, end_sent, oled):
     return code, prev_code, time1, end_sent, oled
 
 while True:
-    check_button(redButton)
+    check_button(redButton, convert_to_alpha)
     
     if convert_to_alpha:
         code, prev_code, time1, end_sent, oled = morse_to_alpha(code, prev_code, time1, end_sent, oled)  
