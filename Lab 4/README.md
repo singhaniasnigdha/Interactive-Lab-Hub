@@ -41,9 +41,13 @@ H) [Reflections](#part-h-reflections)
 
 ## The Report
 
+We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator), [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples), red LED buttons, and the Raspberry Pi in this experiment. We prototype a mini version of our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/morse.png" height="280" /></p>
+
 ### Part A. Capacitive Sensing
 
-We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in this experiment. At boot it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to build our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter.
+At boot it measures the capacitance on each of the 12 contacts of the capacitive sensor. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to 2 nodes of the capacitive touch to translate morse characters to english alphabet and arabic numerals.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_sensor.png" height="240" /></p>
 
@@ -70,15 +74,18 @@ Things needed to build the paper prototype:
  
 A sheet of cardboard is marked with the following dimensions to create the box which holds the Raspberry Pi. The edges are then glued together to create an open box.
 
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/box.png" height="240" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/box.png" height="180" /></p>
 
 To build the numpad, 10 1cm-edge squares are cut to provide a raised platform to simulate the feel of a button. A printout of the T9-keypad is used as stickers on these buttons to guide the user about which letters are associated with which number. Finally, two button in the shape of a circle and rectangle are cut out, to denote the Morse symbols.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/numbers.png" height="240" /></p>
 
-**b. Make a video of your paper display in action.**
+**Interacting with the Paper Display.**
+A prototype of the prototype is created, which does not have any functionality yet. Following are 2 interactions with this prototype: 1) when the led off, the device converts English text to Morse Code 2) when the red led is on, Morse Code is converted to English. 
 
-**Rationale for the Design**: A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/paper-display.gif" height="480" /></p>
+
+**Rationale for the Design.** A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/design.png" height="240" /></p>
 
