@@ -54,7 +54,7 @@ We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator)
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_sensor.png" height="240" /></p>
 
-The capacitive sensor board is connected to the raspberry pi using the qwiic connectors. Then alligator clips are used to attach small strips of conductive sheet to 2 nodes (in our case 8 and 10.) In the image above, the yellow clip represents the 'dit' (morse sound for dot) and the black clip is the 'dah' (morse for dash). The code is available at `cap_morse.py`.
+The capacitive sensor board is connected to the raspberry pi using the qwiic connectors. Then alligator clips are used to attach small strips of conductive sheet to 2 nodes (in our case 8 and 10.) In the image above, the yellow clip represents the `dit` (morse sound for dot) and the black clip is the `dah` (morse for dash). The code is available at `cap_morse.py`.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_morse.gif" height="420" /></p>
 
@@ -68,25 +68,23 @@ I use a spoon to touch the conductive sheet, as I realise that the system is mor
 
 ### Part C. Paper Display
 
-This design can be made by scoring a long strip of corrugated cardboard of width X, with the following measurements:
-
-| Y height of box <br> <sub><sup>- thickness of cardboard</sup></sub> | Z  depth of box <br><sub><sup>- thickness of cardboard</sup></sub> | Y height of box  | Z  depth of box | H height of faceplate <br><sub><sup>* * * * * (don't make this too short) * * * * *</sup></sub>|
-| --- | --- | --- | --- | --- | 
-
-Fold the first flap of the strip so that it sits flush against the back of the face plate, and tape, velcro or hot glue it in place. This will make a H x X interface, with a box of Z x X footprint (which you can adapt to the things you want to put in the box) and a height Y in the back. 
-
-Here is an example:
-
-<img src="https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2020Fall/images/horoscope.png?raw=true"  width="250"/>
-
-
-Make a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
+Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
  
-**a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
+**a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). 
+
+| X length of box | Y width of box | Z  depth of box |
+| --- | --- | --- | 
+| 13cm | 7cm | 3cm | 
+
 
 **b. Make a video of your paper display in action.**
 
-**c. Rationale for the Design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+**Rationale for the Design**: A design similar to older mobile phones with a T9 keypad is used as inspiration for this device. Familiarity with using these mobile phones for typing text messages will make it easy for the user to adapt to it. In addition to the T9 keypad, a button in the shape of a circle (representing the Morse `dit`) and another button in the shape of a rectangle (for `dah`) are used to make it intuitive.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/design.png" height="240" /></p>
+
+It should be small and handy. The dimensions of the device are kept to a minimum to only hold the keypad, screen and the Raspberry Pi. It would have been ideal to have a slimmer device, but the thickness of the Raspberry Pi was a constraint in this regard.
+
 
 ### Part D. Materiality
 
@@ -104,14 +102,24 @@ The sheet holding the sensors is taped onto one of the side of the cardboard, su
 
 ### Part F. 'Works-Like' Prototype
 
+Sensors/Devices used for making this prototype include: 
+* Raspberry Pi, 
+* OLED Display
+* a speaker/aux cable 
+* Red LED Button
+* Capacitive Touch Sensor
+* Conductive Tape
+
 ### Part G. 'Acts-Like' Prototype
 
 
 ### Part H. Reflections
+This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
 
-
-
-Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
+Some things that could have better are:
+* Neater design - First experience with cardboard prototyping, hence the edges are not as clean as they could have been. The conductive tape is visible, which is not pleasant to the eye.
+* Capacitive Touch Sensor - The sensor used for prototyping this experiment is not very robust. It misses several touches and also counts them multiple times on some occassions. The device would work more effectively if the sensors could detect every capacitive change more accurately.
+* Bigger Screen - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
 
 ### Deliverables for this lab are: 
 1. Sketches/photos of device designs
