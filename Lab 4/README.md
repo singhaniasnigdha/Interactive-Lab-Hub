@@ -1,6 +1,6 @@
 # Ph-UI!!!
 
-For lab this week, we focus on the prototyping the physical look and feel of the device.
+For lab this week, we focus on the prototyping the physical look and feel of the device. The parts across Lab 1 and Lab 2 have been merged to make the reading more coherent.
 
 
 ## Readings
@@ -37,21 +37,18 @@ C) [Paper Display](#part-c)
 
 D) [Materiality](#part-d-materiality) 
 
-E) [Record the interaction](#part-e-record-the-interactions)
+E) ['Looks-Like' Prototype](#part-e-looks-like-prototype)
 
-F) ['Looks-Like' Prototype](#part-f-looks-like-prototype)
+F) ['Works-Like' Prototype](#part-f-works-like-prototype)
 
-G) ['Works-Like' Prototype](#part-g-works-like-prototype)
+G) ['Acts-Like' Prototype](#part-g-acts-like-prototype)
 
-H) ['Acts-Like' Prototype](#part-h-acts-like-prototype)
-
-I) [Reflections](#part-i-reflections)
-
+H) [Reflections](#part-h-reflections)
 
 
 ## The Report
 
-### Part A Capacitive Sensing
+### Part A. Capacitive Sensing
 
 We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in this experiment. At boot it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes it considers it a user touch. We attach conductive fabric, to build our own [morse code](https://en.wikipedia.org/wiki/Morse_code) interpreter.
 
@@ -61,7 +58,7 @@ The capacitive sensor board is connected to the raspberry pi using the qwiic con
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/cap_morse.gif" height="420" /></p>
 
-### Part B OLED screen
+### Part B. OLED screen
 
 We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples) to display the decoded alphabets/numbers received from the capacitive sensor-based Morse Generator. The code for the same can be found at `oled_morse.py`.
 
@@ -69,7 +66,7 @@ We also use the [Adafruit OLED Screens](https://github.com/adafruit/Adafruit_Cir
 
 I use a spoon to touch the conductive sheet, as I realise that the system is more robust when the touch occurs using the spoon than my finger.
 
-### Part C Paper Display
+### Part C. Paper Display
 
 This design can be made by scoring a long strip of corrugated cardboard of width X, with the following measurements:
 
@@ -91,9 +88,9 @@ Make a paper display for your project that communicates the state of the Pi and 
 
 **c. Rationale for the Design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
-### Part D Materiality
+### Part D. Materiality
 
-**Choice of Material** -- Cardboard was used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the T9-keypad (used to input the message), and additional sensors.
+**Choice of Material**:  Cardboard was used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the T9-keypad (used to input the message), and additional sensors.
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/material.png" height="240" /></p>
 
@@ -101,17 +98,18 @@ The capacitive touch sensor, OLED screen and red button are placed on a small sh
 
 The sheet holding the sensors is taped onto one of the side of the cardboard, such that it is easy to slide the Pi in and out of the device, and/or connect it with other sensors. 
 
-**Other Alternatives** -- As devices of this kind are usually made of metal or plaastic, they were considered to build the prototype. Plastic Sheets were discarded because they are not environment friendly, while cardboard is bio-degradable and easily available at everyone's houses. Metal sheets are also not particularly friendly to the environment, but they are extremely complicated to cut, mold and shape.
+**Other Alternatives**:  As devices of this kind are usually made of metal or plaastic, they were considered to build the prototype. Plastic Sheets were discarded because they are not environment friendly, while cardboard is bio-degradable and easily available at everyone's houses. Metal sheets are also not particularly friendly to the environment, but they are extremely complicated to cut, mold and shape.
 
-### Part E Record Interactions
+### Part E. 'Looks-Like' Prototype
 
-### Part 2.
+### Part F. 'Works-Like' Prototype
 
-### Part F 'Looks-Like' Prototype
+### Part G. 'Acts-Like' Prototype
 
-### Part G 'Works-Like' Prototype
 
-### Part H 'Acts-Like' Prototype
+### Part H. Reflections
+
+
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
 
@@ -120,7 +118,3 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
 3. "Works like" prototypes: show us what the device can do
 4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
-
-
-
-### Part I Reflections
