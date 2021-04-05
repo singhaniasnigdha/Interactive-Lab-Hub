@@ -70,12 +70,16 @@ num_code, word = "", ""
 prev_code, code = "", ""
 end_sent = True
 
-convert_to_alpha = True
+convert_to_alpha = False
 
 def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code):
     if redButton.is_button_pressed():
+        print(f"Old Mode: {convert_to_alpha}")
         convert_to_alpha = not convert_to_alpha
+        print(f"New Mode: {convert_to_alpha}")
+        
         if convert_to_alpha:
+            # undraw the previous code
             draw.text((0, 10), word, font=font2, fill=0)
             draw.text((50, 10), code, font=font2, fill=0)
             redButton.LED_on(255)
@@ -85,6 +89,7 @@ def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code):
             redButton.LED_off()
         
         num_code, code = "", ""
+    
     return num_code, code
 
 def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
