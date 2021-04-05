@@ -136,9 +136,9 @@ Sensors/Devices used for making this prototype include:
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/schematic.png" height="280" /></p>
 
-The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen in the next section.
+The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen below.
 
-__TODO: Add interaction video__
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1617586946/video_to_markdown/images/google-drive--15rmoO2dHCNTB8MsA2_0-aT8OWI57FYPo-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/15rmoO2dHCNTB8MsA2_0-aT8OWI57FYPo/view?usp=sharing "")
 
 ### Part H. Reflections
 This assignment emphasizes on the value of interactive device design in addition to its functionality. It is important the user finds it intuitive to use the device. Building a working prototype required a lot of strategizing and several iterations. 
