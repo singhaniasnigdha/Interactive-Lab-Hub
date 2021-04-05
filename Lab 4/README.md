@@ -53,7 +53,7 @@ This device is catered to users who want to learn Morse Code, and has 2 modes:
 1. Translating English Letters to Morse Symbols: When the red LED is off, the user is in this mode. This is the first stage of learning, where the user inputs letter using the T9-keypad and their corresponding Morse Code appear on the screen.
 1. Translating Morse Characters to Alphabets/Arabic Numbers: This mode is in play when the red LED is on. Once the user is more familiar with the Morse Code, they can use the buttons below the OLED display, i.e., the dot and dash to input a code in Morse language. The device will then translate their code to English letters.
 
-The user can toggle between modes by pressing the red LED button. This user interaction can be depicted using the storyboard below:
+The user can toggle between modes by pressing the red LED button. Each translation takes about 2 seconds to show up on the display giving you ample time to predict the answer and test your knowledge. This user interaction can be depicted using the storyboard below:
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/storyboard.png" height="360" /></p>
 
