@@ -72,7 +72,7 @@ num_code, word = "", ""
 prev_code, code = "", ""
 end_sent = True
 
-convert_to_alpha = False
+convert_to_alpha = True
 
 def show_image(word1, word2, oled_obj, color=255):
     oled_obj['draw'].text((0, 10), word1, font=font2, fill=color)
