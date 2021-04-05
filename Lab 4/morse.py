@@ -98,7 +98,7 @@ def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, o
         
         num_code, code, word = "", "", ""
     
-    return num_code, code, word
+    return num_code, code, word, convert_to_alpha
 
 def alpha_to_morse(num_code, word, code, time1, end_sent, oled_obj):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
@@ -151,7 +151,7 @@ def morse_to_alpha(code, prev_code, time1, end_sent, oled_obj):
     return code, prev_code, time1, end_sent
 
 while True:
-    num_code, code, word = check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, oled_obj)
+    num_code, code, word, convert_to_alpha = check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, oled_obj)
     
     if convert_to_alpha:
         code, prev_code, time1, end_sent = morse_to_alpha(code, prev_code, time1, end_sent, oled_obj)  
