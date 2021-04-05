@@ -55,7 +55,7 @@ This device is catered to users who want to learn Morse Code, and has 2 modes:
 
 The user can toggle between modes by pressing the red LED button. This user interaction can be depicted using the storyboard below:
 
-__TODO: Add storyboard__
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/storyboard.png" height="360" /></p>
 
 ### Part B. Paper Display
 
@@ -149,4 +149,4 @@ Some things that could have been better are:
 * **Bigger Screen** - The words coded/encoded using Morse had to be restricted to a few letters due the dimension constraints of the screen, which is less than 3cm in length. It would have been interesting to explore coding/encoding sentences.
 
 Some things I wanted to add:
-* Light and Sound to convey the Morse Code, instead of characters. However, this device is presented as a starter to those who wish to learn to read and deciper Morse Code.
+* Light and Sound to convey the Morse Code, instead of characters. However, this device is presented as a starter to those who wish to learn to read and deciper Morse Code. The code does support sound but there was no speaker available to try it out with.
