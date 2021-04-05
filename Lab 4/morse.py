@@ -50,20 +50,22 @@ mpr121 = adafruit_mpr121.MPR121(i2c)
 
 # Create the SSD1306 OLED class.
 # The first two parameters are the pixel width and pixel height.
-oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+oled_obj = {
+    'oled': adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+}
 
 # Set up button
 redButton = qwiic_button.QwiicButton()
 redButton.begin()
-# redButton.LED_on(255)
+redButton.LED_on(255)
 
 # start with a blank screen
-oled.fill(0)
-oled.show()
+oled_obj['oled'].fill(0)
+oled_obj['oled'].show()
 
-# Create blank image for drawing.
-image = Image.new("1", (oled.width, oled.height))
-draw = ImageDraw.Draw(image)
+# Create blank image for drawing
+oled_obj['image'] = Image.new("1", (oled_obj['oled'].width, oled_obj['oled'].height))
+oled_obj['draw'] = ImageDraw.Draw(oled_obj['image'])
 
 time1 = float('inf')
 num_code, word = "", ""
@@ -72,7 +74,14 @@ end_sent = True
 
 convert_to_alpha = False
 
-def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code):
+def show_image(word1, word2, oled_obj, color=255):
+    oled_obj['draw'].text((0, 10), word1, font=font2, fill=color)
+    oled_obj['draw'].text((50, 10), word2, font=font2, fill=color)
+    # Display image
+    oled_obj['oled'].image(oled_obj['image'])
+    oled_obj['oled'].show()
+
+def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, oled_obj):
     if redButton.is_button_pressed():
         print(f"Old Mode: {convert_to_alpha}")
         convert_to_alpha = not convert_to_alpha
@@ -80,40 +89,32 @@ def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code):
         
         if convert_to_alpha:
             # undraw the previous code
-            draw.text((0, 10), word, font=font2, fill=0)
-            draw.text((50, 10), code, font=font2, fill=0)
+            show_image(word, code, oled_obj, color=0)
             redButton.LED_on(255)
         else:
-            draw.text((0, 10), prev_code, font=font2, fill=0)
-            draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
+            # undraw the previous code
+            show_image(prev_code, CODE_TO_LTR.get(prev_code, ""), oled_obj, color=0)
             redButton.LED_off()
         
-        num_code, code = "", ""
+        num_code, code, word = "", "", ""
     
-    return num_code, code
+    return num_code, code, word
 
-def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
+def alpha_to_morse(num_code, word, code, time1, end_sent, oled_obj):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
         end_sent = True
         # undraw the previous code
-        draw.text((0, 10), word, font=font2, fill=0)
-        draw.text((50, 10), code, font=font2, fill=0)
+        show_image(word, code, oled_obj, color=0)
         word, code = "", ""
     
     if time.time() - time1 > UNIT_TIME and len(num_code) > 0:
         # undraw the previous code
-        draw.text((0, 10), word, font=font2, fill=0)
-        draw.text((50, 10), code, font=font2, fill=0)
+        show_image(word, code, oled_obj, color=0)
         
         # Draw the current code
         word += T9_INPUT[int(num_code)]
         code += " " + LTR_TO_CODE[word[-1]]
-        draw.text((0, 10), word, font=font2, fill=255)
-        draw.text((40, 10), code, font=font2, fill=255)
-        
-        # Display image
-        oled.image(image)
-        oled.show()
+        show_image(word, code, oled_obj)
 
         num_code = ""
         end_sent = False
@@ -123,25 +124,17 @@ def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
             num_code += str(num)
             time1 = time.time()
 
-    return num_code, word, code, time1, end_sent, oled
+    return num_code, word, code, time1, end_sent
 
-def morse_to_alpha(code, prev_code, time1, end_sent, oled):
+def morse_to_alpha(code, prev_code, time1, end_sent, oled_obj):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
-        # undraw the previous code
-        draw.text((0, 10), prev_code, font=font2, fill=0)
-        draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
         end_sent = True
     
     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
         # undraw the previous code
-        draw.text((0, 10), prev_code, font=font2, fill=0)
-        draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
+        show_image(prev_code, CODE_TO_LTR.get(prev_code, ""), oled_obj, color=0)
         # Draw the current code
-        draw.text((0, 10), code, font=font2, fill=255)
-        draw.text((50, 10), CODE_TO_LTR.get(code, ""), font=font2, fill=255)
-        # Display image
-        oled.image(image)
-        oled.show()
+        show_image(code, CODE_TO_LTR.get(code, ""), oled_obj)
 
         prev_code, code = code, ""
         end_sent = False
@@ -155,14 +148,14 @@ def morse_to_alpha(code, prev_code, time1, end_sent, oled):
         code = code + '-'
         # os.system('mpg123 sounds/dah.mp3 &')
         time1 = time.time()
-    return code, prev_code, time1, end_sent, oled
+    return code, prev_code, time1, end_sent
 
 while True:
-    num_code, code = check_button(redButton, convert_to_alpha, prev_code, word, code, num_code)
+    num_code, code, word = check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, oled_obj)
     
     if convert_to_alpha:
-        code, prev_code, time1, end_sent, oled = morse_to_alpha(code, prev_code, time1, end_sent, oled)  
+        code, prev_code, time1, end_sent = morse_to_alpha(code, prev_code, time1, end_sent, oled_obj)  
     else:
-        num_code, word, code, time1, end_sent, oled = alpha_to_morse(num_code, word, code, time1, end_sent, oled)
+        num_code, word, code, time1, end_sent = alpha_to_morse(num_code, word, code, time1, end_sent, oled_obj)
     
     time.sleep(UNIT_TIME/8)
