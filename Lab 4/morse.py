@@ -72,13 +72,20 @@ end_sent = True
 
 convert_to_alpha = True
 
-def check_button(redButton, convert_to_alpha):
+def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code):
     if redButton.is_button_pressed():
         convert_to_alpha = not convert_to_alpha
         if convert_to_alpha:
+            draw.text((0, 10), word, font=font2, fill=0)
+            draw.text((50, 10), code, font=font2, fill=0)
             redButton.LED_on(255)
         else:
+            draw.text((0, 10), prev_code, font=font2, fill=0)
+            draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
             redButton.LED_off()
+        
+        num_code, code = "", ""
+    return num_code, code
 
 def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
@@ -115,6 +122,9 @@ def alpha_to_morse(num_code, word, code, time1, end_sent, oled):
 
 def morse_to_alpha(code, prev_code, time1, end_sent, oled):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
+        # undraw the previous code
+        draw.text((0, 10), prev_code, font=font2, fill=0)
+        draw.text((50, 10), CODE_TO_LTR.get(prev_code, ""), font=font2, fill=0)
         end_sent = True
     
     if time.time() - time1 > UNIT_TIME * 3 and len(code) > 0:
@@ -143,7 +153,7 @@ def morse_to_alpha(code, prev_code, time1, end_sent, oled):
     return code, prev_code, time1, end_sent, oled
 
 while True:
-    check_button(redButton, convert_to_alpha)
+    num_code, code = check_button(redButton, convert_to_alpha, prev_code, word, code, num_code)
     
     if convert_to_alpha:
         code, prev_code, time1, end_sent, oled = morse_to_alpha(code, prev_code, time1, end_sent, oled)  

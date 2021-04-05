@@ -48,7 +48,12 @@ We use the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator)
 The device can translate Morse characters (composed of `.` and `-`) to english alphabet and arabic numerals, and vice versa. A button is used to denote the direction of translation. The following sections cover the deliverables for this lab, and the incremental development of the device.
 
 ### Part A. 'Acts-Like' Prototype
-This device is catered to users who want to learn Morse Code. This can be depicted using the storyboard below:
+
+This device is catered to users who want to learn Morse Code, and has 2 modes:
+1. Translating English Letters to Morse Symbols: When the red LED is off, the user is in this mode. This is the first stage of learning, where the user inputs letter using the T9-keypad and their corresponding Morse Code appear on the screen.
+1. Translating Morse Characters to Alphabets/Arabic Numbers: This mode is in play when the red LED is on. Once the user is more familiar with the Morse Code, they can use the buttons below the OLED display, i.e., the dot and dash to input a code in Morse language. The device will then translate their code to English letters.
+
+The user can toggle between modes by pressing the red LED button. This user interaction can be depicted using the storyboard below:
 
 __TODO: Add storyboard__
 
@@ -131,11 +136,7 @@ Sensors/Devices used for making this prototype include:
 
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%204/imgs/schematic.png" height="280" /></p>
 
-This device has 2 modes:
-1. Translating English Letters to Morse Symbols: When the red LED is off, the user is in this mode. This is the first stage of learning, where the user inputs letter using the T9-keypad and their corresponding Morse Code appear on the screen.
-1. Translating Morse Characters to Alphabets/Arabic Numbers: This mode is in play when the red LED is on. Once the user is more familiar with the Morse Code, they can use the buttons below the OLED display, i.e., the dot and dash to input a code in Morse language. The device will then translate their code to English letters.
-
-The user can toggle between modes by pressing the red LED button. The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen in the next section.
+The code for this experiment can be found at `morse.py`. The demo of the device in action can be seen in the next section.
 
 __TODO: Add interaction video__
 
