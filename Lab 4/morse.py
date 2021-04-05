@@ -95,6 +95,7 @@ def check_button(redButton, convert_to_alpha, prev_code, word, code, num_code, o
             # undraw the previous code
             show_image(prev_code, CODE_TO_LTR.get(prev_code, ""), oled_obj, color=0)
             redButton.LED_off()
+        time.sleep(1)
         
         num_code, code, word = "", "", ""
     
