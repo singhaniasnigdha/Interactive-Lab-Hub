@@ -1,17 +1,13 @@
 # Observant Systems
 
-
-For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi, like the Boat Detector we mentioned in lecture. 
-Your **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
-
-This lab will help you think through the design of observant systems, particularly corner cases that the algorithms need to be aware of.
+For lab this week, we focus on creating interactive systems that can detect and respond to events or stimuli in the environment of the Pi. The **observant device** could, for example, count items, find objects, recognize an event or continuously monitor a room.
 
 In Lab 5 part 1, we focus on detecting and sense-making.
 
 In Lab 5 part 2, we'll incorporate interactive responses.
 
 
-## Readings
+### Readings
 
 1. [OpenCV](https://opencv.org/about/).
 1. [Making Sense of Sensing Systems: Five Questions for Designers and Researchers](https://www.cc.gatech.edu/~keith/pubs/chi2002-sensing.pdf)
@@ -42,12 +38,9 @@ D) [Characterize your Observant system](#part-d-characterize-your-observant-syst
 
 ---
 
-### Part A. Play with different sense-making algorithms
+### Part A. Sense-making using the Accelerometer
 
-Befor you get started connect the RaspberryPi Camera V2. [The Pi hut has a great explanation on how to do that](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera).  
-
-#### Filtering, FFTs, and Time Series data.
-Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU data stream could create a simple activity classifier between walking, running, and standing.
+The MPU-6050 combines a 3-axis accelerometer and 3-axis gyroscope and can be used for motion detection. By running a Fast Fourier Transform over the IMU data stream, a simple activity classifier between walking, running, and standing is created.
 
 Using the set up from the [Lab 3 demo](https://github.com/FAR-Lab/Interactive-Lab-Hub/tree/Spring2021/Lab%203/demo) and the accelerometer, try the following:
 
@@ -57,37 +50,45 @@ Using the set up from the [Lab 3 demo](https://github.com/FAR-Lab/Interactive-La
 
 **3. Set up peak detection** Can you identify when your signal reaches a peak and then goes down?
 
-Include links to your code here, and put the code for these in your repo--they will come in handy later.
+Include links to your code here, and put the code for these in your repo.
 
-#### Teachable Machines 
+### Part B. Sense-making using the Pi-Camera
+The RaspberryPi Camera V2 is setup using the instructions available on [the Pi hut](https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera). 
 
+Google's [Teachable Machines](https://teachablemachine.withgoogle.com/train) is used to build a simple classification model that can detect people wearing masks, versus those who are not. This [classification model](https://github.com/singhaniasnigdha/Interactive-Lab-Hub/tree/Spring2021/Lab%205/models/mask-nomask-random.zip) is then saved on the Raspberry Pi and run using the Pi Camera.
 
-### Part B. Constructing a simple interaction
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/teachable-machines.png" height="320" /></p>
 
-Pick one of the models you have tried, pick a class of objects, and experiment with prototyping an interaction.
-This can be as simple as the boat detector earlier.
-Try out different interactions outputs and inputs.
-**Describe and detail the interaction, as well as your experimentation.**
+Our classifier has 3 classes - masked faces, faces without masks and random unrelated images. The dataset for masked and unmasked faces used to train this model can be found [here](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/). For the "others" category, 600 random pictures were collected without faces, so that the model does not misclassify or send an alert when a face is not in the frame.
+
+The teachable machines model is tested using a webcam on an individual who was not part of the training data. The model performs reasonably well (screenshots below).
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/teachable-machine-result.png" height="320" /></p>
+
+The inspiration for this idea was taken from Sam's Lab 4 where she built the [The Honest Mirror](https://github.com/snlee159/Interactive-Lab-Hub/tree/Spring2021/Lab%204), where wizarding was used to remind the user to wear a mask. Here, we leverage the power of machine learning and the Pi Camera to detect if an individual is wearing a mask. The interaction can be depicted using the storyboard below.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/storyboard.png" height="480" /></p>
 
 ### Part C. Testing the interaction prototype
 
-Now flight test your interactive prototype and **note your observations**:
-For example:
-1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+The real-time classifier was tested on different individuals in a public setting, and the recording can be seen below:
 
-**Think about someone using the system. Describe how you think this will work.**
-1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+<!-- ## TODO -- ADD VIDEO -->
 
-### Part D. Characterize your Observant system
+__Uncertainties/Errors reported__: While the model performs reasonably well in the usual setting, it is not very robust and can be tricked. Following are some images which were misclassified when the user covers their nose and mouth using objects other than a mask:
 
-Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
-During the lecture, we mentioned questions to help characterize a material:
+<!-- ## TODO -- ADD ERRORS -->
+
+The errors are usually reported when a individual not wearing a mask is reported as wearing one. No other incorrect results are obtained. Further, given the nature of the task, other errors can be discounted for, as the primary objective is to ensure that every individual in a public setting is wearing a mask.
+
+__Impact of a Misclassification__: As shown in the storyboard, this device can be used at the entrance of lecture halls, shopping malls, subway stations and other public buildings. If a misclassification occurs, it might put other individuals at the same location at risk of contamination, if the individual who is not wearing a mask is infected with a virus. It, however, should be noted that there are no current measures in place to check if all individuals are complying with the regulations. Employing manual labour puts these individuals at risk as they have to interact with many people every day. Automating this process is the best alternative in this case. 
+
+One technique which can be adopted to prevent the system from getting tricked is to make the device small and concealed, such that it cannot be detected easily. Individuals will not be able to locate the devices and hence unable to trick it by temporarily covering their faces.
+
+__Optimizations to reduce misclassification__: It can be said that the model is more accurate at detecting if the nose and mouth are covered, rather than covered with a mask. Perhaps, it would be useful to include these false positives in one of the other classes, to improve the results of the algorithm.
+
+### Part D. Characterizing the Observant system
+
 * What can you use X for?
 * What is a good environment for X?
 * What is a bad environment for X?
