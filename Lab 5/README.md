@@ -89,12 +89,19 @@ __Optimizations to reduce misclassification__: It can be said that the model is 
 
 ### Part D. Characterizing the Observant system
 
-* What can you use X for?
-* What is a good environment for X?
-* What is a bad environment for X?
-* When will X break?
-* When it breaks how will X break?
-* What are other properties/behaviors of X?
-* How does X feel?
+* What can you use `Mask-Up` for? <br>
+The device will be particularly useful in the current scenario, where all public spaces are frantic to open up but do not have the means to ensure that everyone is following the mandated protocols. Using this device at the entrace of any public building will be an effective way to keep a check on the behaviour of the crowd.
 
-**Include a short video demonstrating the answers to these questions.**
+* What is a good environment for `Mask-Up`? <br>
+This device is an electronic. As such it would be required that it be kept away from water and inflammable areas. To effectively capture good-quality images which are easy to classify, the device will be more useful away from direct light, as that will result in a glare on the images. 
+
+* What is a bad environment for `Mask-Up`? <br>
+The device will be ineffective when it faces light as good quality images will not be captured. This might produce wrong results. The positioning of the camera is also crucial, as the face should be clearly in frame to get the most accurate outcomes.
+
+* When will `Mask-Up` break? When it breaks how will `Mask-Up` break?<br>
+While the algorithm performs well generally, it might product false negatives if the user tries to trick the process. The algorithm is looking for a covered mouth and nose, so if the user uses their hands or (even better) their mobile phone to conceal a part of their face, the device will not work correctly. The result will be a false-negative, classifying that the individual is wearing a mask while they are not.
+
+* What are other properties/behaviors of `Mask-Up`? <br>
+
+
+* How does `Mask-Up` feel? <br>
