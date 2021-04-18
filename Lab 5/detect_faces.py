@@ -9,7 +9,6 @@ sys.path.insert(0, '../../rpi-vision')
 from rpi_vision.models.teachablemachine import TeachableMachine
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-model = TeachableMachine('models/mask-nomask-random.zip')
 
 last_seen = [None] * 10
 last_spoken = None
@@ -27,6 +26,8 @@ except:
     # img = cv2.imread("../data/test.jpg")
     # print("Using default image.")
 
+model = TeachableMachine('models/mask-nomask-random.zip')
+
 while(True):
    if webCam:
       ret, img = cap.read()
@@ -34,7 +35,7 @@ while(True):
    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-   print(f"Found {len(faces)} Faces!")
+   #print(f"Found {len(faces)} Faces!")
    
    for (x,y,w,h) in faces:
        img = cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)

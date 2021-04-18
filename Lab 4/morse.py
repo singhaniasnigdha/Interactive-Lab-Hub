@@ -105,7 +105,7 @@ def alpha_to_morse(num_code, word, code, time1, end_sent, oled_obj):
     if time.time() - time1 > UNIT_TIME * 7 and not end_sent:
         end_sent = True
         # undraw the previous code
-        show_image(word, code, oled_obj, color=0)
+        # show_image(word, code, oled_obj, color=0)
         word, code = "", ""
     
     if time.time() - time1 > UNIT_TIME and len(num_code) > 0:
