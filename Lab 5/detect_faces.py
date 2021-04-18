@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import sys
+import time
 
 CONFIDENCE_THRESHOLD = 0.7   # at what confidence level do we say we detected a thing
 PERSISTANCE_THRESHOLD = 0.25  # what percentage of the time we have to have seen a thing
@@ -27,6 +28,12 @@ except:
     # print("Using default image.")
 
 model = TeachableMachine('models/mask-nomask-random.zip')
+prediction_time = time.time()
+
+font                   = cv2.FONT_HERSHEY_SIMPLEX
+fontScale              = 1
+fontColor              = (255,255,255)
+lineType               = 2
 
 while(True):
    if webCam:
@@ -35,19 +42,22 @@ while(True):
    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-   #print(f"Found {len(faces)} Faces!")
    
    for (x,y,w,h) in faces:
        img = cv2.rectangle(img, (x,y), (x+w,y+h), (255,0,0), 2)
-       roi_gray = gray[y:y+h, x:x+w]
+    #    roi_gray = gray[y:y+h, x:x+w]
        roi_color = img[y:y+h, x:x+w]
        
        prediction = model.predict(roi_color)[0]
        print(f'Predictions = {prediction}')
        for p in prediction:
             label, name, conf = p
-            if conf > CONFIDENCE_THRESHOLD:
+            if conf > CONFIDENCE_THRESHOLD and time.time() - prediction_time > 2:
                 print("Detected", name)
+
+                text_pos = (x+w/2, y+h+fontScale)
+                cv2.putText(img, name, text_pos, font, fontScale, fontColor, lineType)
+                prediction_time = time.time()
 
                 persistant_obj = False  # assume the object is not persistant
                 last_seen.append(name)
@@ -63,7 +73,7 @@ while(True):
                     last_spoken = None
 
    if webCam:
-      cv2.imshow('face-detection (press q to quit.)',img)
+      cv2.imshow('face-detection (press q to quit.)', img)
       if cv2.waitKey(1) & 0xFF == ord('q'):
          cap.release()
          break

@@ -1,3 +1,0 @@
-0 Masked
-1 No Mask
-2 Unrelated
