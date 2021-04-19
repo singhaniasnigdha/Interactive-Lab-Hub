@@ -82,7 +82,8 @@ The device feels sturdy as it is encased in a hard box. The limited visible hard
 
 To allow for multiple faces to be detected and classified using this device, we integrated the Teachable Machines model with an OpenCV face-detection algorithm. An example of the OpenCV face detection algorithm can be seen below:
 
-<!-- ## TODO -- ADD face detection gif -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/face-detect.gif" height="320" /></p>
+
 
 Once the faces are identified using Computer Vision, they are classified as either "Masked" or "No Mask" using the Teachable Machines Classifier explained in [Part A](#part-a-constructing-a-simple-interaction). The code can be found in [detect-faces.py](https://github.com/singhaniasnigdha/Interactive-Lab-Hub/tree/Spring2021/Lab%205/detect_faces.py).  Using the face detection algorithm prior to the classification drastically improves the accuracy of the model, as the model otherwise struggled to accurately recognise faces.
 
