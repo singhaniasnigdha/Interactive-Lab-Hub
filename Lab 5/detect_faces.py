@@ -1,4 +1,3 @@
-from rpi_vision.models.teachablemachine import TeachableMachine
 import numpy as np
 import cv2
 import sys
@@ -11,6 +10,7 @@ CONFIDENCE_THRESHOLD = 0.55   # at what confidence level do we say we detected a
 PERSISTANCE_THRESHOLD = 0.25
 
 sys.path.insert(0, '../../rpi-vision')
+from rpi_vision.models.teachablemachine import TeachableMachine
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 redButton = qwiic_button.QwiicButton()
@@ -29,11 +29,9 @@ try:
     webCam = True
 except:
     print(f'No Camera detected!')
-    # img = cv2.imread("../data/test.jpg")
-    # print("Using default image.")
 
-model = TeachableMachine('models/mask-nomask-random.zip')
-prediction_time = time.time()
+# model = TeachableMachine('models/mask-nomask-random.zip')
+model = TeachableMachine('models/mask-vs-no-mask.zip')
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
