@@ -13,17 +13,13 @@ For lab this week, we focus on creating interactive systems that can detect and 
 1. Raspberry Pi
 1. Raspberry Pi Camera (2.1)
 1. Qwiic Red LED Button
-
-### Deliverables for this lab are:
-1. Show pictures, videos of the "sense-making" algorithms you tried.
-1. Show a video of how you embed one of these algorithms into your observant system.
-1. Test, characterize your interactive device. Show faults in the detection and how the system handled it.
-
+1. Qwiic Cables
+1. Cardboard
 
 ## Overview
-Building upon the paper-airplane metaphor (we're understanding the material of machine learning for design), here are the four sections of the lab activity:
+Building upon the paper-airplane metaphor (we're understanding the material of machine learning for design), here are the four sections of the assignment:
 
-A) [Constructing a simple interaction](#part-a-constructing-a-simple-interaction)
+A) [Sense-making using the Pi-Camera](#part-a-sense-making-using-the-pi-camera)
 
 B) [Paper Display](#part-b-paper-display)
 
@@ -56,7 +52,7 @@ The inspiration for this idea was taken from Sam's Lab 4 where she built the [Th
 
 The Raspberry Pi is encased in a cardboard box, with outlets to allow for easy power source and speaker connections. The Pi Camera and red LED are placed outside the box to allow the device to capture images. Qwiic cables are used to connect the LED. The Pi Camera should be placed at an angle to allow an appropriate field of vision. 
 
-<!-- ## TODO -- ADD IMAGE -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/paper-display.png" height="320" /></p>
 
 **Choice of Material**: Cardboard is used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the Pi Camera, and any additional sensors.
 
@@ -90,9 +86,11 @@ To allow for multiple faces to be detected and classified using this device, we 
 
 Once the faces are identified using Computer Vision, they are classified as either "Masked" or "No Mask" using the Teachable Machines Classifier explained in [Part A](#part-a-constructing-a-simple-interaction). The code can be found in [detect-faces.py](https://github.com/singhaniasnigdha/Interactive-Lab-Hub/tree/Spring2021/Lab%205/detect_faces.py).  Using the face detection algorithm prior to the classification drastically improves the accuracy of the model, as the model otherwise struggled to accurately recognise faces.
 
-The real-time classifier was tested on different individuals in a public setting, and the recording can be seen below:
+The real-time classifier was tested on different individuals in a room, and the recording can be seen below:
 
-<!-- ## TODO -- ADD VIDEO -->
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618801877/video_to_markdown/images/google-drive--1A_T-xUXQjc3P0eh_WpmJFzso7gQiqiAU-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1A_T-xUXQjc3P0eh_WpmJFzso7gQiqiAU/view?usp=sharing "")
+
+The recording was taken during the evening and hence some uncertainties can be detected in the system.
 
 __Uncertainties/Errors reported__: While the model performs reasonably well in the usual setting, it is not very robust and can be tricked. Following are some images which were misclassified when the user covers their nose and mouth using objects other than a mask:
 
