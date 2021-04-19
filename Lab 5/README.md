@@ -32,6 +32,7 @@ C) [Characterize your Observant system](#part-c-characterize-your-observant-syst
 D) [Testing the interaction prototype](#part-d-testing-the-interaction-prototype)
 
 E) [Reflections](#part-e-reflections)
+
 ---
 
 ### Part A. Sense-making using the Pi-Camera
@@ -111,7 +112,7 @@ __Optimizations to reduce misclassification__: It can be said that the model is 
 This assignment emphasizes on the value of Observant Systems, where interactions are not explicitly required but the system learns and interprets activities around it in meaningful ways. 
 
 Parts of the assignment I am excited about:
-* It was interesting to learn about OpenCV and I am happy to be able to integrate it with Teachable Machines to provide a more refined output.
+* It was interesting to learn about OpenCV and exciting to be able to integrate it with Teachable Machines to provide a more refined output.
 * The prototype attempts to find a solution to a current problem.
 
 Segments that can be improved include:
