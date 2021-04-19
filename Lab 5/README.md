@@ -93,8 +93,7 @@ The real-time classifier was tested on different individuals in a room, and the 
 The recording was taken during the evening and hence some uncertainties can be detected in the system.
 
 __Uncertainties/Errors reported__: While the model performs reasonably well in the usual setting, it is not very robust and can be tricked. Following are some images which were misclassified when the user covers their nose and mouth using objects other than a mask:
-
-<!-- ## TODO -- ADD ERRORS -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/tricking.png" height="320" /></p>
 
 The errors are usually reported when a individual not wearing a mask is reported as wearing one. No other incorrect results are obtained. Further, given the nature of the task, other errors can be discounted for, as the primary objective is to ensure that every individual in a public setting is wearing a mask.
 
