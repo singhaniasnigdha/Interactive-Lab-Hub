@@ -100,7 +100,7 @@ def get_word_length(rot_encoder, disp_obj, max_len=12):
 
 def get_word_pos(rot_encoder, disp_obj, max_len=12):
     padding = 2
-    shape_width = 5
+    shape_width = 3
     top = padding
     bottom = 32-padding
     
@@ -109,10 +109,11 @@ def get_word_pos(rot_encoder, disp_obj, max_len=12):
             return
         x = start_pos * 2 * shape_width
         disp_obj['draw'].rectangle((x, top, x+shape_width, bottom), outline=outline_color, fill=0)
+        disp_obj['oled'].image(disp_obj['image'])
+        disp_obj['oled'].show()
     
     rot_encoder.set_count(0); rot_encoder.set_red(150)
     prev_pos = None
-    #draw_rectangle(0)
     while not rot_encoder.is_pressed():
         curr_pos = rot_encoder.count % max_len
         if prev_pos != curr_pos:
@@ -120,7 +121,9 @@ def get_word_pos(rot_encoder, disp_obj, max_len=12):
             draw_rectangle(curr_pos)
             prev_pos = curr_pos
         time.sleep(0.5)
+    
     rot_encoder.set_red(0)
+    draw_rectangle(prev_pos, outline_color=0)
     return curr_pos
 
 def show_hangman_tft(img_title, tft_obj):
@@ -173,6 +176,7 @@ def on_player_message(client, userdata, msg):
         redButton.LED_off()
     client.publish(player_topic, f"{word},{hangman_pos},{is_correct_guess},{None}")
 
+show_hangman_tft('welcome.png', disp)
 client = get_mqtt_client(on_player_message)
 
 while True:
