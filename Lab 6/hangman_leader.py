@@ -2,14 +2,15 @@ import os
 import time
 import subprocess
 
-import adafruit_mpr121
 import adafruit_ssd1306
 import digitalio
 import board
 import busio
 import qwiic_twist
 import qwiic_button
+import uuid
 
+import paho.mqtt.client as mqtt
 import adafruit_rgb_display.st7789 as st7789
 
 from PIL import Image, ImageDraw, ImageFont
@@ -55,7 +56,6 @@ greenButton.begin()
 
 # Set up Capacitive Touch Sensor
 i2c = busio.I2C(board.SCL, board.SDA)
-mpr121 = adafruit_mpr121.MPR121(i2c)
 
 # Create the SSD1306 OLED class.
 # The first two parameters are the pixel width and pixel height.
@@ -74,21 +74,34 @@ oled_obj['draw'] = ImageDraw.Draw(oled_obj['image'])
 hangman_pos = 0
 word, word_len = '', 0
 
-def get_word_length(rot_encoder, max_len=10):
-    rot_encoder.set_count(0)
-    while not rot_encoder.is_pressed():
-        choice = rot_encoder.count % max_len
-        # TODO show choice on TFT
-        time.sleep(0.2)
-    return choice
+player_topic = 'IDD/hangman_player'
+leader_topic = 'IDD/hangman_leader'
+
 
 def show_word_oled(oled_obj, word, color=255):
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
     
     oled_obj['draw'].text((0, 10), word, font=font, fill=color)
-    # Display image
     oled_obj['oled'].image(oled_obj['image'])
     oled_obj['oled'].show()
+
+def get_word_length(rot_encoder, disp_obj, max_len=12):
+    rot_encoder.set_count(0)
+    choice = 0
+    while not rot_encoder.is_pressed():
+        show_word_oled(disp_obj, f'Enter Word Length:    {choice}', color=0)
+        choice = rot_encoder.count % max_len
+        show_word_oled(disp_obj, f'Enter Word Length:    {choice}')
+        time.sleep(0.2)
+    return choice
+
+def get_word_pos(rot_encoder, disp_obj, max_len=12):
+    prev_pos = 0
+    rot_encoder.set_count(0)
+    while not rot_encoder.is_pressed():
+        choice = rot_encoder.count % max_len
+        time.sleep(0.2)
+    return choice
 
 def show_hangman_tft(img_title, tft_obj):
     hangman_img = Image.open(f"{cwd}/imgs/{img_title}")
@@ -104,37 +117,61 @@ def blink_button(red, green):
         time.sleep(0.5)
     return green.is_button_pressed()
 
+def get_mqtt_client(on_message):
+    def on_connect(client, userdata, flags, rc):
+        print(f"connected with result code {rc}")
+        client.subscribe(leader_topic)
+
+    client = mqtt.Client(str(uuid.uuid1()))
+    client.tls_set()
+    client.username_pw_set('idd', 'device@theFarm')
+
+    client.on_connect = on_connect
+    client.on_message = on_message
+
+    client.connect('farlab.infosci.cornell.edu', port=8883)
+    return client
+
+def on_player_message(client, userdata, msg):
+    selected_char = msg.payload.decode('UTF-8')
+    print(f"topic: {msg.topic} msg: {selected_char}")
+
+    global hangman_pos, word
+    is_correct_guess = blink_button(redButton, greenButton)
+    if is_correct_guess:
+        # TODO -- show highlight
+        word_pos = get_word_length(twist, oled_obj, max_len=word_len)
+        show_word_oled(oled_obj, word, color=0)
+        word = word[:word_pos] + selected_char + word[word_pos+1:]
+    else:
+        hangman_pos += 1
+    client.publish(player_topic, f"{word},{hangman_pos},{is_correct_guess},{None}")
+
+client = get_mqtt_client(on_player_message)
+
 while True:
     if word_len == 0:
-        # Ask leader to Enter Word Length
-        word_len = get_word_length(twist)
+        word_len = get_word_length(twist, oled_obj)
         word = "_" * word_len
-    else:
+        show_word_oled(oled_obj, f'Enter Word Length:    {word_len}', color=0)
+        is_start = True
+        # Send message to player
+        client.publish(player_topic, f"{word},{hangman_pos},{None},{True}")
+        
+    else: 
+        client.loop()
         show_word_oled(oled_obj, word)
         show_hangman_tft(f'hangman-{hangman_pos}.png', disp)
         
         if hangman_pos == 6:
-            show_hangman_tft(f'lost.gif', disp)
+            show_hangman_tft("lose.png", disp)
             time.sleep(5)
             redButton.LED_off()
             break
         if '_' not in word:
-            show_hangman_tft(f'win.gif', disp)
+            show_hangman_tft("win.gif", disp)
             time.sleep(5)
             greenButton.LED_off()
             break
 
         redButton.LED_off(); greenButton.LED_off()
-        
-        # TODO @Sam -- ask player to enter letter
-        selected_char = 'A'
-
-        is_correct_guess = blink_button(redButton, greenButton)
-        if is_correct_guess:
-            # TODO -- show highlight
-            word_pos = get_word_length(twist, max_len=word_len)
-            show_word_oled(oled_obj, word, color=0)
-            word = word[:word_pos] + selected_char + word[word_pos+1:]
-        else:
-            hangman_pos += 1
-        
