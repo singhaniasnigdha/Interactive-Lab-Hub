@@ -119,6 +119,7 @@ def get_word_pos(rot_encoder, disp_obj, max_len=12):
         curr_pos = rot_encoder.count % max_len
         if prev_pos != curr_pos:
             draw_rectangle(prev_pos, outline_color=0)
+            show_word_oled(disp_obj, ' '.join(list(word)))
             draw_rectangle(curr_pos)
             prev_pos = curr_pos
         time.sleep(0.5)
@@ -167,8 +168,8 @@ def on_player_message(client, userdata, msg):
     
     global prev_selected_char
     if prev_selected_char is not None:
-        show_word_oled(oled_obj, f"-> {prev_selected_char} <-", pos=50, color=0)
-    show_word_oled(oled_obj, f"-> {selected_char} <-", pos=50)
+        show_word_oled(oled_obj, f"-> {prev_selected_char} <-", pos=80, color=0)
+    show_word_oled(oled_obj, f"-> {selected_char} <-", pos=80)
 
     global hangman_pos, word
     is_correct_guess = blink_button(redButton, greenButton)
