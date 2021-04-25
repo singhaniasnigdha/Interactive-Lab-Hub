@@ -73,15 +73,16 @@ oled_obj['draw'] = ImageDraw.Draw(oled_obj['image'])
 # Initialise hangman
 hangman_pos = 0
 word, word_len = '', 0
+prev_selected_char = None
 
 player_topic = 'IDD/hangman_player'
 leader_topic = 'IDD/hangman_leader'
 
 
-def show_word_oled(oled_obj, word, color=255):
+def show_word_oled(oled_obj, word, pos=0, color=255):
     font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10)
     
-    oled_obj['draw'].text((0, 10), word, font=font, fill=color)
+    oled_obj['draw'].text((pos, 10), word, font=font, fill=color)
     oled_obj['oled'].image(oled_obj['image'])
     oled_obj['oled'].show()
 
@@ -100,7 +101,7 @@ def get_word_length(rot_encoder, disp_obj, max_len=12):
 
 def get_word_pos(rot_encoder, disp_obj, max_len=12):
     padding = 2
-    shape_width = 3
+    shape_width = 4
     top = padding
     bottom = 32-padding
     
@@ -163,6 +164,11 @@ def get_mqtt_client(on_message):
 def on_player_message(client, userdata, msg):
     selected_char = msg.payload.decode('UTF-8')
     print(f"topic: {msg.topic} msg: {selected_char}")
+    
+    global prev_selected_char
+    if prev_selected_char is not None:
+        show_word_oled(oled_obj, f"-> {prev_selected_char} <-", pos=50, color=0)
+    show_word_oled(oled_obj, f"-> {selected_char} <-", pos=50)
 
     global hangman_pos, word
     is_correct_guess = blink_button(redButton, greenButton)
@@ -175,6 +181,7 @@ def on_player_message(client, userdata, msg):
         hangman_pos += 1
         redButton.LED_off()
     client.publish(player_topic, f"{word},{hangman_pos},{is_correct_guess},{None}")
+    prev_selected_char = selected_char
 
 show_hangman_tft('welcome.png', disp)
 client = get_mqtt_client(on_player_message)
