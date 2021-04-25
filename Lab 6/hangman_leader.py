@@ -181,7 +181,7 @@ def on_player_message(client, userdata, msg):
     else:
         hangman_pos += 1
         redButton.LED_off()
-    client.publish(player_topic, f"{word},{hangman_pos},{is_correct_guess},{None}")
+    client.publish(player_topic, f"{' '.join(list(word))},{hangman_pos},{is_correct_guess},{None}")
     prev_selected_char = selected_char
 
 show_hangman_tft('welcome.png', disp)
@@ -193,7 +193,7 @@ while True:
         word = "_" * word_len
         show_word_oled(oled_obj, f'Enter Word Length: {word_len}', color=0)
         # Send message to player
-        client.publish(player_topic, f"{word},{hangman_pos},{None},{True}")
+        client.publish(player_topic, f"{' '.join(list(word))},{hangman_pos},{None},{True}")
         
     else: 
         client.loop()

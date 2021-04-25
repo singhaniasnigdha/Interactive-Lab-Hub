@@ -1,17 +1,15 @@
 # m[Q](https://en.wikipedia.org/wiki/QAnon)tt[Anon](https://en.wikipedia.org/wiki/QAnon): Where We Go One, We Go All
 
-## Prep
-
-1. Pull the new changes
-2. Install [MQTT Explorer](http://mqtt-explorer.com/)
-3. Readings 
+## Requirements
+1. Install [MQTT Explorer](http://mqtt-explorer.com/)
+1. Readings 
    * [MQTT](#MQTT)
    * [The Presence Table](https://dl.acm.org/doi/10.1145/1935701.1935800) and [video](https://vimeo.com/15932020)
 
 
 ## Introduction
 
-The point of this lab is to introduce you to distributed interaction. We've included a some Natural Language Processing (NLP) and Generation (NLG) but those are not really the emphasis. Feel free to dig into the examples and play around the code which you can integrate into your projects. However we want to emphasize the grading will focus on your ability to develop interesting uses for messaging across distributed devices. 
+This lab introduces the concepts of distributed interaction.
 
 ## MQTT
 
@@ -27,67 +25,57 @@ MQTT is a lightweight messaging portal invented in 1999 for low bandwidth networ
 
 Setting up a broker isn't much work but for the purposes of this class you should all use the broker we've set up for you. 
 
-### Useful Tooling
+### MQTT Explorer
 
-Debugging and visualizing what's happening on your MQTT broker can be helpful. We like [MQTT Explorer](http://mqtt-explorer.com/). You can connect by putting in the settings from the image below.
+Debugging and visualizing what's happening on your MQTT broker can be helpful. [MQTT Explorer](http://mqtt-explorer.com/) is used to connect to the IDD broker set up for this class. The connections can be established using the parameters below:
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/mqtt_explorer.png" height="320" /></p>
+
+### Send and Receive 
+
+[sender.py](./sender.py) and and [reader.py](./reader.py) present the basics of using the mqtt in python. Before any files are executed, install the packages using `pip install -r requirements.txt`
+
+## The MQTT Hangman
+
+[Sam Lee (snl48)](https://github.com/snlee159/Interactive-Lab-Hub/tree/Spring2021/Lab%206) and I worked together to build this distributed application. We wanted to celebrate a childhood game player on pen/paper without providing a mobile app-like interface. Following section document our version of the MQTT [Hangman](https://en.wikipedia.org/wiki/Hangman_(game))!
+
+### The Design
+
+<!-- TODO: For example, if you made a remote controlled banana piano, explain why anyone would want such a thing. -->
+
+The idea is to provide the thrill of a game in physical form, rather than relying on a screen that automates all user input and feedback.
+
+<!-- Add storyboard -->
+
+This application has 2 components -- the Leader and the Player. The leader chooses a word, which the player should guess. If the player can guess the word, both win, otherwise both lose. The code can be found on [hangman_leader.py](./hangman_leader.py) and [hangman_player.py](./hangman_player.py).
+
+### The Architecture
+
+We create 2 topics for the leader and player to communicate on: `IDD/hangman_leader` and `IDD/hangman_player`, respectively.
+
+<!-- Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music? -->
+
+Several sensors are used by the leader and the player. These are: <br>
+**The Leader** <br>
+* Mini PiTFT Display
+* OLED Display
+* Rotary Encoder
+* Red LED Button
+* Green LED Button
+
+**The Player** <br>
+* Mini PiTFT Display
+* OLED Display
+* 2x Capacitive Touch Sensors
+* LEDs
+
+### Prototype
+
+<!-- Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect? -->
+
+### Interaction Video
+
+<!-- It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location. -->
 
 
-
-![input settings](/Users/ilanmandel/Documents/IDD/Interactive-Lab-Hub/Lab 6/imgs/mqtt_explorer.png)
-
-
-
-Once connected you should be able to see all the messaged on the IDD topic. From the interface you can send and plot messages as well.
-
-
-
-## Send and Receive 
-
-[sender.py](./sender.py) and and [reader.py](./reader.py) show you the basics of using the mqtt in python.  Lets spend a few minutes running these and seeing how messages are transferred and show up. 
-
-
-
-To run these examples make sure to install the packages from `requirements.txt`
-
-
-## The One True ColorNet
-
-It is with great fortitude and resilience that we shall worship at the altar of the *OneColor*. Through unity of the collective RGB we too can find unity in our heart, minds and souls. With the help of machines can  overthrow the bourgeoisie, get on the same wavelength (this was also a color pun) and establish [Fully Automated Luxury Communism](https://en.wikipedia.org/wiki/Fully_Automated_Luxury_Communism).
-
-
-
-The first step on the path to *collective* enlightenment, plug in the [APDS-9960 Proximity, Light, RGB, and Gesture Sensor](https://www.adafruit.com/product/3595).
-
-<img src="https://cdn-shop.adafruit.com/970x728/3595-03.jpg" height="300">
-
-You are almost there!
-
-The second step to achieving our great enlightenment is to run `python color.py`
-
-You will find the two squares on the display. Half is showing an approximation of the output from the color sensor. The other half is up to the collective. Press the top button to share your color with the class. Your color is now our color, our color is now your color. We are one. 
-
-I was not super careful with handling the loop so you may need to press more than once if the timing isn't quite right. Also I have't load tested it so things might just immediately break when every pushes the button at once.
-
-You may ask "but what if I missed class?"
-
-Am I not admitted into the collective enlightenment of the *OneColor*?
-
-Of course not! You can got to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs.
-
-Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
-
-
-
-## Make it your own
-
-Find at least one class (more are okay) partner, and design a distributed application together. 
-
-**1. Explain your design** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
-
-**2. Diagram the architecture of the system.** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
-
-**3. Build a working prototype of the system.** Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect?
-
-**4. Document the working prototype in use.** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
-
-**5. BONUS (Wendy didn't approve this so you should probably ignore it)** get the whole class to run your code and make your distributed system BIGGER.
+### Reflections
