@@ -1,14 +1,14 @@
 import os
 import time
 import subprocess
+import uuid
 
 import adafruit_ssd1306
-import digitalio
 import board
 import busio
-import qwiic_twist
+import digitalio
 import qwiic_button
-import uuid
+import qwiic_twist
 
 import paho.mqtt.client as mqtt
 import adafruit_rgb_display.st7789 as st7789
@@ -79,7 +79,7 @@ leader_topic = 'IDD/hangman_leader'
 
 
 def show_word_oled(oled_obj, word, color=255):
-    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 14)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 10)
     
     oled_obj['draw'].text((0, 10), word, font=font, fill=color)
     oled_obj['oled'].image(oled_obj['image'])
@@ -87,12 +87,13 @@ def show_word_oled(oled_obj, word, color=255):
 
 def get_word_length(rot_encoder, disp_obj, max_len=12):
     rot_encoder.set_count(0)
-    choice = 0
+    prev_choice = None
     while not rot_encoder.is_pressed():
-        show_word_oled(disp_obj, f'Enter Word Length:    {choice}', color=0)
         choice = rot_encoder.count % max_len
-        show_word_oled(disp_obj, f'Enter Word Length:    {choice}')
-        time.sleep(0.2)
+        if prev_choice != choice:
+            show_word_oled(disp_obj, f'Enter Word Length: {prev_choice}', color=0)
+            show_word_oled(disp_obj, f'Enter Word Length: {choice}')
+        time.sleep(0.5)
     return choice
 
 def get_word_pos(rot_encoder, disp_obj, max_len=12):
@@ -167,7 +168,6 @@ while True:
         word_len = get_word_length(twist, oled_obj)
         word = "_" * word_len
         show_word_oled(oled_obj, f'Enter Word Length:    {word_len}', color=0)
-        is_start = True
         # Send message to player
         client.publish(player_topic, f"{word},{hangman_pos},{None},{True}")
         
