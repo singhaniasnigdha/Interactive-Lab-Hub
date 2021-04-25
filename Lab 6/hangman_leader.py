@@ -96,12 +96,26 @@ def get_word_length(rot_encoder, disp_obj, max_len=12):
     return choice
 
 def get_word_pos(rot_encoder, disp_obj, max_len=12):
-    prev_pos = 0
+    padding = 2
+    shape_width = 5
+    top = padding
+    bottom = 32-padding
+    
+    def draw_rectangle(start_pos, outline_color=255):
+        x = start_pos * shape_width
+        disp_obj['draw'].rectangle((x, top, x+shape_width, bottom), outline=outline_color, fill=0)
+    
     rot_encoder.set_count(0)
+    prev_pos = 0
+    draw_rectangle(prev_pos)
     while not rot_encoder.is_pressed():
-        choice = rot_encoder.count % max_len
-        time.sleep(0.2)
-    return choice
+        curr_pos = rot_encoder.count % max_len
+        if prev_pos != curr_pos:
+            draw_rectangle(prev_pos, outline_color=0)
+            draw_rectangle(curr_pos)
+            prev_pos = curr_pos
+        time.sleep(0.5)
+    return curr_pos
 
 def show_hangman_tft(img_title, tft_obj):
     hangman_img = Image.open(f"{cwd}/imgs/{img_title}")
@@ -139,8 +153,7 @@ def on_player_message(client, userdata, msg):
     global hangman_pos, word
     is_correct_guess = blink_button(redButton, greenButton)
     if is_correct_guess:
-        # TODO -- show highlight
-        word_pos = get_word_length(twist, oled_obj, max_len=word_len)
+        word_pos = get_word_pos(twist, oled_obj, max_len=word_len)
         show_word_oled(oled_obj, word, color=0)
         word = word[:word_pos] + selected_char + word[word_pos+1:]
     else:
