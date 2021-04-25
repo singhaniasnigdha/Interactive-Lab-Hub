@@ -86,14 +86,16 @@ def show_word_oled(oled_obj, word, color=255):
     oled_obj['oled'].show()
 
 def get_word_length(rot_encoder, disp_obj, max_len=12):
-    rot_encoder.set_count(0)
+    rot_encoder.set_count(0); rot_encoder.set_red(150)
     prev_choice = None
     while not rot_encoder.is_pressed():
         choice = rot_encoder.count % max_len
         if prev_choice != choice:
             show_word_oled(disp_obj, f'Enter Word Length: {prev_choice}', color=0)
             show_word_oled(disp_obj, f'Enter Word Length: {choice}')
+            prev_choice = choice
         time.sleep(0.5)
+    rot_encoder.set_red(0)
     return choice
 
 def get_word_pos(rot_encoder, disp_obj, max_len=12):
@@ -103,12 +105,14 @@ def get_word_pos(rot_encoder, disp_obj, max_len=12):
     bottom = 32-padding
     
     def draw_rectangle(start_pos, outline_color=255):
-        x = start_pos * shape_width
+        if start_pos is None:
+            return
+        x = start_pos * 2 * shape_width
         disp_obj['draw'].rectangle((x, top, x+shape_width, bottom), outline=outline_color, fill=0)
     
-    rot_encoder.set_count(0)
-    prev_pos = 0
-    draw_rectangle(prev_pos)
+    rot_encoder.set_count(0); rot_encoder.set_red(150)
+    prev_pos = None
+    #draw_rectangle(0)
     while not rot_encoder.is_pressed():
         curr_pos = rot_encoder.count % max_len
         if prev_pos != curr_pos:
@@ -116,6 +120,7 @@ def get_word_pos(rot_encoder, disp_obj, max_len=12):
             draw_rectangle(curr_pos)
             prev_pos = curr_pos
         time.sleep(0.5)
+    rot_encoder.set_red(0)
     return curr_pos
 
 def show_hangman_tft(img_title, tft_obj):
@@ -130,7 +135,12 @@ def blink_button(red, green):
         time.sleep(0.5)
         red.LED_off(); green.LED_off()
         time.sleep(0.5)
-    return green.is_button_pressed()
+    is_green = green.is_button_pressed()
+    if is_green:
+        red.LED_off(); green.LED_on(255)
+    else:
+        red.LED_on(255); green.LED_off()
+    return is_green
 
 def get_mqtt_client(on_message):
     def on_connect(client, userdata, flags, rc):
@@ -155,10 +165,12 @@ def on_player_message(client, userdata, msg):
     is_correct_guess = blink_button(redButton, greenButton)
     if is_correct_guess:
         word_pos = get_word_pos(twist, oled_obj, max_len=word_len)
-        show_word_oled(oled_obj, word, color=0)
+        show_word_oled(oled_obj, ' '.join(list(word)), color=0)
         word = word[:word_pos] + selected_char + word[word_pos+1:]
+        greenButton.LED_off()
     else:
         hangman_pos += 1
+        redButton.LED_off()
     client.publish(player_topic, f"{word},{hangman_pos},{is_correct_guess},{None}")
 
 client = get_mqtt_client(on_player_message)
@@ -167,13 +179,13 @@ while True:
     if word_len == 0:
         word_len = get_word_length(twist, oled_obj)
         word = "_" * word_len
-        show_word_oled(oled_obj, f'Enter Word Length:    {word_len}', color=0)
+        show_word_oled(oled_obj, f'Enter Word Length: {word_len}', color=0)
         # Send message to player
         client.publish(player_topic, f"{word},{hangman_pos},{None},{True}")
         
     else: 
         client.loop()
-        show_word_oled(oled_obj, word)
+        show_word_oled(oled_obj, ' '.join(list(word)))
         show_hangman_tft(f'hangman-{hangman_pos}.png', disp)
         
         if hangman_pos == 6:
@@ -187,4 +199,3 @@ while True:
             greenButton.LED_off()
             break
 
-        redButton.LED_off(); greenButton.LED_off()
