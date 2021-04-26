@@ -87,14 +87,13 @@ The player will use their keyboard to select a letter which they believe is pres
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/player_device.png" height="320" /></p>
 
 We choose this design as it helps the user keep track of which letters they have already selected, to ensure they do not repeat the same wrong letter multiple times. Let's say the player chooses letter 'B'. This will show up on the leader's OLED screen and the red and green LEDs will begin flashing.
-
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/selected_b.gif" height="320" /></p>
 
-The leader should then decide if the selected character is correct or not. If the selected character is the correct choice, they press the Green LED. Next, they use the rotary encoder to selected which blank space this letter should fill. This message is transmitted to the player as: `B _ _, 0, True, False`.
+The leader should then decide if the selected character is correct or not. If the selected character is the correct choice, they press the Green LED. Next, they use the rotary encoder to selected which blank space this letter should fill. A rectangle appears over the current position in the word to guide the user. This message is transmitted to the player as: `B _ _, 0, True, False`.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/correct_char.gif" height="320" /></p>
 
-Suppose the leader believes that the selected letter is incorrect. They press the red LED. In this case, the message would be `_ _ _, 1, False, False`. As one wrong move has been made, the head of the hangman appears on the PiTFT.
-
-<!-- Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect? -->
+Suppose the leader believes that the selected letter is incorrect. They press the red LED. In this case, the message would be `_ _ _, 1, False, False`. As one wrong move has been made, the head of the hangman appears on the PiTFT display.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/wrong_char.gif" height="320" /></p>
 
 ### Interaction Video
 
