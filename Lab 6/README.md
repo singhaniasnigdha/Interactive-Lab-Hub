@@ -79,12 +79,20 @@ The different stages of the hangman game that appear on the Mini PiTFT are shown
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="280" /></p>
 
 To begin the game, the leader uses the rotary encoder to set the length of word that the player should guess:
-<p align="center"><img src="https://drive.google.com/file/d/1jKd_hgIlX58dVi8K3EeM0R2Vr5OBzI53/view?usp=sharing" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="320" /></p>
 
 This information is relayed to the player using MQTT in the format: `{word},{hangman_status},{is_correct_guess},{is_start_of_game}`. The word is composed of spaces, and only filled when characters are correctly guessed. The message sent in the stage above is `_ _ _, 0, None, True`. The OLED screen is updated accordingly.
-28
-The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below:
+
+The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below and they select a letter by turning the letter down. Every letter is connected to a node on the capacitive touch sensor. (NOTE: We are constrained by 24 available nodes in Capacitive Sensor, as the Raspberry Pi can at most connect to 2 such sensors, each providing us with 12 nodes. To accomodate this, we skip connections to letters Q and X.)
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/player_device.png" height="320" /></p>
+
+We choose this design as it helps the user keep track of which letters they have already selected, to ensure they do not repeat the same wrong letter multiple times. Let's say the player chooses letter 'B'. This will show up on the leader's OLED screen and the red and green LEDs will begin flashing.
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/selected_b.gif" height="320" /></p>
+
+The leader should then decide if the selected character is correct or not. If the selected character is the correct choice, they press the Green LED. Next, they use the rotary encoder to selected which blank space this letter should fill. This message is transmitted to the player as: `B _ _, 0, True, False`.
+
+Suppose the leader believes that the selected letter is incorrect. They press the red LED. In this case, the message would be `_ _ _, 1, False, False`. As one wrong move has been made, the head of the hangman appears on the PiTFT.
 
 <!-- Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect? -->
 
