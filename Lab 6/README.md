@@ -53,25 +53,13 @@ We create 2 topics for the leader and player to communicate on: `IDD/hangman_lea
 
 <!-- Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music? -->
 
-Several sensors are used by the leader and the player. These are:
-
-**The Leader** <br>
-* Mini PiTFT Display
-* OLED Display
-* Rotary Encoder
-* Red LED Button
-* Green LED Button
-
-**The Player** <br>
-* Mini PiTFT Display
-* OLED Display
-* 2x Capacitive Touch Sensors
+Several sensors are used by the leader and the player. The sensors and relevant functionality for the leader and player can be described as:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/component_diagram.png" height="360" /></p>
 
 <!-- Add architecture -->
 
-Both the leader and player provide inputs, and receive outputs. The workflow can be described as below:
-
-<!-- Add workflow image -->
+Both the leader and player provide inputs, and receive outputs. The workflow and communication can be summarized as below:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/flow_diagram.png" height="360" /></p>
 
 ### Prototype
 
