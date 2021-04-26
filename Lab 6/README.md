@@ -76,13 +76,13 @@ Both the leader and player provide inputs, and receive outputs. The workflow can
 ### Prototype
 
 The different stages of the hangman game that appear on the Mini PiTFT are shown in the image below. These are difficult to capture on film because of the brightness.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="280" /></p>
 
 To begin the game, the leader uses the rotary encoder to set the length of word that the player should guess:
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="320" /></p>
+<p align="center"><img src="https://drive.google.com/file/d/1jKd_hgIlX58dVi8K3EeM0R2Vr5OBzI53/view?usp=sharing" height="320" /></p>
 
 This information is relayed to the player using MQTT in the format: `{word},{hangman_status},{is_correct_guess},{is_start_of_game}`. The word is composed of spaces, and only filled when characters are correctly guessed. The message sent in the stage above is `_ _ _, 0, None, True`. The OLED screen is updated accordingly.
-
+28
 The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/player_device.png" height="320" /></p>
 
