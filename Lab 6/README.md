@@ -1,15 +1,13 @@
 # m[Q](https://en.wikipedia.org/wiki/QAnon)tt[Anon](https://en.wikipedia.org/wiki/QAnon): Where We Go One, We Go All
 
-## Requirements
+This lab introduces the concepts of distributed interaction.
+
+### Requirements
 1. Install [MQTT Explorer](http://mqtt-explorer.com/)
 1. Readings 
    * [MQTT](#MQTT)
    * [The Presence Table](https://dl.acm.org/doi/10.1145/1935701.1935800) and [video](https://vimeo.com/15932020)
 
-
-## Introduction
-
-This lab introduces the concepts of distributed interaction.
 
 ## MQTT
 
@@ -51,11 +49,12 @@ This application has 2 components -- the Leader and the Player. The leader choos
 
 ### The Architecture
 
-We create 2 topics for the leader and player to communicate on: `IDD/hangman_leader` and `IDD/hangman_player`, respectively.
+We create 2 topics for the leader and player to communicate on: `IDD/hangman_leader` and `IDD/hangman_player`.
 
 <!-- Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music? -->
 
-Several sensors are used by the leader and the player. These are: <br>
+Several sensors are used by the leader and the player. These are:
+
 **The Leader** <br>
 * Mini PiTFT Display
 * OLED Display
@@ -67,9 +66,25 @@ Several sensors are used by the leader and the player. These are: <br>
 * Mini PiTFT Display
 * OLED Display
 * 2x Capacitive Touch Sensors
-* LEDs
+
+<!-- Add architecture -->
+
+Both the leader and player provide inputs, and receive outputs. The workflow can be described as below:
+
+<!-- Add workflow image -->
 
 ### Prototype
+
+The different stages of the hangman game that appear on the Mini PiTFT are shown in the image below. These are difficult to capture on film because of the brightness.
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="320" /></p>
+
+To begin the game, the leader uses the rotary encoder to set the length of word that the player should guess:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="320" /></p>
+
+This information is relayed to the player using MQTT in the format: `{word},{hangman_status},{is_correct_guess},{is_start_of_game}`. The word is composed of spaces, and only filled when characters are correctly guessed. The message sent in the stage above is `_ _ _, 0, None, True`. The OLED screen is updated accordingly.
+
+The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below:
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/player_device.png" height="320" /></p>
 
 <!-- Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect? -->
 
