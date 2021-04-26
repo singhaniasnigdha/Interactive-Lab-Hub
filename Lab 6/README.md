@@ -39,8 +39,6 @@ Debugging and visualizing what's happening on your MQTT broker can be helpful. [
 
 ### The Design
 
-<!-- TODO: For example, if you made a remote controlled banana piano, explain why anyone would want such a thing. -->
-
 The idea is to provide the thrill of a game in physical form, rather than relying on a screen that automates all user input and feedback.
 
 <!-- Add storyboard -->
@@ -51,12 +49,8 @@ This application has 2 components -- the Leader and the Player. The leader choos
 
 We create 2 topics for the leader and player to communicate on: `IDD/hangman_leader` and `IDD/hangman_player`.
 
-<!-- Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music? -->
-
 Several sensors are used by the leader and the player. The sensors and relevant functionality for the leader and player can be described as:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/component_diagram.png" height="360" /></p>
-
-<!-- Add architecture -->
 
 Both the leader and player provide inputs, and receive outputs. The workflow and communication can be summarized as below:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/flow_diagram.png" height="360" /></p>
@@ -64,7 +58,7 @@ Both the leader and player provide inputs, and receive outputs. The workflow and
 ### Prototype
 
 The different stages of the hangman game that appear on the Mini PiTFT are shown in the image below. These are difficult to capture on film because of the brightness.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="280" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="160" /></p>
 
 To begin the game, the leader uses the rotary encoder to set the length of word that the player should guess:
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="320" /></p>
@@ -89,3 +83,11 @@ Suppose the leader believes that the selected letter is incorrect. They press th
 
 
 ### Reflections
+
+Some things that we appreciate about this project are:
+* Learning about MQTT and expanding the scope of the project to incorporate multiple Raspberry Pis.
+* Increasing the complexity of the project as compared to the past projects.
+
+Some aspects which we thought could be added/improved were:
+* Handling duplicate characters. For example: `APPLE` has 2 P's, which the leader cannot handle currently. With the limited number of buttons we were constrained on how we could use them to fill multiple gaps on one player input.
+* Account for more than 1 player. Our code does not handle situations where multiple character inputs are sent without response, or inputs from multiple players. It would be exciting to see how this can be expanded to involve more than 1 player (in addition to the leader).
