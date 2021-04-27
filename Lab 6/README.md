@@ -81,8 +81,7 @@ Suppose the leader believes that the selected letter is incorrect. They press th
 
 Sam and I recorded the final interaction video on Zoom. The display screen could not be captured well, and hence some subtitles have been added to aid understanding.
 
-<!-- It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location. -->
-
+[![Watch the video](https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/video-title.png)](https://drive.google.com/file/d/1hU5vXa6ZyCo2S6qyIeXqfGYZhy_4rlsY/view?usp=sharing)
 
 ### Reflections
 
