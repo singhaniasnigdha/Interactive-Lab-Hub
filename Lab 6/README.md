@@ -61,23 +61,25 @@ The different stages of the hangman game that appear on the Mini PiTFT are shown
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/stages.png" height="160" /></p>
 
 To begin the game, the leader uses the rotary encoder to set the length of word that the player should guess:
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/set_word_len.gif" height="420" /></p>
 
 This information is relayed to the player using MQTT in the format: `{word},{hangman_status},{is_correct_guess},{is_start_of_game}`. The word is composed of spaces, and only filled when characters are correctly guessed. The message sent in the stage above is `_ _ _, 0, None, True`. The OLED screen is updated accordingly.
 
-The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below and they select a letter by turning the letter down. Every letter is connected to a node on the capacitive touch sensor. (NOTE: We are constrained by 24 available nodes in Capacitive Sensor, as the Raspberry Pi can at most connect to 2 such sensors, each providing us with 12 nodes. To accomodate this, we skip connections to letters Q and X.)
+The player will use their keyboard to select a letter which they believe is present in the word selected by the leader. Their setup is as shown below and they select a letter by turning the letter down. Every letter is connected to a node on the capacitive touch sensor. (NOTE: We are constrained by 24 available nodes in Capacitive Sensor, as the Raspberry Pi can at most connect to 2 such sensors, each providing us with 12 nodes. To accomodate this, we skip connections to letters X and Z.)
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/player_device.png" height="320" /></p>
 
 We choose this design as it helps the user keep track of which letters they have already selected, to ensure they do not repeat the same wrong letter multiple times. Let's say the player chooses letter 'B'. This will show up on the leader's OLED screen and the red and green LEDs will begin flashing.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/selected_b.gif" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/selected_b.gif" height="420" /></p>
 
 The leader should then decide if the selected character is correct or not. If the selected character is the correct choice, they press the Green LED. Next, they use the rotary encoder to selected which blank space this letter should fill. A rectangle appears over the current position in the word to guide the user. This message is transmitted to the player as: `B _ _, 0, True, False`.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/correct_char.gif" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/correct_char.gif" height="420" /></p>
 
 Suppose the leader believes that the selected letter is incorrect. They press the red LED. In this case, the message would be `_ _ _, 1, False, False`. As one wrong move has been made, the head of the hangman appears on the PiTFT display.
-<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/wrong_char.gif" height="320" /></p>
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%206/imgs/wrong_char.gif" height="420" /></p>
 
 ### Interaction Video
+
+Sam and I recorded the final interaction video on Zoom. The display screen could not be captured well, and hence some subtitles have been added to aid understanding.
 
 <!-- It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location. -->
 
@@ -85,9 +87,10 @@ Suppose the leader believes that the selected letter is incorrect. They press th
 ### Reflections
 
 Some things that we appreciate about this project are:
-* Learning about MQTT and expanding the scope of the project to incorporate multiple Raspberry Pis.
-* Increasing the complexity of the project as compared to the past projects.
+* Learning about MQTT and expanding the scope of the project to incorporate multiple Raspberry Pis. We enjoyed brainstorming and developing this idea.
+* Increasing the complexity of the deliverable as compared to our past projects.
 
 Some aspects which we thought could be added/improved were:
+* Making the use of the rotary encoder to start the game more intuitive. We change the color of the encoder from blue to red, but this might not be sufficient to draw the user's attention and guide them through the process.
 * Handling duplicate characters. For example: `APPLE` has 2 P's, which the leader cannot handle currently. With the limited number of buttons we were constrained on how we could use them to fill multiple gaps on one player input.
 * Account for more than 1 player. Our code does not handle situations where multiple character inputs are sent without response, or inputs from multiple players. It would be exciting to see how this can be expanded to involve more than 1 player (in addition to the leader).
