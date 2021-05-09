@@ -79,10 +79,10 @@ def show_selected_time(disp, selected_time):
 
 def choose_dip_time(rot_encoder, default_dip_time, max_time=5):
     prev_choice = default_dip_time
-    show_selected_time(disp, prev_choice)
+    show_selected_time(disp, default_dip_time)
     time.sleep(0.5)
 
-    rot_encoder.set_count(0); rot_encoder.set_red(150)
+    rot_encoder.set_count(2); rot_encoder.set_red(150)
     while not rot_encoder.is_pressed():
         choice = (rot_encoder.count % max_time) + 1
         if prev_choice != choice:
@@ -100,7 +100,7 @@ while True:
     if start_dip:
         start_time = time.time()
         while time.time() - start_time < (dip_time * 60):
-            servo.ChangeDutyCycle(80 / 18 + 2)
+            servo.ChangeDutyCycle(100 / 18 + 2)
             time.sleep(2)
             servo.ChangeDutyCycle(60 / 18 + 2)
             time.sleep(2)
