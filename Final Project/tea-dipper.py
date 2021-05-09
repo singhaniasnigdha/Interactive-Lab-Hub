@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 cwd = os.getcwd()
 i2c = busio.I2C(board.SCL, board.SDA)
 
-MOTOR_PIN = 17
+MOTOR_PIN = 18
 
 def image_formatting(img):
     img = img.convert('RGB')
@@ -28,7 +28,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(MOTOR_PIN, GPIO.OUT)
     servo = GPIO.PWM(MOTOR_PIN, 50)
-    servo.start(2.5)
+    servo.start(100 / 18 + 2)
 
     # Setup SPI bus using hardware SPI:
     spi = board.SPI()
@@ -101,15 +101,17 @@ dip_time = default_dip_time
 while True:
     if start_dip:
         start_time = time.time()
+        redButton.LED_on(255)
         while time.time() - start_time < (dip_time * 60):
-            servo.ChangeDutyCycle(100 / 18 + 2)
+            servo.ChangeDutyCycle(80 / 18 + 2)
             time.sleep(2)
-            servo.ChangeDutyCycle(60 / 18 + 2)
+            servo.ChangeDutyCycle(100 / 18 + 2)
             time.sleep(2)
             
             if redButton.is_button_pressed():
                 break
         # TODO: speaker says tea is ready
+        redButton.LED_off()
         start_dip = False
     
     show_image(disp, 'tea-time.jpg')
