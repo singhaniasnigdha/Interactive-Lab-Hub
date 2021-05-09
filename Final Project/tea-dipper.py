@@ -15,7 +15,7 @@ from PIL import Image, ImageDraw, ImageFont
 cwd = os.getcwd()
 i2c = busio.I2C(board.SCL, board.SDA)
 
-MOTOR_PIN = 13
+MOTOR_PIN = 17
 
 def image_formatting(img):
     img = img.convert('RGB')
@@ -25,8 +25,10 @@ def image_formatting(img):
 
 def setup():
     # Setup the servo
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(MOTOR_PIN, GPIO.OUT)
     servo = GPIO.PWM(MOTOR_PIN, 50)
+    servo.start(2.5)
 
     # Setup SPI bus using hardware SPI:
     spi = board.SPI()
