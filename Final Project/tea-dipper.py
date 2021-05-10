@@ -62,8 +62,10 @@ def setup():
     # Set up buttons
     redButton = qwiic_button.QwiicButton()
     redButton.begin()
+    redButton.LED_off()
     greenButton = qwiic_button.QwiicButton(address=0x62)
     greenButton.begin()
+    greenButton.LED_off()
 
     # Alternatively load a TTF font.  Make sure the .ttf font file is in the
     # same directory as the python script!
