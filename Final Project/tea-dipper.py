@@ -104,9 +104,9 @@ while True:
         redButton.LED_on(255)
         while time.time() - start_time < (dip_time * 60):
             servo.ChangeDutyCycle(80 / 18 + 2)
-            time.sleep(2)
+            time.sleep(1.5)
             servo.ChangeDutyCycle(100 / 18 + 2)
-            time.sleep(2)
+            time.sleep(1.5)
             
             if redButton.is_button_pressed():
                 break
@@ -115,10 +115,11 @@ while True:
         start_dip = False
     
     show_image(disp, 'tea-time.jpg')
-    time.sleep(2)
+    time.sleep(3)
 
     # Choose Dip Time
     dip_time = choose_dip_time(twist, default_dip_time, max_time=5)
+    show_image(disp, 'start.png')
     # Blink Button to ask user to press when to begin
     while not greenButton.is_button_pressed():
         greenButton.LED_on(255)
