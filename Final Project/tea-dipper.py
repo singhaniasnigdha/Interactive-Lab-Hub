@@ -5,6 +5,7 @@ import qwiic_button
 import qwiic_twist
 
 import os
+import subprocess
 import time
 
 import RPi.GPIO as GPIO
@@ -17,6 +18,11 @@ i2c = busio.I2C(board.SCL, board.SDA)
 
 MOTOR_PIN = 18
 
+def speak(command):
+    subprocess.run(["sh", "GoogleTTS_demo.sh", command])
+    # call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
+    time.sleep(0.5)
+
 def image_formatting(img):
     img = img.convert('RGB')
     # Scale the image to the smaller screen dimension
@@ -28,7 +34,7 @@ def setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(MOTOR_PIN, GPIO.OUT)
     servo = GPIO.PWM(MOTOR_PIN, 50)
-    servo.start(100 / 18 + 2)
+    servo.start(110 / 18 + 2)
 
     # Setup SPI bus using hardware SPI:
     spi = board.SPI()
@@ -106,12 +112,12 @@ while True:
         while time.time() - start_time < (dip_time * 60):
             servo.ChangeDutyCycle(80 / 18 + 2)
             time.sleep(1.5)
-            servo.ChangeDutyCycle(100 / 18 + 2)
+            servo.ChangeDutyCycle(110 / 18 + 2)
             time.sleep(1.5)
             
             if redButton.is_button_pressed():
                 break
-        # TODO: speaker says tea is ready
+        speak("Your Tea is Ready! ENJOY.")
         redButton.LED_off()
         show_image(disp, 'tea-time.jpg')
         start_dip = False
