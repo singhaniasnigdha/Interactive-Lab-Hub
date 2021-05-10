@@ -102,6 +102,7 @@ while True:
     if start_dip:
         start_time = time.time()
         redButton.LED_on(255)
+        show_image(disp, 'stop.png')
         while time.time() - start_time < (dip_time * 60):
             servo.ChangeDutyCycle(80 / 18 + 2)
             time.sleep(1.5)
@@ -112,10 +113,11 @@ while True:
                 break
         # TODO: speaker says tea is ready
         redButton.LED_off()
+        show_image(disp, 'tea-time.jpg')
         start_dip = False
     
     show_image(disp, 'tea-time.jpg')
-    time.sleep(3)
+    time.sleep(5)
 
     # Choose Dip Time
     dip_time = choose_dip_time(twist, default_dip_time, max_time=5)
