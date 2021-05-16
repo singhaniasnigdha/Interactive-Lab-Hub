@@ -19,6 +19,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 MOTOR_PIN = 18
 
 def speak(command):
+    # Use Google TTS
     subprocess.run(["sh", "GoogleTTS_demo.sh", command])
     # call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
     time.sleep(0.5)
@@ -112,11 +113,14 @@ while True:
         redButton.LED_on(255)
         show_image(disp, 'stop.png')
         while time.time() - start_time < (dip_time * 60):
+            # Down Position
             servo.ChangeDutyCycle(80 / 18 + 2)
             time.sleep(1.5)
+            # Up Position
             servo.ChangeDutyCycle(110 / 18 + 2)
             time.sleep(1.5)
             
+            # Ensures stop always occurs at up position
             if redButton.is_button_pressed():
                 break
         speak("Your Tea is Ready! ENJOY.")
