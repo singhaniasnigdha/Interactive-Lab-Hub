@@ -32,8 +32,7 @@ __Servo Motor__: A servo motor is used to perform the dipping action. The tea-ba
 
 The green, orange and brown wires connect to 3.3V, GPIO and GND, respectively.
 
-
-__Mini PiTFT__: The PiTFT Display shows the welcome screen as well all feedback throughout the set up of the Little Dipper. Instructions such as 'Press the Red Button to Stop' as well as assisting the user while selecting the duration of dipping are done using this device. The colored display makes it a preferred choice over the OLED Display. However, this screen lacks flexibility, as it requires to alwaays be placed on the Pi (limiting the design).
+__Mini PiTFT__: The PiTFT Display shows the welcome screen as well all feedback throughout the set up of the Little Dipper. Instructions such as 'Press the Red Button to Stop' as well as assisting the user while selecting the duration of dipping are done using this device. The colored display makes it a preferred choice over the OLED Display. However, this screen lacks flexibility, as it requires to always be placed on the Pi (limiting the design).
 
 
 __Text to Speech__: Voice is used to draw the user's attention when the tea is ready but they are not close to the device. [`GoogleTTS`](GoogleTTS_demo.sh) is used for because this TTS is clearer as compared to others available. A speaker is connected to the 4-pole stereo audio port.
