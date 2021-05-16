@@ -12,11 +12,11 @@ In this assignment, a combination of sensors are used to build a fully functioni
 
 Little Dipper prepares a perfect cup of tea, as you get ready/are engaged in other things every morning. You won't have to worry about over-extracting your tea anymore. In fact, after caliberating it well, the strength of your tea will be the same every single day!
 
-<!-- TODO: Incomplete -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/storyboard.png" height="420" /></p>
 
 ### Components used for Interactions
 
-<!-- TODO: Add image of components -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/schematic.png" height="420" /></p>
 
 __Rotary Encoder__: The first step to begin the process requires the user to select how long they want the device to dip their tea bag. This is done using the rotary encoder, where they twist the wheel to select between 1-5 minutes. The default dipping time is set to 3 minutes. The GIF below showcases this interaction.
 <!-- TODO: Add GIF -->
