@@ -6,7 +6,11 @@ In this assignment, a combination of sensors are used to build a fully functioni
 
 ## The Little Dipper
 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/little-dipper.jpg" height="360" /></p>
+
 ### Rationale
+
+Little Dipper prepares a perfect cup of tea, as you get ready/are engaged in other things every morning. You won't have to worry about over-extracting your tea anymore. In fact, after caliberating it well, the strength of your tea will be the same every single day!
 
 <!-- TODO: Incomplete -->
 
