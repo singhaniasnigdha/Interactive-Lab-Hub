@@ -19,21 +19,21 @@ Little Dipper prepares a perfect cup of tea, as you get ready/are engaged in oth
 <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/schematic.png" height="420" /></p>
 
 __Rotary Encoder__: The first step to begin the process requires the user to select how long they want the device to dip their tea bag. This is done using the rotary encoder, where they twist the wheel to select between 1-5 minutes. The default dipping time is set to 3 minutes. The GIF below showcases this interaction.
-<!-- TODO: Add GIF -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/twist.gif" height="360" /></p>
 
 __LED Buttons__: The Green and Red LED buttons are used to get user input to start and abruptly stop the tea dipper, respectively. After the user sets the dipping time using the Rotary Encoder, the Green LED blinks, drawing the user's attention to the button, and asking them to press the button to start the dipping process. The dipper will begin the process and continue dipping the user's tea-bag for the specified duration. Here, the Red LED button can be pressed if he wants to interrupt the process, and terminate it before stopping time. 
+
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/led-blink.gif" height="360" /></p>
 
 LEDs always blink if the user has the option of using them, and are turned off when not in use.
 
 __Servo Motor__: A servo motor is used to perform the dipping action. The tea-bag is placed on the hook and its position is controlled by the Raspberry Pi. This is a new sensor that was experimented with for this assignment. It was exciting to learn how to solder wires to make this operational (all other sensors could be connected using Qwiic cables).
-<!-- TODO Add picture -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/servo.gif" height="360" /></p>
 
 The green, orange and brown wires connect to 3.3V, GPIO and GND, respectively.
 
 
 __Mini PiTFT__: The PiTFT Display shows the welcome screen as well all feedback throughout the set up of the Little Dipper. Instructions such as 'Press the Red Button to Stop' as well as assisting the user while selecting the duration of dipping are done using this device. The colored display makes it a preferred choice over the OLED Display. However, this screen lacks flexibility, as it requires to alwaays be placed on the Pi (limiting the design).
-
-<!-- <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%203/imgs/screens.png" height="360" /></p> -->
 
 
 __Text to Speech__: Voice is used to draw the user's attention when the tea is ready but they are not close to the device. [`GoogleTTS`](GoogleTTS_demo.sh) is used for because this TTS is clearer as compared to others available. A speaker is connected to the 4-pole stereo audio port.
