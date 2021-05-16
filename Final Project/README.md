@@ -47,7 +47,7 @@ def speak(command):
 
 The Raspberry Pi is encased in a cardboard box, with outlets to allow for easy power source and speaker connections. The sensors are placed outside the box to allow the user to operate them. Qwiic cables are used to connect the LEDs, rotary encoder and Mini PiTFT. Servo motors are connected to the Pi by soldering the wires to the TFT inputs. 
 
-<!-- <p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Lab%205/imgs/paper-display.png" height="320" /></p> -->
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/paper-display.png" height="420" /></p>
 
 **Choice of Material**: Cardboard is used to build the prototype for this device because it is inexpensive, versatile and can be cut, folded, and shaped with at-home equipment. By using an Olfa knife, it is easy to make a box out of a small sheet of cardboard, which is good enough to contain the Raspberry Pi, the servo motor, and any additional sensors.
 
