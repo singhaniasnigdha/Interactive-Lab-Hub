@@ -2,10 +2,13 @@
 
 In this assignment, a combination of sensors are used to build a fully functioning and well-designed interactive tool that could be used at all homes. This is the **The Little Dipper** (inspired from the Constellation)!
 
+<p align="center"><img src="https://github.com/singhaniasnigdha/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/imgs_readme/ursaminor.jpg" height="360" /></p>
+
 ## The Little Dipper
 
 ### Rationale
 
+<!-- TODO: Incomplete -->
 
 ### Components used for Interactions
 
@@ -64,10 +67,11 @@ python tea-dipper.py
 
 ### Reflections
 
+Some aspects of the project I enjoyed were:
+* Learning how to use the servo motors and soldering wires.
+* Coming up with an idea and a prototype that I would use everyday.
 
-## Deliverables
-
-1. Documentation of design process
-2. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
-3. Video of someone using your project (or as safe a version of that as can be managed given social distancing)
-4. Reflections on process (What have you learned or wish you knew at the start?)
+Some aspects which would be exciting to add are:
+* Setting up a camera which can learn which tea is being dipped and set different default dipping times per tea.
+* Experimenting with Laser Cutting or more complex display methods.
+* It would also be exciting to use MQTT to allow the user to connect to the device using their mobile phones.
